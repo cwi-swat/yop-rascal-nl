@@ -7,7 +7,7 @@ titel: Lesplan voor de Leraar
 * Attitude
    * "Ik kan zelf een programmeertaal bedenken, ontwerpen en maken"
    * "Metaprogrammeren is misschien ingewikkeld, maar het is niet moeilijk en héél leuk"
-   * Omgaan met imperfectie van je eigen bedenksels, en (tijdelijke) frustraties als wat je bedenkt even niet lukt, de aanhouder wint, en om hulp vragen is niet slecht.
+   * Omgaan met imperfectie van je eigen bedenksels, en (tijdelijke) frustraties als wat je bedenkt even niet lukt, de aanhouder wint, én om hulp vragen is niet slecht.
    * "Lui én slim"; de computer het werk laten doen.
 * Kennis
    * Nieuwe woorden en begrippen:
