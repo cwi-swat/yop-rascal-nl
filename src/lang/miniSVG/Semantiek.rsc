@@ -2,7 +2,8 @@ module lang::miniSVG::Semantiek
 
 import lang::miniSVG::Syntax;
 
-// vertaalt een-op-een een lijst van miniSVG teken-instructies naar de textuele XML vorm die "SVG" heet:
+// Dit vertaalt een-op-een een lijst van miniSVG teken-instructies naar de textuele XML vorm die "SVG" heet.
+// Én het regelt de assen (van waar tot waar (-1000 tot 1000), en de richting (y-as omhoog en x-as naar rechts))
 str toSVG(miniSVG(list[Element] elements))
     = "\<svg 
       '    viewBox=\"0 0 1000 1000\"
@@ -18,7 +19,6 @@ str toSVG(miniSVG(list[Element] elements))
       '    <}>
       '    \<line x1=\"0\" y1=\"-500\" x2=\"0\" y2=\"500\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
       '    \<line x1=\"-500\" y1=\"0\" x2=\"500\" y2=\"0\"stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
-      '   
       '\</g\>
       '\</svg\>
       '";
@@ -27,7 +27,7 @@ str toSVG(e:circle(int cx, int cy, int r))
     = "\<circle cx=\"cx\" cy=\"<cy>\" r=\"<r>\" <stroke(e)> /\>"; 
 
 str toSVG(e:rectangle(int x, int y, int width, int height)) 
-    = "\<rectange x=\"<x>\" y=\"<y>\" width=\"<width>\" height=\"<height>\" <stroke(e)> /\>";
+    = "\<rect x=\"<x>\" y=\"<y>\" width=\"<width>\" height=\"<height>\" <stroke(e)> /\>";
 
 str toSVG(e:ellipse(int cx, int cy, int rx, int ry)) 
     = "\<ellipse cx=\"<cx>\" cy=\"<cy>\" rx=\"<rx>\" ry=\"<ry>\" <stroke(e)> /\>";
