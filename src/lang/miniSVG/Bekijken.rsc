@@ -7,6 +7,15 @@ import Content;
 import util::IDEServices;
 import IO;
 
+void davidsPlaatje() {
+    plaatje = [
+        line(10,-10,100,-100),
+        line(-800,200,10,-10)
+    ];
+
+    bekijken(miniSVG(plaatje));
+}
+
 void bekijken(MiniSVG plaatje) {
     echteSVG = toSVG(plaatje);
 

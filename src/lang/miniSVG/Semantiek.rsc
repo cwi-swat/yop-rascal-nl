@@ -33,7 +33,7 @@ str toSVG(e:ellipse(int cx, int cy, int rx, int ry))
     = "\<ellipse cx=\"<cx>\" cy=\"<cy>\" rx=\"<rx>\" ry=\"<ry>\" <stroke(e)> /\>";
     
 str toSVG(e:line(int x1, int x2, int y1, int y2)) 
-    = "\<line x1=\"<x1>\" x2=\"<x2>\" y1=\"<y2>\" y2=\"<y2>\" <stroke(e)> /\>";
+    = "\<line x1=\"<x1>\" x2=\"<x2>\" y1=\"<y1>\" y2=\"<y2>\" <stroke(e)> /\>";
 
 str toSVG(e:polyline(lrel[int x, int y] points)) 
     = "\<polyline points=\"<for (<x,y> <- points) {><x>,<y> <}>\" <stroke(e)> /\>";
@@ -47,4 +47,6 @@ str toSVGColor(black()) = "black";
 str toSVGColor(white()) = "white";
 str toSVGColor(none())  = "none";
 default str toSVGColor(Color _) = "pink";
+
+
 
