@@ -14,7 +14,9 @@ void bekijken(MiniSVG plaatje) {
 }
 
 void opslaan(MiniSVG plaatje, str bestandsnaam) {
-    writeFile((|home:///| + bestandsnaam)[extension="svg"], toSVG(plaatje));
+    writeFile((|home:///| + bestandsnaam)[extension="svg"], 
+        "\<?xml version=\"1.0\" standalone=\"yes\"?\>
+        '<toSVG(plaatje)>");
 }
 
 private void bekijkSVG(str svg) {
