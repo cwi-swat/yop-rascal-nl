@@ -7,18 +7,23 @@ titel: Lesplan voor de Leraar
 * Attitude
    * "Ik kan zelf een programmeertaal bedenken, ontwerpen en maken"
    * "Metaprogrammeren is misschien ingewikkeld, maar het is niet moeilijk en héél leuk"
-   * "Ik hoef geen wiskunde bolleboos te zijn om goed te zijn in programmeren"
+   * Omgaan met imperfectie van je eigen bedenksels, en (tijdelijke) frustraties als wat je bedenkt even niet lukt, de aanhouder wint, en om hulp vragen is niet slecht.
+   * "Lui én slim"; de computer het werk laten doen.
 * Kennis
    * Nieuwe woorden en begrippen:
       * metaprogrammeren
-      * vertaler/compiler
-      * SVG (scalable vector graphics)
+      * vertalerbouw
+      * pattern matching (patroon herkenning)
+      * substitution (vervangen)
+      * syntax
+      * semantics
    * Programmeertalen maken is een kwestie van _vertalers_ bedenken en maken
    * Rascal is een taal om _vertalers_ mee te maken
 * Vaardigheden
-   * Een simpele syntax-uitbreiding kunnen bedenken en definieren.
-   * Een vertaler voor die uitbreiding kunnen intypen
-   * De nieuwe taal kunnen uitproberen
+   * Een simpele syntax-uitbreiding kunnen bedenken en maken.
+   * Een semantiek (vertaler) voor die uitbreiding kunnen bedenken en maken.
+   * Met je eigen nieuwe taal kunnen spelen.
+   * Je eigen creaties "verkopen": wat is het en waarom is het tof?
 
 ## Voorkennis, vaardigheden
 
@@ -38,13 +43,59 @@ Het belangrijkste is dat de leerlingen (a) lekker bezig zijn en (b) een beetje l
 
 ### Klassikale inleiding
 
+* klassikale opstelling
+* docenten geven informatie voor het downloaden en installeren van VScode, Rascal en deze opdracht
+* docenten geven overzicht van de planning, wie, wat, waar, wanneer
+
 ### Samenwerken in groepjes (I)
 
+* groepjes van 2 leerlingen, met 1 laptop
+* opstarten, downloaden, installeren
+* docenten rennen rond om iedereen te helpen opstarten
+* inleidende opdrachten zijn
+   * specifiek
+   * simpel
+   * overzichtelijk
+   * leuk
 ### Samenwerken in groepjes (II)
+
+* groepjes van 2 leerlingen, met 1 laptop
+* als de vorige opdrachten gelukt zijn, dan komt nu fase 2
+* opdrachten zijn creatief 
+   * bedenk je eigen taaluitbreiding samen
+   * probeer het uit
+   * maak het
+* voorbeeld ideeën voor mensen die vast zitten
+   * (makkelijk) maak een "herhaal" instructie
+   * (uitdagender) maak een "van-tot" herhaal instructie
+   * (spannend) maak een "spiegel" instructie
+   * (super spannend) maak een "symmetrie" instructie voor verschillende soorten (spiegel, draai, schuif); daarbij kun je spiegelen in verschillende assen (x-as, y-as, willekeurige lineaire vergelijking y = ax + b), draaien om verschillende punten, en schuiven over verschillende richting en
 
 ### Waterval verhalen vertellen 
 
+* leerlingen vertellen elkaar twee-aan-twee wat je bedacht en gemaakt hebben en waarom
+* samen besluiten wat het leukste verhaal is om door te vertellen
+* vier-aan-vier gaan we verder en vertellen elkaar de twee gekozen verhalen
+* weer samen besluiten (stemmen) welk verhaal
+* dan acht aan acht, en (misschien) 16 aan 16. even kijken of mensen wel willen!
+* de laatste 1 of 2 verhalen mogen klassikaal
+
+Verhalen vertellen; met heel veel structuur:
+1. Wat heb je bedacht: laat de "syntax" zien
+2. Waarom heb je dat bedacht? hoe helpt het de programmeur in jouw taal "lui en slim" te zijn?
+3. Vragen van de andere kinderen. Bij 1 en 2 mag er niet onderbroken worden!
+4. Hoe heb je het gemaakt? laat de "semantiek" zien.
+5. Waarom heb je het zo gemaakt? Ben je zelf "lui en slim" geweest? Of was het uitdagend?
+6. Vragen van de andere kinderen. Bij 4 en 5 mag er niet onderbroken worden!
+7. Dan het andere team 1-6
+8. Stemmen: meeste stemmen gelden. De makers mogen meestemmen. Bij gelijkspel doet de leraar eerlijk "kop of munt".
 ### Klassikaal oogsten
 
+* Demo van het winnende team/de winnende teams
+* Uitdelen truiten
+* Leerdoelen expliciet maken
+* Vragen hoeveel gelukt is
+* Stickers uitdelen
 ## Tijdplanning
 
+Hier komt de planning van de dag ((TODO))
