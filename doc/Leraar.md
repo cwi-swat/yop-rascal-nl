@@ -27,6 +27,9 @@ titel: Lesplan voor de Leraar
 
 ## Voorkennis, vaardigheden
 
+* Middelbare schoolkinderen met de leeftijd 13 tot/met 17
+   * Hebben vaker geprogrammeerd in Hedy, Python, Scratch
+   * Hebben wiskunde geleerd uit "Getal & Ruimte"
 * Wiskunde/Informatica
    * Cartesisch coordinatenstelsel (X Y) en grafieken
    * Letterformules invullen en bedenken bij een verhaaltje
