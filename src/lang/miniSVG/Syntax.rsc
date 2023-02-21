@@ -10,6 +10,9 @@ data Element(Color stroke=black(), int \stroke-width=1, Color fill=\grey(), real
     | polyline(lrel[int x, int y] points)
     | polygon(lrel[int x, int y] points)
     | text(int x, int y, str sentence)
+    | move(int x, int y, list[Element] elements)
+    | scale(real factor, list[Element] elements)
+    | nothing()
     ;
 
 data Color
