@@ -12,6 +12,7 @@ data Element(Color stroke=black(), int \stroke-width=1, Color fill=\grey(), real
     | text(int x, int y, str sentence)
     | move(int x, int y, list[Element] elements)
     | scale(real factor, list[Element] elements)
+    | link(loc src, Element element)
     | nothing()
     ;
 

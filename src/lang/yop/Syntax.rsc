@@ -19,6 +19,6 @@ syntax Tekening
     // | "draai" Getal aantal "keer" "{" Tekening* "}"
     ;
 
-lexical Getal = [0-9] | ([1-9][0-9]+);
+lexical Getal = [0-9]+;
 
 layout WS = [\ \t\n\r]*;

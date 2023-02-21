@@ -5,6 +5,7 @@ import lang::yop::Syntax;
 import String;
 import IO;
 import util::Math;
+import ParseTree;
 
 // de toestand van de schildpad is X, Y en Richting
 int huidigeX = 0;
@@ -75,8 +76,8 @@ Element vertaal((Tekening) `pen neer`) {
     return nothing();
 }
 
-Element vertaal((Tekening) `cirkel <Getal diameter>`) 
-    = circle(huidigeX, huidigeY, vertaal(diameter));
+Element vertaal(t:(Tekening) `cirkel <Getal diameter>`) 
+    = link(t.src, circle(huidigeX, huidigeY, vertaal(diameter)));
 
 Element vertaal((Tekening) `herhaal <Getal aantal> { <Tekening* tekeningen> }`) 
     = move(0, 0, [vertaal(t) | _ <- [0..vertaal(aantal)], t <- tekeningen]);

@@ -46,6 +46,11 @@ str toSVG(scale(real factor, list[Element] elements))
       '    <}>
       '\</g\>";
 
+str toSVG(link(loc src, Element element)) 
+    = "\<a href=# onclick=\"fetch(\'/editor?\' + new URLSearchParams({src: <"<src>"[1..-1]>}));\"\>
+      '  <toSVG(element)>
+      '\</a\>";
+
 str toSVG(nothing()) = "";
 
 // Omdat het assenstelsel op zijn kop staat, staat alle tekst ook op zijn kop.
