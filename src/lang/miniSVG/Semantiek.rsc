@@ -8,10 +8,6 @@ str toSVG(miniSVG(list[Element] elements))
     = "\<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"
       '    viewBox=\"0 0 1000 1000\"
       '    preserveAspectRatio=\"xMidYMid slice\" height=\"100%\"
-      '    stroke=\"black\"
-      '    fill=\"grey\"
-      '    fill-opacity=\".5\"
-      '    stroke-opacity=\".8\"
       '\>
       '\<rect x=\"0\" y=\"0\" width=\"1000\" height=\"1000\" style=\"fill: lightyellow\"/\>
       '\<g transform=\"matrix(1 0 0 -1 500 500)\" \>
@@ -41,11 +37,17 @@ str toSVG(e:polyline(lrel[int x, int y] points))
 str toSVG(e:polygon(lrel[int x, int y] points)) 
     = "\<polygon points=\"<for (<x,y> <- points) {><x>,<y> <}>\" <stroke(e)> /\>";
 
-str stroke(Element e) = "stroke=\"<toSVGColor(e.stroke)>\" stroke-width=\"<e.\stroke-width>\" fill-opacity=\".5\" stroke-opacity=\"1\"";
+str toSVG(e:text(int x, int y, str alinea)) 
+    = "\<g transform=\"matrix(1 0 0 -1 1 <2 * y>)\" \>\<text x=\"<x>\" y=\"<y>\"\><alinea>\</text\>\</g\>";
 
-str toSVGColor(black()) = "black";
-str toSVGColor(white()) = "white";
-str toSVGColor(none())  = "none";
+default str toSVG(Element e) {
+    throw "can not translate element yet: <e>";
+}
+
+str stroke(Element e) 
+    = "stroke=\"<toSVGColor(e.stroke)>\" fill=\"<toSVGColor(e.fill)>\" stroke-width=\"<e.\stroke-width>\" fill-opacity=\"<e.\fill-opacity>\" stroke-opacity=\"<e.\stroke-opacity>\"";
+
+str toSVGColor(str colorName()) = colorName;
 default str toSVGColor(Color _) = "pink";
 
 

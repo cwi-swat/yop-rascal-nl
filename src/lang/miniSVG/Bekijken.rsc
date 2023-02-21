@@ -9,8 +9,16 @@ import IO;
 
 void davidsPlaatje() {
     plaatje = [
+        
         line(10,-10,100,-100),
-        line(-800,200,10,-10)
+        line(-800,200,10,-10),
+        circle(0,0,50),
+        circle(10,10,50,stroke=lightred()),
+        circle(-10,-10,50), 
+        rectangle(-100,-100,200,200,stroke=red(),\stroke-width=10,\fill=white(),\fill-opacity=.5,\stroke-opacity=1.0),
+        polyline([<0,0>,<0,10>,<10,-10>,<-10,10>]),
+        text(-100,110,"Hallo! Groetjes van David"),
+        polygon([<100,0>,<0,10>,<10,-10>,<-10,10>])
     ];
 
     bekijken(miniSVG(plaatje));
