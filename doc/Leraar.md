@@ -50,6 +50,35 @@ Het belangrijkste is dat de leerlingen (a) lekker bezig zijn en (b) een beetje l
 * docenten geven informatie voor het downloaden en installeren van VScode, Rascal en deze opdracht
 * docenten geven overzicht van de planning, wie, wat, waar, wanneer
 
+### Fluisterspel
+
+Doel: begrijpen wat je aan het doen bent.
+
+Opstelling:
+* 4 kinderen gaan elkaar vertellen wat er getekend moet worden (een cirkel, vierkant of driehoek en hoe groot)
+* de vierde (laatste) tekent en verstaat Nederlands
+* de een na laatste spreek Nederlands plus een andere taal
+* de tweede spreekt diezelfde taal plus Engels
+* de eerste kan Engels en verzint iets om te zeggen
+
+Stappen:
+1. de eerste kiest een woord uit "circle", "square", "triangle" en tussen de 1 en 10 "centimeter", en fluistert in het oor van de tweede persoon
+2. de tweede persoon luisterst, vertaalt de opdracht in een taal die persoon drie kent, en fluistert die in hun oor.
+3. de derde persoon luistert, vertaalt de opdracht in het Nederlands en fluistert die in het oor van persoon 4
+4. persoon vier luistert, en tekent wat ze horen op een papiertje
+
+Daarna uitleg:
+
+* *Syntax*= wat je zegt en wat je hoort, letterlijk, zonder het nog te begrijpen
+* *Semantiek*= hoe je het begrijpt in een andere taal (tekenen, engels, nederlands, arabisch, gebarentaal)
+* *Vertalen*=eerst herkennen en dan vervangen
+
+| Taal1->| Taal 2->  | Taal 3->   | Taal 4   |
+|--------|-----------|------------|----------|
+| Engels | Arabisch  | Nederlands | Tekening |
+| YOP    | MiniSVG   | SVG        | Pixels   |
+
+
 ### Samenwerken in groepjes (I)
 
 * groepjes van 2 leerlingen, met 1 laptop
