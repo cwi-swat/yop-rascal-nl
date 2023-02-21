@@ -13,7 +13,7 @@ int huidigeRichting = 0;
 bool pen = true;
 
 bool schildpad(Tekening t) {
-    println("Na <t>:");
+    println("🐢 na <t>:");
     println("  X: <huidigeX>
             '  Y: <huidigeY>
             '  R: <huidigeRichting>
@@ -44,8 +44,11 @@ MiniSVG vertaal(Programma p) {
 
 
 Element vertaal((Tekening) `vooruit <Getal afstand>`) {
+    // waar komen we vandaan?
     vorigeX = huidigeX;
     vorigeY = huidigeY;
+
+    // en waar gaan we naartoe?
     huidigeX = round(huidigeX + cos(radialen(huidigeRichting)) * vertaal(afstand));
     huidigeY = round(huidigeY + sin(radialen(huidigeRichting)) * vertaal(afstand));
 
@@ -72,20 +75,8 @@ Element vertaal((Tekening) `pen neer`) {
     return nothing();
 }
 
-Element vertaal((Tekening) `cirkel <Getal diameter>`) {
-    return circle(huidigeX, huidigeY, vertaal(diameter));
-}
+Element vertaal((Tekening) `cirkel <Getal diameter>`) 
+    = circle(huidigeX, huidigeY, vertaal(diameter));
 
-
-
-public Programma example 
-    = (Programma) `vooruit 40 
-                  'links 90 
-                  'vooruit 40 
-                  'rechts 90 
-                  'pen op
-                  'vooruit 40 
-                  'pen neer
-                  'links 90 
-                  'vooruit 40
-                  'cirkel 40`;
+Element vertaal((Tekening) `herhaal <Getal aantal> { <Tekening* tekeningen> }`) 
+    = move(0, 0, [vertaal(t) | _ <- [0..vertaal(aantal)], t <- tekeningen]);

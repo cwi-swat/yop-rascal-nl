@@ -1,4 +1,5 @@
 Project-Name: yop-rascal-nl
 Source: src
+Require-Libraries: |lib://rascal-lsp|
 
 
