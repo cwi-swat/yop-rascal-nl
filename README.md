@@ -14,7 +14,7 @@ Het is de bedoeling dat het leuk is. Misschien wil je iets laten zien
 aan de leraren of de rest van de klas aan het eind. 
 
 "een programmeer taal maken", betekent:
-    * bedenken/ontwerpen van een uitbreiding of verandering in de voorbeeldtaal
-    * programmeren van de "syntax" (hoe het er uit ziet) en "semantiek" (wat het moet doen)
-    * uitproberen (laten zien aan je zelf hoe het werkt met een mooi voorbeeldprogramma)
-    * demonstreren (uitleggen aan iemand anders wat, hoe en waarom je het hebt bedacht)
+   * bedenken/ontwerpen van een uitbreiding of verandering in de voorbeeldtaal
+   * programmeren van de "syntax" (hoe het er uit ziet) en "semantiek" (wat het moet doen)
+   * uitproberen (laten zien aan je zelf hoe het werkt met een mooi voorbeeldprogramma)
+   * demonstreren (uitleggen aan iemand anders wat, hoe en waarom je het hebt bedacht)
