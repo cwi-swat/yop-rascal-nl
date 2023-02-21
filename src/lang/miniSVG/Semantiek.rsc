@@ -37,6 +37,9 @@ str toSVG(e:polyline(lrel[int x, int y] points))
 str toSVG(e:polygon(lrel[int x, int y] points)) 
     = "\<polygon points=\"<for (<x,y> <- points) {><x>,<y> <}>\" <stroke(e)> /\>";
 
+// Omdat het assenstelsel op zijn kop staat, staat alle tekst ook op zijn kop.
+// Daarom draaien we hier alles weer terug voordat we het tekenen door eerst y met -1
+// te vermenigvuldigen en daarna alles verticaal terug te schuiven (anders komt het onder de y-as terecht)
 str toSVG(e:text(int x, int y, str alinea)) 
     = "\<g transform=\"matrix(1 0 0 -1 1 <2 * y>)\" \>\<text x=\"<x>\" y=\"<y>\"\><alinea>\</text\>\</g\>";
 
