@@ -1,0 +1,15 @@
+i = 0 - 500
+pen op
+herhaal 1000 {
+    naar i 50 x sin (i / 50)
+    pen neer
+    i = i + 1
+}
+
+i = 0 - 500
+pen op
+herhaal 1000 {
+    naar i 50 x cos (i / 50)
+    pen neer
+    i = i + 1
+}
