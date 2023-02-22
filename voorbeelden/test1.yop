@@ -1,9 +1,24 @@
-herhaal 4 {
-    herhaal 8 { 
-        vooruit 40  
-        links 45 
-    } 
-    vooruit 40  
-    links 90
-    cirkel 30 
-}  
+vooruit 100
+rechts 50 
+vooruit 100
+rechts 50
+vooruit 100
+rechts 50
+vooruit 100
+rechts 50
+vooruit 100
+rechts 50
+vooruit 100
+rechts 50
+vooruit 100
+rechts 220
+vooruit 37
+
+
+
+
+
+
+
+
+
