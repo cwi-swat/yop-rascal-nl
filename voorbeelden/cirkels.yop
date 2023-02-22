@@ -1,0 +1,7 @@
+herhaal 30 {
+    herhaal 180 {
+        vooruit 2
+        rechts 2
+    }
+    rechts 20
+}
