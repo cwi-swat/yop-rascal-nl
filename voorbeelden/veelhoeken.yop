@@ -1,0 +1,13 @@
+
+hoeken = 5 
+kant   = 40
+herhaal hoeken { 
+    vooruit kant
+    rechts 360 / hoeken
+}
+hoeken = 15 
+kant   = 20
+herhaal hoeken { 
+    vooruit kant
+    rechts 360 / hoeken
+}

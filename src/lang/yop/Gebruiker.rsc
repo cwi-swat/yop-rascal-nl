@@ -29,7 +29,7 @@ set[LanguageService] contribs() = {
         return {
             <p.src, run (p.top, title="Bekijk plaatje")>,
             <p.src, mini(p.top, title="Bekijk MiniSVG code")>,
-            <p.src, svg(p.top, title="Bekijk SVG code")>
+            <p.src, svg(p.top,  title="Bekijk SVG code")>
         };
     }),
 
@@ -37,24 +37,42 @@ set[LanguageService] contribs() = {
 };
 
 value exec(run(Programma p)) {
-   bekijken(vertaal(p));
-   return ("result": true);
+    try {
+        bekijken(vertaal(p));
+        return ("result": true);
+    }
+    catch loc src : {
+        registerDiagnostics([error("Division by zero", src)]);
+        return ("result": false);
+    }
 }
 
 value exec(mini(Programma p)) {
-    MiniSVG mini = vertaal(p);
-    bestand = p.src.top[extension="mini"];
-    iprintToFile(bestand, mini);
-    edit(bestand);
-    return ("result": true);
+    try {
+        MiniSVG mini = vertaal(p);
+        bestand = p.src.top[extension="mini"];
+        iprintToFile(bestand, mini);
+        edit(bestand);
+        return ("result": true);
+    }
+    catch loc src : {
+        registerDiagnostics([error("Division by zero", src)]);
+        return ("result": false);
+    }
 }
 
 value exec(svg(Programma p)) {
-    str svg = toSVG(vertaal(p));
-    bestand = p.src.top[extension="svg"];
-    writeFile(bestand, svg);
-    edit(bestand);
-    return ("result": true);
+    try {
+        str svg = toSVG(vertaal(p));
+        bestand = p.src.top[extension="svg"];
+        writeFile(bestand, svg);
+        edit(bestand);
+        return ("result": true);
+    }
+    catch loc src : {
+        registerDiagnostics([error("Division by zero", src)]);
+        return ("result": false);
+    }
 }
 
 void main() {

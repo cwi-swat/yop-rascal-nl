@@ -5,12 +5,14 @@ import lang::yop::Syntax;
 import String;
 import util::Math;
 import ParseTree;
+import Exception;
 
 // de toestand van de schildpad is X, Y en Richting
 real huidigeX = 0.;
 real huidigeY = 0.;
-real huidigeRichting = 0.;
+real huidigeRichting = 90.;
 bool pen = true;
+map[str,real] waarden = ();
 
 // richting veranderen kan, maar als je klokje rond bent, begin je weer bij 0
 void veranderRichting(real graden) {
@@ -25,8 +27,9 @@ MiniSVG vertaal(Programma p) {
     // eerst de schildpad terug in de oorsprong
     huidigeX = 0.;
     huidigeY = 0.;
-    huidigeRichting = 0.;
+    huidigeRichting = 90.;
     pen = true;
+    waarden = ();
 
     // dan de lijst van tekeningen vertalen
     return miniSVG(vertaal(p.tekeningen));
@@ -69,6 +72,11 @@ Element vertaal(t:(Tekening) `pen neer`) {
     return comment(t);
 }
 
+Element vertaal(t:(Tekening) `<Naam n> = <Som s>`) {
+    waarden["<n>"] = vertaal(s);
+    return comment(t);
+}
+
 Element vertaal(t:(Tekening) `cirkel <Som diameter>`) 
     = link(t, circle(huidigeX, huidigeY, vertaal(diameter)));
 
@@ -78,10 +86,17 @@ Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`)
 // uitrekenen van sommen gaat door stap voor stap vertalen van
 // yop sommen naar Rascal sommen:
 real vertaal((Som) `<Getal g>`)         = vertaal(g);
+real vertaal((Som) `wortel <Som w>`)    = sqrt(vertaal(w));
 real vertaal((Som) `<Som a> + <Som b>`) = vertaal(a) + vertaal(b);
 real vertaal((Som) `<Som a> - <Som b>`) = vertaal(a) - vertaal(b);
 real vertaal((Som) `<Som a> x <Som b>`) = vertaal(a) * vertaal(b);
-real vertaal((Som) `<Som a> / <Som b>`) = vertaal(a) / vertaal(b);
+real vertaal((Som) `<Som a> / <Som b>`) {
+    try 
+        return vertaal(a) / vertaal(b); 
+    catch ArithmeticException("Division by zero"): 
+        throw b.src;
+} 
+real vertaal((Som) `<Naam n>`)          = waarden["<n>"]?0.;
 real vertaal((Som) `(<Som s>)`)         = vertaal(s);
 
 // int vertaal((Som) `willekeurig <Som w>`) = arbInt(vertaal(w));

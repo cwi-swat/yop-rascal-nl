@@ -1,6 +1,0 @@
-
-herhaal 30 {
-    vooruit 5 
-    rechts 360 / 30
-} 
- 
