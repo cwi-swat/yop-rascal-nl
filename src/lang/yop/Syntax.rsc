@@ -3,12 +3,12 @@ module lang::yop::Syntax
 start syntax Programma = Tekening* tekeningen;
 
 syntax Tekening
-    = "vooruit" Getal afstand
-    | "rechts" Getal graden
-    | "links" Getal graden
+    = "vooruit" Som afstand
+    | "rechts" Som graden
+    | "links" Som graden
     | "pen" ("op" | "neer")
-    | "cirkel" Getal diameter
-    | "herhaal" Getal "{" Tekening* "}"
+    | "cirkel" Som diameter
+    | "herhaal" Som "{" Tekening* "}"
 
 // voeg dit eens toe: 
     // | "ellipse" Getal xDiameter Getal yDiameter
@@ -18,6 +18,19 @@ syntax Tekening
     // | "spiegel" "in" ("x"|"y") "{" Tekening* "}"
     // | "draai" Getal aantal "keer" "{" Tekening* "}"
     ;
+
+syntax Som 
+    = Getal
+    | "(" Som ")"
+    // | "willekeurig" Som
+    > left (
+        Som "x" Som
+        | Som "/" Som
+    )
+    > left ( 
+        Som "+" Som
+        | Som "-" Som
+    );
 
 lexical Getal = [0-9]+;
 

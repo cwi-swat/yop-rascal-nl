@@ -16,25 +16,25 @@ str toSVG(miniSVG(list[Element] elements))
       '\</svg\>
       '";
 
-str toSVG(e:circle(int cx, int cy, int r)) 
+str toSVG(e:circle(real cx, real cy, real r)) 
     = "\<circle cx=\"<cx>\" cy=\"<cy>\" r=\"<r>\" <stroke(e)> /\>"; 
 
-str toSVG(e:rectangle(int x, int y, int width, int height)) 
+str toSVG(e:rectangle(real x, real y, real width, real height)) 
     = "\<rect x=\"<x>\" y=\"<y>\" width=\"<width>\" height=\"<height>\" <stroke(e)> /\>";
 
-str toSVG(e:ellipse(int cx, int cy, int rx, int ry)) 
+str toSVG(e:ellipse(real cx, real cy, real rx, real ry)) 
     = "\<ellipse cx=\"<cx>\" cy=\"<cy>\" rx=\"<rx>\" ry=\"<ry>\" <stroke(e)> /\>";
     
-str toSVG(e:line(int x1, int x2, int y1, int y2)) 
+str toSVG(e:line(real x1, real x2, real y1, real y2)) 
     = "\<line x1=\"<x1>\" x2=\"<x2>\" y1=\"<y1>\" y2=\"<y2>\" <stroke(e)> /\>";
 
-str toSVG(e:polyline(lrel[int x, int y] points)) 
-    = "\<polyline points=\"<for (<x,y> <- points) {><x>,<y> <}>\" <stroke(e)> /\>";
+str toSVG(e:polyline(lrel[real x, real y] poreals)) 
+    = "\<polyline poreals=\"<for (<x,y> <- poreals) {><x>,<y> <}>\" <stroke(e)> /\>";
 
-str toSVG(e:polygon(lrel[int x, int y] points)) 
-    = "\<polygon points=\"<for (<x,y> <- points) {><x>,<y> <}>\" <stroke(e)> /\>";
+str toSVG(e:polygon(lrel[real x, real y] poreals)) 
+    = "\<polygon poreals=\"<for (<x,y> <- poreals) {><x>,<y> <}>\" <stroke(e)> /\>";
 
-str toSVG(move(int x, int y, list[Element] elements)) 
+str toSVG(move(real x, real y, list[Element] elements)) 
     = "\<g transform=\"matrix(1 0 0 1 <x> <1 * y>)\" \>
       '    <for (e <- elements) {>
       '    <toSVG(e)><}>
@@ -56,7 +56,7 @@ str toSVG(comment(str bericht)) = "\<!-- <bericht> --\>";
 // Omdat het assenstelsel op zijn kop staat, staat alle tekst ook op zijn kop.
 // Daarom draaien we hier alles weer terug voordat we het tekenen door eerst y met -1
 // te vermenigvuldigen en daarna alles verticaal terug te schuiven (anders komt het onder de y-as terecht)
-str toSVG(e:text(int x, int y, str alinea)) 
+str toSVG(e:text(real x, real y, str alinea)) 
     = "\<g transform=\"matrix(1 0 0 -1 0 <2 * y>)\" \>
       '    \<text x=\"<x>\" y=\"<y>\"\>
       '        <alinea>

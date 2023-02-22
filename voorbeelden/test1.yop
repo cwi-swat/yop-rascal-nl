@@ -1,9 +1,6 @@
-herhaal 6 {
-    vooruit 45  
-    rechts 60 
-} 
-herhaal 8 {
-    vooruit 45 
-    rechts 45 
+
+herhaal 30 {
+    vooruit 5 
+    rechts 360 / 30
 } 
  
