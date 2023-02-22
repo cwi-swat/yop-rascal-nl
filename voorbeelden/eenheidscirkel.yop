@@ -3,9 +3,13 @@ stappen = 20
 
 r = 0
 herhaal stappen + 1 {
-    naar schaal x sin r schaal x cos r
+    x = schaal x sin r
+    y = schaal x cos r
+    
+    naar x y
     naar 0 0
-    naar schaal x sin r schaal x cos r
+    naar x y
+    
     r = r + (PI / stappen)
 }
 naar 0 0
