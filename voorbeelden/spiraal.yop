@@ -1,9 +1,9 @@
 lengte = 3
-hoek = 90
+hoek   = 90
 
-herhaal 35 {
+herhaal (2 x hoek) / 5 {
     rechts hoek
-    vooruit 25 x sin lengte
+    vooruit 30 x sin lengte
     hoek = hoek - 5
     lengte = lengte + (1/10)
 }
