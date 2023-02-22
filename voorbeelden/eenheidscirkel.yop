@@ -1,0 +1,31 @@
+schaal = 250
+stappen = 20
+
+r = 0
+herhaal stappen + 1 {
+    naar schaal x sin r schaal x cos r
+    naar 0 0
+    naar schaal x sin r schaal x cos r
+    r = r + (PI / stappen)
+}
+naar 0 0
+
+schaal = 125
+stappen = 10
+
+r = 0
+herhaal stappen + 1 {
+    naar schaal x sin r schaal x cos r
+    r = r + (PI / stappen)
+}
+naar 0 0
+
+schaal = 50
+stappen = 5
+
+r = 0
+herhaal stappen + 1 {
+    naar schaal x sin r schaal x cos r
+    r = r + (PI / stappen)
+}
+naar 0 0
