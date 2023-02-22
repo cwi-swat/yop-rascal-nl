@@ -4,6 +4,7 @@ start syntax Programma = Tekening* tekeningen;
 
 syntax Tekening
     = "vooruit" Som afstand
+    | "naar" Som x Som y
     | "spring" Som afstand
     | "rechts" Som graden
     | "links" Som graden

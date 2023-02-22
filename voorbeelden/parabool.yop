@@ -1,0 +1,7 @@
+i = 0 - 40
+pen op
+herhaal 80 {
+    naar i (1/10) x (i x i)
+    pen neer
+    i = i + 1
+}

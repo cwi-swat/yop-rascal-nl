@@ -52,6 +52,18 @@ Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
     return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY));
 }
 
+Element vertaal(t:(Tekening) `naar <Som x> <Som y>`) {
+    // waar komen we vandaan?
+    vorigeX = huidigeX;
+    vorigeY = huidigeY;
+
+    // en waar gaan we naartoe?
+    huidigeX = vertaal(x);
+    huidigeY = vertaal(y);
+
+    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY));
+}
+
 Element vertaal(t:(Tekening) `spring <Som afstand>`) {
     // simuleer een sprong door pen op, vooruit, pen neer
 
