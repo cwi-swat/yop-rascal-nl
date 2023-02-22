@@ -4,6 +4,7 @@ start syntax Programma = Tekening* tekeningen;
 
 syntax Tekening
     = "vooruit" Som afstand
+    | "spring" Som afstand
     | "rechts" Som graden
     | "links" Som graden
     | "pen" ("op" | "neer")
@@ -22,8 +23,11 @@ syntax Tekening
 
 syntax Som 
     = Getal
-    | Naam
+    | Naam 
     | "wortel" Som
+    | "sin" Som
+    | "cos" Som
+    | "PI"
     // | "willekeurig" Som
     | "(" Som ")"
     > left ( Som "x" Som

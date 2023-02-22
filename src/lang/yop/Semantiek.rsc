@@ -52,6 +52,16 @@ Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
     return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY));
 }
 
+Element vertaal(t:(Tekening) `spring <Som afstand>`) {
+    // simuleer een sprong door pen op, vooruit, pen neer
+
+    pen = false;
+    vertaal((Tekening) `vooruit <Som afstand>`);
+    pen = true;
+
+    return comment(t);
+}
+
 Element vertaal(t:(Tekening) `rechts <Som graden>`) {
     veranderRichting(-1 * vertaal(graden));
     return comment(t);
@@ -87,6 +97,9 @@ Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`)
 // yop sommen naar Rascal sommen:
 real vertaal((Som) `<Getal g>`)         = vertaal(g);
 real vertaal((Som) `wortel <Som w>`)    = sqrt(vertaal(w));
+real vertaal((Som) `sin <Som w>`)       = sin(vertaal(w));
+real vertaal((Som) `cos <Som w>`)       = cos(vertaal(w));
+real vertaal((Som) `PI`)                = PI();
 real vertaal((Som) `<Som a> + <Som b>`) = vertaal(a) + vertaal(b);
 real vertaal((Som) `<Som a> - <Som b>`) = vertaal(a) - vertaal(b);
 real vertaal((Som) `<Som a> x <Som b>`) = vertaal(a) * vertaal(b);

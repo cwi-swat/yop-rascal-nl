@@ -1,13 +1,12 @@
+hoeken = 8
+kant   = 200 / hoeken
+straal = kant / (2 x sin (PI / hoeken))
 
-hoeken = 5 
-kant   = 40
-herhaal hoeken { 
-    vooruit kant
-    rechts 360 / hoeken
-}
-hoeken = 15 
-kant   = 20
-herhaal hoeken { 
+links 90
+spring straal
+rechts 90
+
+herhaal hoeken {  
     vooruit kant
     rechts 360 / hoeken
 }

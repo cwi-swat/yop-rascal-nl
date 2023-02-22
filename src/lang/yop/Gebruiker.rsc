@@ -1,14 +1,18 @@
 module lang::yop::Gebruiker
 
-import util::LanguageServer;
 import lang::yop::Syntax;
 import lang::yop::Semantiek;
+import lang::yop::Controle;
+
 import lang::miniSVG::Syntax;
 import lang::miniSVG::Bekijken;
 import lang::miniSVG::Semantiek;
+
 import util::Reflective;
-import ParseTree;
 import util::IDEServices;
+import util::LanguageServer;
+
+import ParseTree;
 import IO;
 
 PathConfig pcfg = getProjectPathConfig(|project://yop-rascal-nl|);
@@ -33,6 +37,10 @@ set[LanguageService] contribs() = {
         };
     }),
 
+    summarizer(Summary (loc _, start[Programma] p) {
+        return controleer(p.top);
+    }),
+
     executor(exec)
 };
 
@@ -42,7 +50,7 @@ value exec(run(Programma p)) {
         return ("result": true);
     }
     catch loc src : {
-        registerDiagnostics([error("Division by zero", src)]);
+        registerDiagnostics([error("Delen door nul is flauwekul", src)]);
         return ("result": false);
     }
 }
@@ -56,7 +64,7 @@ value exec(mini(Programma p)) {
         return ("result": true);
     }
     catch loc src : {
-        registerDiagnostics([error("Division by zero", src)]);
+        registerDiagnostics([error("Delen door nul is flauwekul", src)]);
         return ("result": false);
     }
 }
@@ -70,7 +78,7 @@ value exec(svg(Programma p)) {
         return ("result": true);
     }
     catch loc src : {
-        registerDiagnostics([error("Division by zero", src)]);
+        registerDiagnostics([error("Delen door nul is flauwekul", src)]);
         return ("result": false);
     }
 }

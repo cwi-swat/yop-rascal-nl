@@ -1,6 +1,7 @@
 module lang::miniSVG::Syntax
 
-data MiniSVG = miniSVG(list[Element] elements);
+data MiniSVG 
+    = miniSVG(list[Element] elements);
 
 data Element(Color stroke=black(), real \stroke-width=1., Color fill=\grey(), real \fill-opacity=0.8, real \stroke-opacity=1.)
     = circle(real cx, real cy, real r)
