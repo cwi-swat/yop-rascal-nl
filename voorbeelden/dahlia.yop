@@ -1,0 +1,10 @@
+herhaal 8 {
+    rechts 45
+    herhaal 6 {
+        herhaal 90 {
+            vooruit 2
+            rechts 2
+        }
+        rechts 90
+    }
+}

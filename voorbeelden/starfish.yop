@@ -1,0 +1,7 @@
+i = 0
+herhaal 3600 { 
+    vooruit 10 
+    rechts i + (1 / 10)
+    i = i + 1
+}
+ 
