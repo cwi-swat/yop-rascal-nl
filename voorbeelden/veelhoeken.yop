@@ -1,5 +1,5 @@
 hoeken = 9
-kant   = 400 / hoeken
+kant   = 500 / hoeken
 straal = kant / (2 x sin (PI / hoeken))
 
 links 90 

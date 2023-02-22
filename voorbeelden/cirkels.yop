@@ -1,6 +1,6 @@
 herhaal 30 {
     herhaal 180 {
-        vooruit 2
+        vooruit 5
         rechts 2
     }
     rechts 20

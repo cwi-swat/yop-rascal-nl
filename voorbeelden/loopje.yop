@@ -1,4 +1,4 @@
-herhaal 25 {
+herhaal 500 {
     afstand = random 25
     hoek = random 180
     rechts hoek - 90
