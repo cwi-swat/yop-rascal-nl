@@ -8,8 +8,8 @@ str toSVG(miniSVG(list[Element] elements))
     = "\<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1000 1000\" preserveAspectRatio=\"xMidYMid slice\" height=\"100%\" \>
       '\<rect x=\"0\" y=\"0\" width=\"1000\" height=\"1000\" style=\"fill: lightyellow\"/\>
       '\<g transform=\"matrix(1 0 0 -1 500 500)\" \>
-      '    <for (e <- elements) {><toSVG(e)>
-      '    <}>
+      '    <for (e <- elements) {>
+      '    <toSVG(e)><}>
       '    \<line x1=\"0\" y1=\"-500\" x2=\"0\" y2=\"500\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
       '    \<line x1=\"-500\" y1=\"0\" x2=\"500\" y2=\"0\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
       '\</g\>
@@ -36,8 +36,8 @@ str toSVG(e:polygon(lrel[int x, int y] points))
 
 str toSVG(move(int x, int y, list[Element] elements)) 
     = "\<g transform=\"matrix(1 0 0 1 <x> <1 * y>)\" \>
-      '    <for (e <- elements) {><toSVG(e)>
-      '    <}>
+      '    <for (e <- elements) {>
+      '    <toSVG(e)><}>
       '\</g\>";
 
 str toSVG(scale(real factor, list[Element] elements)) 
@@ -47,11 +47,11 @@ str toSVG(scale(real factor, list[Element] elements))
       '\</g\>";
 
 str toSVG(link(loc src, Element element)) 
-    = "\<a href=# onclick=\"fetch(\'/editor?\' + new URLSearchParams({src: <"<src>"[1..-1]>}));\"\>
+    = "\<a href=# onclick=\"fetch(\'/editor?\' + new URLSearchParams({src: \'<src>\'}));\"\>
       '  <toSVG(element)>
       '\</a\>";
 
-str toSVG(nothing()) = "";
+str toSVG(comment(str bericht)) = "\<!-- <bericht> --\>";
 
 // Omdat het assenstelsel op zijn kop staat, staat alle tekst ook op zijn kop.
 // Daarom draaien we hier alles weer terug voordat we het tekenen door eerst y met -1

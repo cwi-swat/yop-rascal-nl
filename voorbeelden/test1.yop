@@ -1,24 +1,9 @@
-vooruit 100
-rechts 50 
-vooruit 100
-rechts 50
-vooruit 100
-rechts 50
-vooruit 100
-rechts 50
-vooruit 100
-rechts 50
-vooruit 100
-rechts 50
-vooruit 100
-rechts 220
-vooruit 37
-
-
-
-
-
-
-
-
-
+herhaal 6 {
+    vooruit 45  
+    rechts 60 
+} 
+herhaal 8 {
+    vooruit 45 
+    rechts 45 
+} 
+ 

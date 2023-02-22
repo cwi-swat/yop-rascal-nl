@@ -13,7 +13,7 @@ data Element(Color stroke=black(), int \stroke-width=1, Color fill=\grey(), real
     | move(int x, int y, list[Element] elements)
     | scale(real factor, list[Element] elements)
     | link(loc src, Element element)
-    | nothing()
+    | comment(str what)
     ;
 
 data Color
