@@ -124,7 +124,7 @@ real vertaal((Som) `<Som a> / <Som b>`) {
 real vertaal((Som) `<Naam n>`)          = waarden["<n>"]?0.;
 real vertaal((Som) `(<Som s>)`)         = vertaal(s);
 
-// int vertaal((Som) `willekeurig <Som w>`) = arbInt(vertaal(w));
+real vertaal((Som) `random <Som w>`) = 1. * arbInt(round(vertaal(w)));
 
 // van syntax naar Rascal `int` getallen waar we mee kunnen rekenen
 real vertaal(Getal g) = 1. * toInt("<g>");

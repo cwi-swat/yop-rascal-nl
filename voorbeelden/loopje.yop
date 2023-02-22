@@ -1,0 +1,6 @@
+herhaal 25 {
+    afstand = random 25
+    hoek = random 180
+    rechts hoek - 90
+    vooruit afstand
+}

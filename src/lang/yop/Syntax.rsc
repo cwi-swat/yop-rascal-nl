@@ -29,7 +29,7 @@ syntax Som
     | "sin" Som
     | "cos" Som
     | "PI"
-    // | "willekeurig" Som
+    | "random" Som
     | "(" Som ")"
     > left ( Som "x" Som
            | Som "/" Som

@@ -2,7 +2,7 @@ hoeken = 8
 kant   = 200 / hoeken
 straal = kant / (2 x sin (PI / hoeken))
 
-links 90
+links 90 
 spring straal
 rechts 90
 
