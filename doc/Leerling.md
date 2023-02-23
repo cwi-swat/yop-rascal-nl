@@ -19,7 +19,7 @@ herhaal 3600 {
 ```
 
 En dit is de tekening die er uit komt:
-<img width="377" alt="image" src="https://user-images.githubusercontent.com/1990295/220869648-48068480-4d67-47fe-bc9a-2b4d927cd8b3.png">
+<img width="25%" alt="image" src="https://user-images.githubusercontent.com/1990295/220869648-48068480-4d67-47fe-bc9a-2b4d927cd8b3.png">
 
 ### What the...?
 
