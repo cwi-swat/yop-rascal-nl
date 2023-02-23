@@ -113,16 +113,15 @@ En dit is de tekening die er uit komt:
 
 * Werk in teams van twee achter één laptop samen. Help elkaar. Wissel het toetsenbord af en toe. 
 * Het idee van YOP is gebaseerd op het klassieke ["LOGO"](https://nl.wikipedia.org/wiki/Logo_(programmeertaal)): 
-   * YOP heeft een (platonische) notie van een 🐢 die wandelt over een groot stuk plat papier met een pen in zijn pootjes. Het is "platonisch" want die 🐢 zit alleen in ons hoofd, en daarom maken de pootjes trouwens ook geen afdrukken op het papier. 
-   * Maar de pen wel! Als de 🐢 loopt, dan trekt hij kaarsrechte strepen achter zich aan.
+   * YOP heeft een (platonische) notie van een 🐢 die wandelt over een stuk plat papier met een pen in zijn pootjes. 
+   * Als de 🐢 loopt, dan trekt hij kaarsrechte strepen achter zich aan.
    * De 🐢 kan van richting veranderen
    * De 🐢 kan de pen tijdelijk optrekken om te verplaatsen zonder strepen te trekken.
-   * We hebben een XY assenstelsel van -500 tot 500, met de oorsprong `(0,0)` precies in het midden.
+   * Er is een XY assenstelsel van -500 tot 500, met de oorsprong `(0,0)` precies in het midden.
    * De 🐢 begint in de oorsprong met als richting omhoog op de y-as.
-   * De `voorbeelden` spreken voor zich maar in `src/lang/yop/Syntax` vindt je een metaprogramma dat precies definieert wat de *Syntax* van YOP is: de woordenschat en de regels over hoe je die woorden kunt samenstellen tot zinnen en hele programma's. Kijk maar eens, maar je hoeft er nog niks mee.
-* De opdracht is spelen en uitproberen:
-   1. Speel met YOP zoals het nu is. Gebruik de voorbeelden maar probeer ook nieuwe dingen.
-   2. Streepjes zijn links! Als je in een plaatje op een streepje klikt, spring je naar de YOP broncode regel die deze streep gemaakt heeft.
+* De opdracht is **spelen** en **uitproberen**:
+   1. Speel met YOP zoals het nu is. Gebruik de voorbeelden maar probeer ook je eigen dingen.
+   2. Streepjes zijn "links"! Klik maar eens ergens op in een plaatje.
    2. Schrijf alvast op wat er bij je op komt op:
       * wat je irritant vindt aan YOP, of
       * waar je kansen ziet voor verbetering, of 
