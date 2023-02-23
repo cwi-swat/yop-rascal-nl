@@ -42,7 +42,7 @@
 
 1. We werken met 4 talen vandaag, net zoals in het fluisterspel:
    * *YOP* is je eigen tekenprogrammeertaal, met zinnen als `pen op` en `pen neer`, `herhaal { vooruit 40 }` en `cirkel 50`.
-   * *miniSVG* is een nogal abstract maar simpele mini taal voor 2 dimensionele graphics, met zinnen als `circle(0,0,50,\stroke-color="orange")`.
+   * *miniSVG* is een nogal abstracte, lelijke, maar simpele mini taal voor 2 dimensionele graphics, met zinnen als `circle(0,0,50,\stroke-color="orange")`. Programmeurs zien deze taal niet maar wij gebruiken het als tussenstation richting de vertaling naar SVG.
    * [*SVG*](https://www.w3.org/TR/SVG2/) is een [XML](https://www.w3.org/xml) dialect met zeer uitgebreide teken en transformatie mogelijkheden. Een cirkel ziet er bijvoorbeeld zo uit: `</circle cx=0 cy=0 r=50>`, maar er zijn duizenden opties en trucjes die we hier even niet laten zien.
    * Pixels op het scherm; de uiteindelijke tekening is ook een taal. Hier is een typisch voorbeeld: <img width="835" alt="image" src="https://user-images.githubusercontent.com/1990295/220865657-e771c297-d9e8-4c49-ad00-3d73c75bc717.png">
 
@@ -65,5 +65,27 @@
       * als dit niet klopt, vraag even hulp.
    * Voeg `Mijn Documenten/yop` toe aan je VScode "workspace":
       * "File" menu, "Add folder to workspace..."
-   * Het yop project verschint
+   * Het `yop-rascal-nl` project verschijnt in het bestandsoverzicht aan de linkerkant.
+   * Open het bestand `src/lang/yop/Gebruiker.rsc`. Dit is een Rascal programma.
+      * Beneden staat de `main` functie, met daarboven `Run in new Rascal terminal`.
+      * Klik daarop
+      * Na even wachten komt er een nieuw "console" onder in het scherm. Het `main()` commando is al uitgevoerd.
+      * Focus op de terminal met je muis.
+      * Pijltje omhoog en het `main()` command verschijnt weer.
+      * "Enter" en `main` wordt nog een keer uitgevoerd.
+   * **Elke keer als je `main` uitvoert, leert VScode pas over de laatste versie van YOP.**
+4. Open een `.yop` bestand uit `voorbeelden`
+   * Er staan altijd drie opties bovenaan, mits het YOP programma syntactisch correct is (een geldige zin):
+      * `Bekijk plaatje` vertaalt eerst naar miniSVG, dan naar SVG, dan naar pixels en laat het plaatje ook zien.
+      * `Bekijk mini SVG` vertaalt naar miniSVG, slaat het resultaat op in een `.mini` bestand en opent dat bestand om het te kunnen lezen.
+      * `Bekijk SVG` vertaalt naar miniSVG, dan naar SVG, , slaat het resultaat op in een `.svg` bestand en opent dat bestand om het te kunnen lezen.
+   * `.svg` bestanden kun je bewaren en aan iemand sturen. De meeste mensen hebben SVG viewers op hun telefoon en computer.
+5. Alles wat je met YOP kunt doen, is geprogrammeerd in dit project. Zelfs de drie opties hierboven staan geprogrammeerd in `src/lang/yop/Gebruiker.rsc`.
+
+## Opdracht 1 - "vooruit" is ouderwets
+   
+## Opdracht 2 - handiger herhalen
+   
+## Opdracht 3 - vrije creativiteit
+   
 
