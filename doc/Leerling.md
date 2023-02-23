@@ -70,7 +70,7 @@ En dit is de tekening die er uit komt:
    * *YOP* is je eigen tekenprogrammeertaal, met zinnen als `pen op` en `pen neer`, `herhaal { vooruit 40 }` en `cirkel 50`.
    * *miniSVG* is een nogal abstracte, lelijke, maar simpele mini taal voor 2 dimensionele graphics, met zinnen als `circle(0,0,50,\stroke-color="orange")`. Programmeurs zien deze taal niet maar wij gebruiken het als tussenstation richting de vertaling naar SVG.
    * [*SVG*](https://www.w3.org/TR/SVG2/) is een [XML](https://www.w3.org/xml) dialect met zeer uitgebreide teken en transformatie mogelijkheden. Een cirkel ziet er bijvoorbeeld zo uit: `</circle cx=0 cy=0 r=50>`, maar er zijn duizenden opties en trucjes die we hier even niet laten zien.
-   * Pixels op het scherm; de uiteindelijke tekening is ook een taal. Hier is een typisch voorbeeld: <img width="25%" alt="image" src="https://user-images.githubusercontent.com/1990295/220865657-e771c297-d9e8-4c49-ad00-3d73c75bc717.png">
+   * Pixels op het scherm; de uiteindelijke tekening is ook een taal. Hier is een typisch voorbeeld: </br><img width="25%" alt="image" src="https://user-images.githubusercontent.com/1990295/220865657-e771c297-d9e8-4c49-ad00-3d73c75bc717.png">
 
 2. We maken vandaag zelf de Syntax van YOP en de Semantiek (vertaling naar miniSVG)
 3. Als je helemaal los wilt gaan, kun je ook de Syntax en Semantiek van miniSVG eerst uitbreiden.
