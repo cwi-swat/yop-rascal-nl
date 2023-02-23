@@ -124,9 +124,9 @@ waarmee de schildpad draait. Van 0 tot 180 wordt de hoek (rechtsaf) steeds grote
 * Werk in teams van twee achter één laptop samen. Help elkaar. Wissel het toetsenbord af en toe. 
 * Het idee van YOP is gebaseerd op het klassieke ["LOGO"](https://nl.wikipedia.org/wiki/Logo_(programmeertaal)): 
    * YOP heeft een (platonische) notie van een 🐢 die wandelt over een stuk plat papier met een pen in zijn pootjes. 
-   * Als de 🐢 loopt, dan trekt hij kaarsrechte strepen achter zich aan.
-   * De 🐢 kan van richting veranderen
-   * De 🐢 kan de pen tijdelijk optrekken om te verplaatsen zonder strepen te trekken.
+   * Als de 🐢 `vooruit` loopt, dan trekt hij kaarsrechte strepen achter zich aan.
+   * De 🐢 kan naar `links` en `rechts` van richting veranderen
+   * De 🐢 kan de `pen` tijdelijk `op`trekken om te verplaatsen zonder strepen te trekken.
    * Er is een XY assenstelsel van -500 tot 500, met de oorsprong `(0,0)` precies in het midden.
    * De 🐢 begint in de oorsprong met als richting omhoog op de y-as.
 * De opdracht is **spelen** en **uitproberen**:
