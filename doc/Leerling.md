@@ -122,6 +122,7 @@ En dit is de tekening die er uit komt:
    * De `voorbeelden` spreken voor zich maar in `src/lang/yop/Syntax` vindt je een metaprogramma dat precies definieert wat de *Syntax* van YOP is: de woordenschat en de regels over hoe je die woorden kunt samenstellen tot zinnen en hele programma's. Kijk maar eens, maar je hoeft er nog niks mee.
 * De opdracht is spelen en uitproberen:
    1. Speel met YOP zoals het nu is. Gebruik de voorbeelden maar probeer ook nieuwe dingen.
+   2. Streepjes zijn links! Als je in een plaatje op een streepje klikt, spring je naar de YOP broncode regel die deze streep gemaakt heeft.
    2. Schrijf alvast op wat er bij je op komt op:
       * wat je irritant vindt aan YOP, of
       * waar je kansen ziet voor verbetering, of 
@@ -130,14 +131,26 @@ En dit is de tekening die er uit komt:
    3. Loop je vast? Dat hoort erbij. Steek je hand op!
    
 ## Opdracht 1 - "vooruit" is toch ouderwets?
-  
-* `vooruit <getal>` is in YOP nu hét middel om een streep te trekken.
-* maar bekt `loop <getal>` wel wat lekkerder.
-
-
+ 
+### Deel 1 - snel resultaat
    
+* `vooruit <getal>` is in YOP nu hét middel om een streep te trekken, maar misschien bekt `loop <getal>` wel wat lekkerder?
+* Vervang in `src/lang/yop/Syntax` overal waar `vooruit` staat door `loop`. Nu is de Syntax aangepast.
+* Vervang in `src/lang/yop/Semantiek`, in de vertaler naar miniSVG, overal waar `vooruit` staat door `loop`. Nu is de semantiek ook aangepast.
+* Probeer een yop programma uit te voeren:
+   * dat gaat niet, want nu is het programma niet meer syntactisch correct
+   * pas `vooruit` aan naar `loop`
+   * nu werkt het wel.
 
-## Opdracht 2 - handiger herhalen
+### Deel 2 - een beetje spijt
+   
+* Nu zijn alle oude programma's stuk; en het is werk om die aan te passen :-(
+* Laten we de oude `vooruit` **ook** toestaan. Dan zijn we "backwards compatible".
+* Voeg in `src/lang/yop/Syntax` een kopie van de `loop` regel toe en vervang daarin `loop` door `vooruit`
+* Kopiëer in `src/lang/yop/Semantiek` de vertaalregel voor `loop` en maak hiervan en variant voor `vooruit` van.
+* Probeer yop programma's waar zowel `loop` als vooruit in `voorkomen`
+
+## Opdracht 2 - handiger herhalen of kleuren?
    
 ## Opdracht 3 - vrije creativiteit
    
