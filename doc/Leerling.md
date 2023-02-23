@@ -43,6 +43,8 @@ En dit is de tekening die er uit komt:
    * Probeer één fout tegelijkertijd te maken, dan leer je sneller omdat je weet waar het aan ligt. Dus hele korte stukjes programmeren en tussendoor héél veel testen.
    * Perfectie is de vijand van lol en effectiviteit. Maak in ieder geval *iets*, en probeer als het werkt het uit te breiden naar je grotere visie.
 
+<div style="page-break-after: always; visibility: hidden"> </div>
+
 ## Even inkomen: fluisterspel
 
 ### Opdracht
