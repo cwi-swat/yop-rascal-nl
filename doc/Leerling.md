@@ -105,10 +105,9 @@ En dit is de tekening die er uit komt:
 
 ## Opdracht 0
 
-* Het idee van YOP is gebaseerd op het klassieke "LOGO": 
-   * Er is een (platonisch) concept van een 🐢 die loopt over een platte grond met een pen in zijn pootjes. Het is platonisch want die 🐢 zit alleen in ons hoofd.
-   * De pootjes maken trouwens geen afdrukken.
-   * Maar de pen wel! Als de 🐢 loopt, dan trekt hij strepen achter zich aan.
+* Het idee van YOP is gebaseerd op het klassieke ["LOGO"](https://nl.wikipedia.org/wiki/Logo_(programmeertaal)): 
+   * YOP heeft een (platonische) notie van een 🐢 die wandelt over een groot stuk plat papier met een pen in zijn pootjes. Het is "platonisch" want die 🐢 zit alleen in ons hoofd, en daarom maken de pootjes trouwens ook geen afdrukken op het papier. 
+   * Maar de pen wel! Als de 🐢 loopt, dan trekt hij kaarsrechte strepen achter zich aan.
    * De 🐢 kan van richting veranderen
    * De 🐢 kan de pen tijdelijk optrekken om te verplaatsen zonder strepen te trekken.
    * We hebben een XY assenstelsel van -500 tot 500, met de oorsprong `(0,0)` precies in het midden.
