@@ -100,10 +100,32 @@ En dit is de tekening die er uit komt:
       * `Bekijk mini SVG` vertaalt naar miniSVG, slaat het resultaat op in een `.mini` bestand en opent dat bestand om het te kunnen lezen.
       * `Bekijk SVG` vertaalt naar miniSVG, dan naar SVG, , slaat het resultaat op in een `.svg` bestand en opent dat bestand om het te kunnen lezen.
    * `.svg` bestanden kun je bewaren en aan iemand sturen. De meeste mensen hebben SVG viewers op hun telefoon en computer.
+   * Lekker even programmeren in YOP is leuk.
 5. Alles wat je met YOP kunt doen, is geprogrammeerd in dit project. Zelfs de drie opties hierboven staan geprogrammeerd in `src/lang/yop/Gebruiker.rsc`.
 
-## Opdracht 1 - "vooruit" is ouderwets
+## Opdracht 0
+
+* Het idee van YOP is gebaseerd op het klassieke "LOGO": 
+   * Er is een (platonisch) concept van een 🐢 die loopt over een platte grond met een pen in zijn pootjes. Het is platonisch want die 🐢 zit alleen in ons hoofd.
+   * De pootjes maken trouwens geen afdrukken.
+   * Maar de pen wel! Als de 🐢 loopt, dan trekt hij strepen achter zich aan.
+   * De 🐢 kan van richting veranderen
+   * De 🐢 kan de pen tijdelijk optrekken om te verplaatsen zonder strepen te trekken.
+   * We hebben een XY assenstelsel van -500 tot 500, met de oorsprong `(0,0)` precies in het midden.
+   * De 🐢 begint in de oorsprong met als richting omhoog op de y-as.
+* De opdracht is spelen en uitproberen:
+   1. Speel met YOP zoals het nu is. Gebruik de voorbeelden maar probeer ook nieuwe dingen.
+   2. Schrijf of wat je irritant vindt aan YOP, of waar je kansen ziet voor verbetering, of "wat als je dit nou zou kunnen opschrijven?"-achtige ideeën.
+   3. Loop je vast? Dat hoort erbij. Steek je hand op!
    
+## Opdracht 1 - "vooruit" is toch ouderwets?
+  
+* `vooruit <getal>` is in YOP nu hét middel om een streep te trekken.
+* maar bekt `loop <getal>` wel wat lekkerder.
+
+
+   
+
 ## Opdracht 2 - handiger herhalen
    
 ## Opdracht 3 - vrije creativiteit
