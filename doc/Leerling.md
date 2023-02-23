@@ -138,7 +138,7 @@ waarmee de schildpad draait. Van 0 tot 180 wordt de hoek (rechtsaf) steeds grote
 * Nu zijn alle oude programma's stuk; en het is werk om die aan te passen :-(
 * Laten we de oude `vooruit` **ook** toestaan. Dan zijn we "backwards compatible".
 * Voeg in `src/lang/yop/Syntax` een kopie van de `loop` regel toe en vervang daarin `loop` door `vooruit`
-* Kopiëer in `src/lang/yop/Semantiek` de vertaalregel voor `loop` en maak hiervan en variant voor `vooruit` van.
+* Kopiëer in `src/lang/yop/Semantiek` de vertaalregel voor `loop` en maak hiervan een variant voor `vooruit` van.
 * Probeer yop programma's waar zowel `loop` als vooruit in `voorkomen`
 
 ## Opdracht 2 - handiger herhalen of kleuren?
