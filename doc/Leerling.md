@@ -105,6 +105,7 @@ En dit is de tekening die er uit komt:
 
 ## Opdracht 0
 
+* Werk in teams van twee achter één laptop samen. Help elkaar. Wissel het toetsenbord af en toe. 
 * Het idee van YOP is gebaseerd op het klassieke ["LOGO"](https://nl.wikipedia.org/wiki/Logo_(programmeertaal)): 
    * YOP heeft een (platonische) notie van een 🐢 die wandelt over een groot stuk plat papier met een pen in zijn pootjes. Het is "platonisch" want die 🐢 zit alleen in ons hoofd, en daarom maken de pootjes trouwens ook geen afdrukken op het papier. 
    * Maar de pen wel! Als de 🐢 loopt, dan trekt hij kaarsrechte strepen achter zich aan.
@@ -114,7 +115,11 @@ En dit is de tekening die er uit komt:
    * De 🐢 begint in de oorsprong met als richting omhoog op de y-as.
 * De opdracht is spelen en uitproberen:
    1. Speel met YOP zoals het nu is. Gebruik de voorbeelden maar probeer ook nieuwe dingen.
-   2. Schrijf of wat je irritant vindt aan YOP, of waar je kansen ziet voor verbetering, of "wat als je dit nou zou kunnen opschrijven?"-achtige ideeën.
+   2. Schrijf alvast op wat er bij je op komt op:
+      * wat je irritant vindt aan YOP, of
+      * waar je kansen ziet voor verbetering, of 
+      * "wat als"-achtige ideeën. Wat als je ook kleuren kon gebruiken? Wat als je ook in een kromme beweging kon lopen? etc. 
+      * later gaan je één van jullie ideeën proberen te maken.
    3. Loop je vast? Dat hoort erbij. Steek je hand op!
    
 ## Opdracht 1 - "vooruit" is toch ouderwets?
