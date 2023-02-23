@@ -135,11 +135,12 @@ En dit is de tekening die er uit komt:
 ### Deel 1 - snel resultaat
    
 * `vooruit <getal>` is in YOP nu hét middel om een streep te trekken, maar misschien bekt `loop <getal>` wel wat lekkerder?
-* Vervang in `src/lang/yop/Syntax` overal waar `vooruit` staat door `loop`. Nu is de Syntax aangepast.
-* Vervang in `src/lang/yop/Semantiek`, in de vertaler naar miniSVG, overal waar `vooruit` staat door `loop`. Nu is de semantiek ook aangepast.
+* Vervang in `src/lang/yop/Syntax` waar `vooruit` staat door `loop`. Nu is de Syntax aangepast.
+* Vervang in `src/lang/yop/Semantiek`, in de vertaler naar miniSVG, waar `vooruit` staat door `loop`. Nu is de semantiek ook aangepast.
 * Probeer een yop programma uit te voeren:
-   * dat gaat niet, want nu is het programma niet meer syntactisch correct
-   * pas `vooruit` aan naar `loop`
+   * eerst de `main` functie van `Gebruiker` nog eens draaien. Daarna ziet VScode de wijzigingen.
+   * maar het gaat niet, want nu is het programma niet meer "syntactisch correct". `vooruit` zit niet meer in de woordenschat.
+   * pas dus `vooruit` aan naar `loop` in het yop programma.
    * nu werkt het wel.
 
 ### Deel 2 - een beetje spijt
