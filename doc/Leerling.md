@@ -27,7 +27,7 @@ En dit is de tekening die er uit komt:
 > waarmee de schildpad draait. Op een gegeven moment is de hoek zo groot (groter dan 90 graden) dat de schildpad achteruit gaat lopen. Dan dan komt hij verder dan 
 > 180 graden zodat hij linksaf gaat in plaats van rechts af. Uiteindelijk is hij helemaal het klokje rond tot `360` graden en begint het dansje opnieuw. Na 
 > 5 keer de spiraal ingedoken te zijn en weer omgedraaid, komt hij weer aan waar hij was begonnen. Als we meer dan 3600 stapjes maken, zien we niet meer streepjes omdat 
-> ze precies over elkaar heen getekent worden. Het getal `3600` is niet toevallig precies genoeg. Weet jij waarom?
+> ze precies over elkaar heen getekend worden. Het getal `3600` is niet toevallig precies genoeg. Weet jij waarom?
 
 ## Ongevraagde adviezen
 
