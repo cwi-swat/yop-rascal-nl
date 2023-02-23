@@ -29,6 +29,7 @@ En dit is de tekening die er uit komt:
 > 5 keer de spiraal ingedoken te zijn en weer omgedraaid, komt hij weer aan waar hij was begonnen. Als we meer dan 3600 stapjes maken, zien we niet meer streepjes omdat 
 > ze precies over elkaar heen getekend worden. Het getal `3600` is -niet geheel toevallig- precies genoeg voor een heel rondje. Weet jij waarom?
 
+<!-- 
 ## Ongevraagde adviezen
 
 * Programmeertaalontwerp is een kwestie van smaak en efficiëntie;
@@ -42,8 +43,7 @@ En dit is de tekening die er uit komt:
    * Snel en vaak fouten maken, zorgt dat je snel meer verkent van de uitdagingen en sneller leert.
    * Probeer één fout tegelijkertijd te maken, dan leer je sneller omdat je weet waar het aan ligt. Dus hele korte stukjes programmeren en tussendoor héél veel testen.
    * Perfectie is de vijand van lol en effectiviteit. Maak in ieder geval *iets*, en probeer als het werkt het uit te breiden naar je grotere visie.
-
-<div style="page-break-after: always; visibility: hidden"> </div>
+ -->
 
 ## Even inkomen: fluisterspel
 
