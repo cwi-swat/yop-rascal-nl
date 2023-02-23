@@ -103,7 +103,7 @@ En dit is de tekening die er uit komt:
    * Lekker even programmeren in YOP is leuk.
 5. Alles wat je met YOP kunt doen, is geprogrammeerd in dit project. Zelfs de drie opties hierboven staan geprogrammeerd in `src/lang/yop/Gebruiker.rsc`.
 
-## Opdracht 0
+## Opdracht nul; kennismaking met YOP.
 
 * Werk in teams van twee achter één laptop samen. Help elkaar. Wissel het toetsenbord af en toe. 
 * Het idee van YOP is gebaseerd op het klassieke ["LOGO"](https://nl.wikipedia.org/wiki/Logo_(programmeertaal)): 
