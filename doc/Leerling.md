@@ -7,8 +7,11 @@
    2. *Semantiek* is wat het betekent, altijd door een *vertaling* naar een andere taal.
 * We gaan de *Syntax* en *Semantiek* van "YOP" -dat staat voor Your Own Programming language- dus veranderen.
 
-Dit is een voorbeeld YOP programma:
+Dit is een voorbeeld YOP programma met de resulterende tekening, plus uitleg:
 
+<table>
+<tr> <td>
+   
 ```
 i = 0
 herhaal 3600 { 
@@ -17,14 +20,21 @@ herhaal 3600 {
     i = i + 1
 }
 ```
+   </td><td>
 
-En dit is de tekening die er uit komt:
-<img width="25%" alt="image" src="https://user-images.githubusercontent.com/1990295/220869648-48068480-4d67-47fe-bc9a-2b4d927cd8b3.png">
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/1990295/220869648-48068480-4d67-47fe-bc9a-2b4d927cd8b3.png"></td>
+<td>
+   
+Dit programma gaat alleen maar `rechts` af en `vooruit`. Hoe kan het nou dat er zulke mooie krullen uit komen? Dat komt doordat `i` steeds groter wordt, dat is de hoek 
+waarmee de schildpad draait. Van 0 tot 180 wordt de hoek (rechtsaf) steeds groter, en tussen 180 en 360 (linksaf) wordt de hoek weer kleiner tot we weer rechtdoor gaan (360 graden). Dan begint het weer opnieuw.
+   
+</td>
+</tr>
+</table>
 
 ### What the...?
 
-> Dit programma gaat alleen maar `rechts` af en `vooruit`. Hoe kan het nou dat er zulke mooie krullen uit komen? Dat komt doordat `i` steeds groter wordt, dat is de hoek 
-> waarmee de schildpad draait. Van 0 tot 180 wordt de hoek (rechtsaf) steeds groter, en tussen 180 en 360 (linksaf) wordt de hoek weer kleiner tot we weer rechtdoor gaan (360 graden). Dan begint het weer opnieuw.
+
 
 <!-- 
 ## Ongevraagde adviezen
