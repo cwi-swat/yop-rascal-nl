@@ -7,6 +7,21 @@
    2. *Semantiek* is wat het betekent, altijd door een *vertaling* naar een andere taal.
 * We gaan de *Syntax* en *Semantiek* van "YOP" -dat staat voor Your Own Programming language- dus veranderen.
 
+Dit is een voorbeeld YOP programma:
+
+```
+i = 0
+herhaal 3600 { 
+    vooruit 10 
+    rechts i + (1 / 10)
+    i = i + 1
+}
+```
+
+En dit is de tekening die er uit komt:
+<img width="377" alt="image" src="https://user-images.githubusercontent.com/1990295/220869648-48068480-4d67-47fe-bc9a-2b4d927cd8b3.png">
+
+
 ## Ongevraagde adviezen
 
 * Programmeertaalontwerp is een kwestie van smaak en efficiëntie;
