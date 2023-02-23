@@ -113,6 +113,7 @@ En dit is de tekening die er uit komt:
    * De 🐢 kan de pen tijdelijk optrekken om te verplaatsen zonder strepen te trekken.
    * We hebben een XY assenstelsel van -500 tot 500, met de oorsprong `(0,0)` precies in het midden.
    * De 🐢 begint in de oorsprong met als richting omhoog op de y-as.
+   * De `voorbeelden` spreken voor zich maar in `src/lang/yop/Syntax` vindt je een metaprogramma dat precies definieert wat de *Syntax* van YOP is: de woordenschat en de regels over hoe je die woorden kunt samenstellen tot zinnen en hele programma's. Kijk maar eens, maar je hoeft er nog niks mee.
 * De opdracht is spelen en uitproberen:
    1. Speel met YOP zoals het nu is. Gebruik de voorbeelden maar probeer ook nieuwe dingen.
    2. Schrijf alvast op wat er bij je op komt op:
