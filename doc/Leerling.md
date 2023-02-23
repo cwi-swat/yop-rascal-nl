@@ -1,6 +1,6 @@
 # Maak je eigen programmeertaal, "YOP", met Rascal
 
-* Rascal is een "meta" programmeertaal: een programmeertaal om programmeertalen mee te *maken*.
+* [Rascal](https://www.rascal-mpl.org) is een "meta" programmeertaal: een programmeertaal om programmeertalen mee te *maken*.
 * Je breidt vandaag een kleine programmeertaal voor tekenen uit met je eigen ideeën. Dat doen we in kleine stapjes.
 * Programmeertalen bestaan uit twee onderdelen:
    1. *Syntax* is wat je kunt opschrijven, de regels van de grammatica en het woordenboek. 
