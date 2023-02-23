@@ -46,7 +46,7 @@ En dit is de tekening die er uit komt:
    * nummer 3 verstaat taal **X** en kan gebarentaal (gebruik je handen en je vingers; zelf verzinnen)
    * nummer 4 begrijpt die gebarentaal en tekent wat er gecommuniceerd wordt op papier (vorm en ongeveer aangegeven grootte)
 2. Doorgeven van de informatie:
-   * nummer 1 bedenkt de vorm en fluister dat in het oor van 2.
+   * nummer 1 bedenkt de vorm en fluistert dat in het oor van 2.
    * nummer 2 luistert naar 1, maakt de vertaling en fluistert het resultaat in het oor van 3.
    * nummer 3 luistert naar 2, vertaalt dat naar gebaren taal en geeft dat door aan 4.
    * nummer 4 kijkt naar de gebaren, interpreteert ze en zet dat idee op papier met en pen of potlood.
