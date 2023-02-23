@@ -32,26 +32,6 @@ waarmee de schildpad draait. Van 0 tot 180 wordt de hoek (rechtsaf) steeds grote
 </tr>
 </table>
 
-### What the...?
-
-
-
-<!-- 
-## Ongevraagde adviezen
-
-* Programmeertaalontwerp is een kwestie van smaak en efficiëntie;
-   * Over smaak valt niet te twisten, dus volg vooral je gevoel. Wat lijkt je leuk? Wat lijkt je handig? Wat lijkt je elegant?
-   * Er is één basisprincipe: **"lui én slim"** zijn
-      * probeer dat het minder saai wordt en minder werk om te programmeren in YOP, zonder dat je minder kan tekenen.
-      * probeer dat je zelf ook weinig werk hoeft te doen om een uitbreiding toe te voegen. Laat de computer het werk doen.
-* Metaprogrammeren gaat niet gelijk goed!
-   * Je maakt iets wat nog *nooit* iemand heeft gemaakt, want je hebt het zelf bedacht 👍
-   * Je weet niet precies alles van al die verschillende talen die in het spel zijn. Logisch.
-   * Snel en vaak fouten maken, zorgt dat je snel meer verkent van de uitdagingen en sneller leert.
-   * Probeer één fout tegelijkertijd te maken, dan leer je sneller omdat je weet waar het aan ligt. Dus hele korte stukjes programmeren en tussendoor héél veel testen.
-   * Perfectie is de vijand van lol en effectiviteit. Maak in ieder geval *iets*, en probeer als het werkt het uit te breiden naar je grotere visie.
- -->
-
 ## Even inkomen: fluisterspel
 
 ### Opdracht
