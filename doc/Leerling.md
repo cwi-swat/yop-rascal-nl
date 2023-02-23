@@ -24,10 +24,7 @@ En dit is de tekening die er uit komt:
 ### What the...?
 
 > Dit programma gaat alleen maar `rechts` af en `vooruit`. Hoe kan het nou dat er zulke mooie krullen uit komen? Dat komt doordat `i` steeds groter wordt, dat is de hoek 
-> waarmee de schildpad draait. Op een gegeven moment is de hoek zo groot (groter dan 90 graden) dat de schildpad naar beneden gaat lopen. Op dat moment begint de binnenkant van een krul, waar we steeds dieper in gaan omdat de hoek steeds scherper wordt. Dan dan komt hij verder dan 
-> 180 graden zodat hij linksaf gaat in plaats van rechts af. Nu wordt de hoek juist steeds minder scherp, hoe groter hij wordt, naarmate we dichter bij de 270 komen. Uiteindelijk is hij helemaal het klokje rond tot `360` graden en begint het dansje opnieuw. Na 
-> 5 keer de spiraal ingedoken te zijn en weer omgedraaid, komt hij weer aan waar hij was begonnen. Als we meer dan 3600 stapjes maken, zien we niet meer streepjes omdat 
-> ze precies over elkaar heen getekend worden. Het getal `3600` is -niet geheel toevallig- precies genoeg voor een heel rondje. Weet jij waarom?
+> waarmee de schildpad draait. Van 0 tot 180 wordt de hoek (rechtsaf) steeds groter, en tussen 180 en 360 (linksaf) wordt de hoek weer kleiner tot we weer rechtdoor gaan (360 graden). Dan begint het weer opnieuw.
 
 <!-- 
 ## Ongevraagde adviezen
