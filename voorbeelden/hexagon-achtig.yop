@@ -5,6 +5,10 @@ herhaal 2 {
             vooruit i
             links 60
         }
+        pen kleur meng 
+            random i delen rood met
+            random 100 - i delen blauw met
+            random 50 delen transparant
         links 60
     }
     i = i - 50
