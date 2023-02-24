@@ -143,6 +143,10 @@ Color vertaal((Kleur) `meng <{Kleur "met"}+ elems>`)
 Color mix(lrel[real parts, Color color] mixture) {
     total = (0 | it + p | p <- mixture<parts>);
     
+    if (total <= 0.) {
+        return rgb(0,0,0,1.);
+    }
+    
     mixR = 0.;
     mixG = 0.;
     mixB = 0.; 
