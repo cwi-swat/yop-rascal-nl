@@ -1,7 +1,12 @@
 herhaal 30 {
+    // dit blok maakt precies 1 hele cirkel 
+    // (eigenlijk een regelmatige veelhoek met zoveel hoeken dat het een cirkel lijkt)
     herhaal 180 {
-        vooruit 5
+        vooruit 3
         rechts 2
     }
+    // dan draaien we wat naar rechts
     rechts 20
+    
+    // en gaan we nog 29 keer alles overnieuw
 }

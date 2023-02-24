@@ -12,14 +12,6 @@ syntax Tekening
     | Naam "=" Som
     | "cirkel" Som diameter
     | "herhaal" Som "{" Tekening* "}"
-
-// voeg dit eens toe: 
-    // | "ellipse" Getal xDiameter Getal yDiameter
-
-// voeg hierna je eigen dingen toe, zoals bijv:
-    
-    // | "spiegel" "in" ("x"|"y") "{" Tekening* "}"
-    // | "draai" Getal aantal "keer" "{" Tekening* "}"
     ;
 
 syntax Som 
@@ -40,5 +32,28 @@ syntax Som
     ;
 
 lexical Getal  = [0-9]+;
-lexical Naam   = [a-z]+;
-layout Spaties = [\ \t\n\r]*;
+lexical Naam   = @category="Variable" naam: [a-z]+;
+lexical Spaties = [\ \t\n\r]+ !>> [\ \t\n\r];
+
+lexical Commentaar = @category="Comment" "//" ![\n]* !>> ![\n] $;
+layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "--";
+
+// Hieronder ideeen voor mogelijke uitbreidingen:
+
+// TE DOEN: Letters kunnen schrijven:
+// syntax Tekening = "schrijf" Tekst;
+// lexical Tekst = ![\n]+ !>> ![\n];
+
+// TE DOEN: Ellipse tekenen zonder hele grote veelhoeken.
+// Zoek in Semantiek hoe cirkel vertaald wordt, en in miniSVG::Syntax waar je naartoe vertaalt.
+// syntax Tekening = "ellipse" Getal breedte Getal hoogte;
+
+// LASTIG: hele tekening kopieren en gespiegeld terugplakken
+// Ga je twee de vertaling maken vanuit een andere schildpadpositie? Of ga je de miniSVG tekening kopieren en
+// daarin absolute coordinaten wijzigen? Wees lui en slim!
+// syntax Tekening = "spiegel" "in" ("x"|"y") "{" Tekening* "}";
+
+// LASTIG: hele tekening kopieren en gedraaid terugplakken
+// Ga je twee de vertaling maken vanuit een andere schildpadpositie? Of ga je de miniSVG tekening kopieren en
+// daarin absolute coordinaten wijzigen? Wees lui en slim!
+// syntax Tekening = "draai" Getal aantal "keer" "{" Tekening* "}";

@@ -3,8 +3,8 @@ stappen = 20
 
 r = 0
 herhaal stappen + 1 {
-    x = schaal x sin r
-    y = schaal x cos r
+    x = schaal x cos r
+    y = schaal x sin r
     
     naar x y
     naar 0 0
@@ -14,12 +14,12 @@ herhaal stappen + 1 {
 }
 naar 0 0
 
-schaal = 125
+schaal = 100
 stappen = 10
 
 r = 0
 herhaal stappen + 1 {
-    naar schaal x sin r schaal x cos r
+    naar schaal x cos r schaal x sin r
     r = r + (PI / stappen)
 }
 naar 0 0
@@ -29,7 +29,7 @@ stappen = 5
 
 r = 0
 herhaal stappen + 1 {
-    naar schaal x sin r schaal x cos r
+    naar schaal x cos r schaal x sin r
     r = r + (PI / stappen)
 }
 naar 0 0

@@ -17,31 +17,37 @@ str toSVG(miniSVG(list[Element] elements))
       '";
 
 str toSVG(e:circle(real cx, real cy, real r)) 
-    = "\<circle cx=\"<cx>\" cy=\"<cy>\" r=\"<r>\" <stroke(e)> /\>"; 
+    = "\<circle cx=\"<cx * 1.0>\" cy=\"<cy * 1.0>\" r=\"<r * 1.0>\" <style(e)> /\>"; 
 
 str toSVG(e:rectangle(real x, real y, real width, real height)) 
-    = "\<rect x=\"<x>\" y=\"<y>\" width=\"<width>\" height=\"<height>\" <stroke(e)> /\>";
+    = "\<rect x=\"<x * 1.0>\" y=\"<y * 1.0>\" width=\"<width * 1.0>\" height=\"<height * 1.0>\" <style(e)> /\>";
 
 str toSVG(e:ellipse(real cx, real cy, real rx, real ry)) 
-    = "\<ellipse cx=\"<cx>\" cy=\"<cy>\" rx=\"<rx>\" ry=\"<ry>\" <stroke(e)> /\>";
+    = "\<ellipse cx=\"<cx * 1.0>\" cy=\"<cy * 1.0>\" rx=\"<rx * 1.0>\" ry=\"<ry * 1.0>\" <style(e)> /\>";
     
 str toSVG(e:line(real x1, real x2, real y1, real y2)) 
-    = "\<line x1=\"<x1>\" x2=\"<x2>\" y1=\"<y1>\" y2=\"<y2>\" <stroke(e)> /\>";
+    = "\<line x1=\"<x1 * 1.0>\" x2=\"<x2 * 1.0>\" y1=\"<y1 * 1.0>\" y2=\"<y2 * 1.0>\" <style(e)> /\>";
 
 str toSVG(e:polyline(lrel[real x, real y] poreals)) 
-    = "\<polyline poreals=\"<for (<x,y> <- poreals) {><x>,<y> <}>\" <stroke(e)> /\>";
+    = "\<polyline poreals=\"<for (<x,y> <- poreals) {><x * 1.0>,<y * 1.0> <}>\" <style(e)> /\>";
 
 str toSVG(e:polygon(lrel[real x, real y] poreals)) 
-    = "\<polygon poreals=\"<for (<x,y> <- poreals) {><x>,<y> <}>\" <stroke(e)> /\>";
+    = "\<polygon poreals=\"<for (<x,y> <- poreals) {><x * 1.0>,<y * 1.0> <}>\" <style(e)> /\>";
 
 str toSVG(move(real x, real y, list[Element] elements)) 
-    = "\<g transform=\"matrix(1 0 0 1 <x> <1 * y>)\" \>
+    = "\<g transform=\"matrix(1 0 0 1 <x * 1.0> <1.0 * y>)\" \>
       '    <for (e <- elements) {>
       '    <toSVG(e)><}>
       '\</g\>";
 
 str toSVG(scale(real factor, list[Element] elements)) 
-    = "\<g transform=\"scale(<factor> <factor>)\" \>
+    = "\<g transform=\"scale(<factor * 1.0> <factor * 1.0>)\" \>
+      '    <for (e <- elements) {><toSVG(e)>
+      '    <}>
+      '\</g\>";
+
+str toSVG(rotate(real angle, list[Element] elements)) 
+    = "\<g transform=\"rotate(<angle * 1.0>)\" \>
       '    <for (e <- elements) {><toSVG(e)>
       '    <}>
       '\</g\>";
@@ -56,19 +62,23 @@ str toSVG(comment(str bericht)) = "\<!-- <bericht> --\>";
 // Omdat het assenstelsel op zijn kop staat, staat alle tekst ook op zijn kop.
 // Daarom draaien we hier alles weer terug voordat we het tekenen door eerst y met -1
 // te vermenigvuldigen en daarna alles verticaal terug te schuiven (anders komt het onder de y-as terecht)
-str toSVG(e:text(real x, real y, str alinea)) 
-    = "\<g transform=\"matrix(1 0 0 -1 0 <2 * y>)\" \>
-      '    \<text x=\"<x>\" y=\"<y>\"\>
-      '        <alinea>
-      '    \</text\>
-      '\</g\>";
+// Maar niet voordat we de text in de gevraagde richting hebben gedraaid (om de richting van de schildpad te kunnen gebruiken)
+str toSVG(e:text(real x, real y, real angle, str alinea)) 
+    = "\<text x=\"<x * 1.0>\" y=\"<y * 1.0>\"  transform=\"rotate(<angle * 1.0> <x * 1.0> <y * 1.0>) scale(1,-1) translate(<0.0> <-2.0 * y>) \" <style(e)> \>
+      '   <alinea>
+      '\</text\>
+      '";
 
 default str toSVG(Element e) {
     throw "can not translate element yet: <e>";
 }
 
-str stroke(Element e) 
-    = "stroke=\"<toSVGColor(e.stroke)>\" fill=\"<toSVGColor(e.fill)>\" stroke-width=\"<e.\stroke-width>\" fill-opacity=\"<e.\fill-opacity>\" stroke-opacity=\"<e.\stroke-opacity>\"";
+str style(Element e) 
+    = "stroke=\"<toSVGColor(e.stroke)>\" 
+      '    fill=\"<toSVGColor(e.fill)>\" 
+      '    stroke-width=\"<e.\stroke-width>\" 
+      '    fill-opacity=\"<e.\fill-opacity>\" 
+      '    stroke-opacity=\"<e.\stroke-opacity>\"";
 
 str toSVGColor(str colorName()) = colorName;
 default str toSVGColor(Color _) = "pink";

@@ -10,7 +10,7 @@ import Exception;
 // de toestand van de schildpad is X, Y en Richting
 real huidigeX = 0.;
 real huidigeY = 0.;
-real huidigeRichting = 90.;
+real huidigeRichting = 0.;
 bool pen = true;
 map[str,real] waarden = ();
 
@@ -27,7 +27,7 @@ MiniSVG vertaal(Programma p) {
     // eerst de schildpad terug in de oorsprong
     huidigeX = 0.;
     huidigeY = 0.;
-    huidigeRichting = 90.;
+    huidigeRichting = 0.;
     pen = true;
     waarden = ();
 

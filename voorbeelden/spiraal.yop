@@ -1,5 +1,6 @@
 lengte = 3
 hoek   = 90
+links 90
 
 herhaal (2 x hoek) / 5 {
     rechts hoek

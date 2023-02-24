@@ -17,7 +17,7 @@ Summary controleer(Programma p) {
                    | n <- definities<0> - gebruiken<0>, l <- definities[n]}
 
                  + {<l, warning("Deze naam <n> wordt zo te zien pas later gedefinieerd op regel <m.begin.line>", l)> 
-                   | <n,l> <- gebruiken, !any(m <- definities[n], l.begin.line >= m.begin.line), m <- definities[n]},
+                   | <n,l> <- gebruiken, !any(m <- definities[n], l.begin.line > m.begin.line), m <- definities[n]},
         
         definitions = gebruiken<1,0> o definities
     );
