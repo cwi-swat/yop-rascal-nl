@@ -11,9 +11,11 @@ hoeken = 10
 // dat ze niet te kort zijn en ook niet te lang
 kant   = 500 / hoeken
 
+pen dikte 3
 herhaal hoeken { // er zijn zoveel streepjes te tekenen
     vooruit kant
     rechts 360 / hoeken // na elk streepje moeten we zoveel draaien
+    pen kleur rood
 }
 
 // aan het eind kom je precies uit waar je begonnen was.
