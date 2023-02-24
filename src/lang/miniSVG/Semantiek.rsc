@@ -76,9 +76,9 @@ default str toSVG(Element e) {
 str style(Element e) 
     = "stroke=\"<toSVGColor(e.stroke)>\" 
       '    fill=\"<toSVGColor(e.fill)>\" 
-      '    stroke-width=\"<e.\stroke-width>\" 
-      '    fill-opacity=\"<e.\fill-opacity>\" 
-      '    stroke-opacity=\"<e.\stroke-opacity>\"";
+      '    stroke-width=\"<1.0 * e.\stroke-width>\" 
+      '    fill-opacity=\"<1.0 * e.\fill-opacity>\" 
+      '    stroke-opacity=\"<1.0 * e.\stroke-opacity>\"";
 
 str toSVGColor(str colorName()) = colorName;
 default str toSVGColor(Color _) = "pink";

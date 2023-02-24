@@ -40,6 +40,13 @@ layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "--";
 
 // Hieronder ideeen voor mogelijke uitbreidingen:
 
+// TE DOEN: pen dikte instellen.
+// Kijk bij de vertaling van `naar` hoe je dit zou kunnen doen voor pendikte.
+//   * er moet een `real huidigePenDikte = 1.0` bij komen
+//   * die variabele moet veranderen als `pen <Som s>` langs komt
+//   * ALLES wat iets tekent in miniSVG moet die variabele gaan vertalen naar `\stroke-width` in miniSVG. Bijvoorbeeld: `circle(\stroke-width=huidigePenDikte)`
+// syntax Tekening = "pen" "dikte" Som;
+
 // TE DOEN: Letters kunnen schrijven:
 // syntax Tekening = "schrijf" Tekst;
 // lexical Tekst = ![\n]+ !>> ![\n];
