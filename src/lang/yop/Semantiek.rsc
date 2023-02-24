@@ -129,6 +129,35 @@ real vertaal((Som) `random <Som w>`) = 1. * arbInt(round(vertaal(w)));
 // van syntax naar Rascal `int` getallen waar we mee kunnen rekenen
 real vertaal(Getal g) = 1. * toInt("<g>");
 
+// er is alvast een vertaling voor kleuren, maar die wordt nog nergens
+// gebruikt. Bedenk zelf een manier om kleuren te gebruiken in YOP!
+Color vertaal((Kleur) `rood`)  = rgb(255,0,0,1.);
+Color vertaal((Kleur) `groen`) = rgb(0,255,0,1.);
+Color vertaal((Kleur) `blauw`)  = rgb(0,0,255,1.);
+Color vertaal((Kleur) `transparant`)  = rgb(0,0,0,0.);
+Color vertaal((Kleur) `<Som s> delen <Kleur k>`) = vertaal(k);
+
+Color vertaal((Kleur) `meng <{Kleur "met"}+ elems>`)
+    = mix([<vertaal(s), vertaal(k)> | (Kleur) `<Som s> delen <Kleur k>` <- elems]);
+
+Color mix(lrel[real parts, Color color] mixture) {
+    total = (0 | it + p | p <- mixture<parts>);
+    
+    mixR = 0.;
+    mixG = 0.;
+    mixB = 0.; 
+    mixT = 0.;   
+
+    for (<p, rgb(r, g, b, t)> <- mixture) {
+        mixR += r * p / total;
+        mixG += g * p / total;
+        mixB += b * p / total;
+        mixT += t * p / total;
+    }
+
+    return rgb(round(mixR), round(mixG), round(mixB), mixT);
+}
+
 // handige functie om even een commentaar te produceren op basis van de huidige 🐢
 Element comment(Tekening t) = comment("🐢 <t>; x: <huidigeX>, y: <huidigeY>, richting: <huidigeRichting>, pen: <pen> 🐢");
 

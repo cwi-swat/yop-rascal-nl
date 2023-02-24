@@ -31,6 +31,19 @@ syntax Som
            )
     ;
 
+// Kleur wordt nog nergens gebruikt, maar er is wel
+// een handige vertaling alvast. Dus gebruik `Kleur`
+// in je eigen Syntax uitbreiding en dan kun je de vertaling
+// in Semantiek ook gebruiken
+syntax Kleur
+    = "rood"
+    | "groen"
+    | "blauw"
+    | "transparant"
+    | Som "delen" Kleur
+    | "meng" {Kleur "met"}+
+    ;
+
 lexical Getal  = [0-9]+;
 lexical Naam   = @category="Variable" naam: [a-z]+;
 lexical Spaties = [\ \t\n\r]+ !>> [\ \t\n\r];

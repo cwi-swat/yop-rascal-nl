@@ -3,7 +3,7 @@ module lang::miniSVG::Syntax
 data MiniSVG 
     = miniSVG(list[Element] elements);
 
-data Element(Color stroke=black(), real \stroke-width=1., Color fill=\grey(), real \fill-opacity=0.8, real \stroke-opacity=1.)
+data Element(Color stroke=rgb(0,0,0), real \stroke-width=1., Color fill=rgb(230,230,230), real \fill-opacity=0.8, real \stroke-opacity=1.)
     = circle(real cx, real cy, real r)
     | rectangle(real x, real y, real width, real height, real rx=0, real ry=0)
     | ellipse(real cx, real cy, real rx, real ry)
@@ -18,16 +18,5 @@ data Element(Color stroke=black(), real \stroke-width=1., Color fill=\grey(), re
     | comment(str what)
     ;
 
-data Color
-    = black()
-    | white()
-    | grey()
-    | red()
-    | yellow()
-    | lightyellow()
-    | lightred()
-    | green()
-    | lightgreen()
-    | blue()
-    | lightblue()
-    ;
+data Color = rgb(int r, int g, int b, real transparancy);
+
