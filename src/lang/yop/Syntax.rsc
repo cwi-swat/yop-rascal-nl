@@ -41,6 +41,8 @@ syntax Kleur
     = "rood"
     | "groen"
     | "blauw"
+    | "wit"
+    | "zwart"
     | "transparant"
     | Som "delen" Kleur
     | "meng" {Kleur "met"}+

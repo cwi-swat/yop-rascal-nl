@@ -145,7 +145,9 @@ real vertaal(Getal g) = 1. * toInt("<g>");
 // gebruikt. Bedenk zelf een manier om kleuren te gebruiken in YOP!
 Color vertaal((Kleur) `rood`)  = rgb(255,0,0,1.);
 Color vertaal((Kleur) `groen`) = rgb(0,255,0,1.);
-Color vertaal((Kleur) `blauw`)  = rgb(0,0,255,1.);
+Color vertaal((Kleur) `blauw`) = rgb(0,0,255,1.);
+Color vertaal((Kleur) `wit`)    = rgb(0,0,0,1.);
+Color vertaal((Kleur) `zwart`)  = rgb(255,255,255,1.);
 Color vertaal((Kleur) `transparant`)  = rgb(0,0,0,0.);
 Color vertaal((Kleur) `<Som s> delen <Kleur k>`) = vertaal(k);
 
@@ -154,6 +156,10 @@ Color vertaal((Kleur) `meng <{Kleur "met"}+ elems>`)
 
 Color mix(lrel[real parts, Color color] mixture) {
     total = (0 | it + p | p <- mixture<parts>);
+    
+    if (total <= 0.) {
+        return rgb(0,0,0,1.);
+    }
     
     mixR = 0.;
     mixG = 0.;
