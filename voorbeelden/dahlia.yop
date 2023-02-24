@@ -5,6 +5,10 @@ herhaal 8 {
             vooruit 2
             rechts 2
         }
+        pen kleur meng
+            random 10 delen rood met
+            random 10 delen blauw met
+            random 20 delen transparant
         rechts 90
     }
 }

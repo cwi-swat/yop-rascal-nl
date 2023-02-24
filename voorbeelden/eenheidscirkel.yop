@@ -6,18 +6,21 @@ herhaal stappen + 1 {
     x = schaal x cos r
     y = schaal x sin r
     
+    pen dikte 3
     naar x y
     naar 0 0
     naar x y
+    pen dikte 1
     
     r = r + (PI / stappen)
 }
 naar 0 0
 
-schaal = 100
+schaal = 50
 stappen = 10
 
 r = 0
+
 herhaal stappen + 1 {
     naar schaal x cos r schaal x sin r
     r = r + (PI / stappen)

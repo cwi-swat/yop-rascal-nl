@@ -1,5 +1,7 @@
 i = 0 - 500
 pen op
+pen kleur rood
+pen dikte 3
 herhaal 1000 {
     naar i 50 x sin (i / 50)
     pen neer
@@ -8,8 +10,12 @@ herhaal 1000 {
 
 i = 0 - 500
 pen op
+pen kleur blauw
 herhaal 1000 {
     naar i 50 x cos (i / 50)
     pen neer
+    pen kleur meng 
+        2 delen blauw met 
+        random 5 + 1 delen transparant
     i = i + 1
 }
