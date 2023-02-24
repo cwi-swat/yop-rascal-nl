@@ -1,12 +1,13 @@
 herhaal 500 {
     pen dikte (random 10) + 1
-    pen kleur meng 
-        // random 10 delen rood met 
-        random 10 + 1 delen groen met 
-        random 10 + 1 delen blauw met 
-        random 20 + 1 delen transparant
-    afstand = random 25
+    afstand = random 50
     hoek = random 180
+    pen kleur meng 
+        random 10 delen rood met 
+        random 10 delen groen met 
+        random 10 delen blauw met 
+        random 20 delen transparant
+    
     rechts hoek - 90
     vooruit afstand
 }
