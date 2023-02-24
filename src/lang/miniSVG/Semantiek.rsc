@@ -1,7 +1,6 @@
 module lang::miniSVG::Semantiek
 
 import lang::miniSVG::Syntax;
-import util::Math;
 
 // Dit vertaalt een-op-een een lijst van miniSVG teken-instructies naar de textuele XML vorm die "SVG" heet.
 // Én het regelt de assen (van waar tot waar (-1000 tot 1000), en de richting (y-as omhoog en x-as naar rechts))
@@ -83,7 +82,8 @@ str style(Element e)
 
 
 
-str toSVGColor(rgb(int r, int g, int b, real a)) = "rgb(<r> <g> <b> <a>)";
+str toSVGColor(rgb(int r, int g, int b, real a)) = "rgb(<r>,<g>,<b>,<a * 1.0>)";
+
 
 
 
