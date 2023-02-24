@@ -3,8 +3,7 @@ herhaal 50 {
     y = random 500 - 250
     naar x y
     pen kleur meng
-        random 10 delen rood met
-        random 10 delen groen met
-        random 10 delen blauw met
-        random 30 delen transparant
+        // 10 delen zwart met
+        20 delen wit met
+        10 delen rood
 }
