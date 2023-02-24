@@ -11,6 +11,8 @@ import Exception;
 real huidigeX = 0.;
 real huidigeY = 0.;
 real huidigeRichting = 0.;
+real huidigePenDikte = 2.;
+Color huidigePenKleur = rgb(0,0,0,1.);
 bool pen = true;
 map[str,real] waarden = ();
 
@@ -49,7 +51,7 @@ Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
     huidigeX = huidigeX + cos(radialen(huidigeRichting)) * vertaal(afstand);
     huidigeY = huidigeY + sin(radialen(huidigeRichting)) * vertaal(afstand);
 
-    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY));
+    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY, \stroke-width=huidigePenDikte, \stroke=huidigePenKleur));
 }
 
 Element vertaal(t:(Tekening) `naar <Som x> <Som y>`) {
@@ -61,7 +63,7 @@ Element vertaal(t:(Tekening) `naar <Som x> <Som y>`) {
     huidigeX = vertaal(x);
     huidigeY = vertaal(y);
 
-    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY));
+    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY,  \stroke-width=huidigePenDikte, \stroke=huidigePenKleur));
 }
 
 Element vertaal(t:(Tekening) `spring <Som afstand>`) {
@@ -99,8 +101,18 @@ Element vertaal(t:(Tekening) `<Naam n> = <Som s>`) {
     return comment(t);
 }
 
+Element vertaal(t:(Tekening) `pen dikte <Som s>`) {
+    huidigePenDikte = vertaal(s);
+    return comment(t);
+}
+
+Element vertaal(t:(Tekening) `pen kleur <Kleur k>`) {
+    huidigePenKleur = vertaal(k);
+    return comment(t);
+}
+
 Element vertaal(t:(Tekening) `cirkel <Som diameter>`) 
-    = link(t, circle(huidigeX, huidigeY, vertaal(diameter)));
+    = link(t, circle(huidigeX, huidigeY, vertaal(diameter),  \stroke-width=huidigePenDikte,\stroke=huidigePenKleur));
 
 Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`) 
     = move(0., 0., [*vertaal(tekeningen) | _ <- [0..round(vertaal(aantal))]]);

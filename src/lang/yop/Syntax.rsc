@@ -9,6 +9,8 @@ syntax Tekening
     | "rechts" Som graden
     | "links" Som graden
     | "pen" ("op" | "neer")
+    | "pen" "kleur" Kleur kleur
+    | "pen" "dikte" Som dikte
     | Naam "=" Som
     | "cirkel" Som diameter
     | "herhaal" Som "{" Tekening* "}"
@@ -56,9 +58,16 @@ layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "--";
 // TE DOEN: pen dikte instellen.
 // Kijk bij de vertaling van `naar` hoe je dit zou kunnen doen voor pendikte.
 //   * er moet een `real huidigePenDikte = 1.0` bij komen
-//   * die variabele moet veranderen als `pen <Som s>` langs komt
+//   * die variabele moet veranderen als `pen dikte <Som s>` langs komt tijdens `vertaal`
 //   * ALLES wat iets tekent in miniSVG moet die variabele gaan vertalen naar `\stroke-width` in miniSVG. Bijvoorbeeld: `circle(\stroke-width=huidigePenDikte)`
 // syntax Tekening = "pen" "dikte" Som;
+
+// TE DOEN: pen kleur instellen
+// Kijk bij de vertaling van `naar` hoe je dit zou kunnen doen voor pendikte.
+//   * er moet een `Color huidigePenKleur = 1.0` bij komen
+//   * die variabele moet veranderen als `pen kleurr <Kleur s>` langs komt tijdens `vertaal`
+//   * ALLES wat iets tekent in miniSVG moet die variabele gaan vertalen naar `\stroke-width` in miniSVG. Bijvoorbeeld: `circle(\stroke-width=huidigePenDikte)`
+ // syntax Tekening = "pen" "kleur" Kleur;
 
 // TE DOEN: Letters kunnen schrijven:
 // syntax Tekening = "schrijf" Tekst;
