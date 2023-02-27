@@ -1,3 +1,6 @@
 ports:
-  - port: 1024-9999
+  - port: 9000-12000
     onOpen: ignore
+vscode:
+  extensions:
+    - https://jurgen.vinju.org/downloads/rascalmpl-0.6.4-head523.vsix
