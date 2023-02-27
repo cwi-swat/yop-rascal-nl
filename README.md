@@ -2,6 +2,13 @@
 
 This project is for Dutch students and teachers, so we continue in Dutch.
 
+<a href="https://gitpod.io/#<your-repository-url>">
+  <img
+    src="https://img.shields.io/badge/Probeer%20met-Gitpod-908a85?logo=gitpod"
+    alt="Use with Gitpod"
+  />
+</a>
+
 Dit is een klein projectje om snel te leren hoe je je eigen programmeertaal kunt maken.
 De doelgroep is middelbare school leerlingen.
 
