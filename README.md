@@ -2,7 +2,7 @@
 
 This project is for Dutch students and teachers, so we continue in Dutch.
 
-<a href="https://gitpod.io/#<your-repository-url>">
+<a href="https://gitpod.io/#https://github.com/cwi-swat/yop-rascal-nl">
   <img
     src="https://img.shields.io/badge/Probeer%20met-Gitpod-908a85?logo=gitpod"
     alt="Use with Gitpod"
