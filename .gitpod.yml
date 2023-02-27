@@ -1,3 +1,3 @@
 ports:
   - port: 1024-9999
-    onOpen: ignore
+    onOpen: open-browser
