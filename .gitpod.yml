@@ -3,4 +3,4 @@ ports:
     onOpen: ignore
 vscode:
   extensions:
-    - https://jurgen.vinju.org/downloads/rascalmpl-0.6.4-head.vsix
+    - http://jurgen.vinju.org/downloads/rascalmpl-0.6.4-head.vsix
