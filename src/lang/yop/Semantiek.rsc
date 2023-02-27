@@ -155,7 +155,7 @@ Color vertaal((Kleur) `meng <{Kleur "met"}+ elems>`)
     = mix([<vertaal(s), vertaal(k)> | (Kleur) `<Som s> delen <Kleur k>` <- elems]);
 
 Color mix(lrel[real parts, Color color] mixture) {
-    total = (0 | it + p | p <- mixture<parts>);
+    total = (0. | it + p | p <- mixture<parts>);
     
     if (total <= 0.) {
         return rgb(0,0,0,1.);
