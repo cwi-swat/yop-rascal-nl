@@ -1,3 +1,4 @@
+pen dikte 3
 herhaal 8 {
     rechts 45
     herhaal 6 {
@@ -6,9 +7,11 @@ herhaal 8 {
             rechts 2
         }
         pen kleur meng
+            10 delen wit met
             random 10 delen rood met
-            random 10 delen blauw met
-            random 20 delen transparant
+            random 10 delen groen met
+            5 + random 5 delen blauw met
+            random 15 delen transparant
         rechts 90
     }
 }
