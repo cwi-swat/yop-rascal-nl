@@ -4,3 +4,5 @@ ports:
 vscode:
   extensions:
     - http://jurgen.vinju.org/downloads/rascalmpl-0.6.4-head.vsix
+tasks:
+    - command gp open /workspace/yop-rascal-nl/src/lang/yop/Gebruiker.rsc
