@@ -6,4 +6,4 @@ vscode:
     - http://jurgen.vinju.org/downloads/rascalmpl-0.6.4-head.vsix
 tasks:
   - name: "open Gebruiker.rsc"
-    command: gp open /workspace/yop-rascal-nl/src/lang/yop/Gebruiker.rsc
+    init: gp open /workspace/yop-rascal-nl/src/lang/yop/Gebruiker.rsc
