@@ -6,22 +6,29 @@
    * Zoek op "rascal" en kies "Rascal Metaprogramming Language" van "Usethesource".
    * Soms komen er wat vragen over installatie van Java. Alle keuzes zijn goed, maar mischien heb je zelf voorkeuren.
 3. Je hebt het YOP project nodig. 
-   * Download de zip hier <TODODODODODO>
-   * Pak de zip ergens uit. Onthoudt waar ergens is. Bijvoorbeeld in `Mijn Documenten/yop-rascal-nl`
+   * óf download de zip hier:
+      * https://github.com/cwi-swat/yop-rascal-nl/releases/download/2023-03-03/yop-rascal-nl.zip
+      * kortere URL: https://tinyurl.com/2yfup2rr
+      * Pak de zip ergens uit. Onthoudt waar ergens is. Bijvoorbeeld in `Mijn Documenten/yop-rascal-nl`
       * de folder moet `yop-rascal-nl` heten.
       * in die folder staat `src` en `META-INF`, etc.
       * als dit niet klopt, vraag even hulp.
-   * Voeg `Mijn Documenten/yop` toe aan je VScode "workspace":
+      * Voeg `Mijn Documenten/yop` toe aan je VScode "workspace":
       * "File" menu, "Add folder to workspace..."
+   * óf je "cloned" hem met "git" 
+      * CMD+P op de mac of CTRL+SHIFT+P op Windows, dan `clone` typen en ENTER
+      * Kies https://github.com/cwi-swat/yop-rascal-nl als repository (overtypen)
+      * kies een locatie: Bijvoorbeeld in `Mijn Documenten/yop-rascal-nl`
+      * dan gaat de rest vanzelf
    * Het `yop-rascal-nl` project verschijnt in het bestandsoverzicht aan de linkerkant.
    * Open het bestand `src/lang/yop/Gebruiker.rsc`. Dit is een Rascal programma.
       * Beneden staat de `main` functie, met daarboven `Run in new Rascal terminal`.
       * Klik daarop
-      * Na even wachten komt er een nieuw "console" onder in het scherm. Het `main()` commando is al uitgevoerd.
+      * Na even wachten komt er een nieuw "terminal" onder in het scherm. Het `main()` commando is al uitgevoerd.
       * Focus op de terminal met je muis.
       * Pijltje omhoog en het `main()` command verschijnt weer.
       * "Enter" en `main` wordt nog een keer uitgevoerd.
-   * **Elke keer als je `main` uitvoert, leert VScode pas over de laatste versie van YOP.**
+   * **Elke keer als je `main` uitvoert, leert VScode pas over de laatste versie van YOP die je hebt gemaakt.**
 4. Open een `.yop` bestand uit `voorbeelden`
    * Er staan altijd drie opties bovenaan, mits het YOP programma syntactisch correct is (een geldige zin):
       * `Bekijk plaatje` vertaalt eerst naar miniSVG, dan naar SVG, dan naar pixels en laat het plaatje ook zien.
