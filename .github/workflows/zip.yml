@@ -9,12 +9,12 @@ jobs:
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: 'yop.zip'
+        filename: 'yop-rascal-nl.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
 
     - name: Upload zip
       uses: ncipollo/release-action@v1.12.0
       with:
-        artifacts: "yop.zip"
+        artifacts: "yop-rascal-nl.zip"
         tag: zip
         token: ${{ secrets.GITHUB_TOKEN }}
