@@ -16,4 +16,5 @@ jobs:
       uses: ncipollo/release-action@v1.12.0
       with:
         artifacts: "yop.zip"
+        tag: zip
         token: ${{ secrets.GITHUB_TOKEN }}
