@@ -7,15 +7,15 @@ titel: Lesplan voor de Leraar
 * Attitude
    * "Ik kan zelf een programmeertaal bedenken, ontwerpen en maken"
    * "Metaprogrammeren is misschien ingewikkeld, maar het is niet moeilijk en héél leuk"
-   * Omgaan met imperfectie van je eigen bedenksels, en (tijdelijke) frustraties als wat je bedenkt even niet lukt, de aanhouder wint, én om hulp vragen is niet slecht.
+   * Omgaan met imperfectie en frustratie
+   * Om hulp vragen is niet slecht.
    * "Lui én slim"; de computer het werk laten doen.
 * Kennis
    * Nieuwe woorden en begrippen:
-      * metaprogrammeren
-      * vertalerbouw
+      * vertaler: "compiler"
       * pattern matching (patroon herkenning)
       * substitution (vervangen)
-      * syntax
+      * syntax 
       * semantics
    * Programmeertalen maken is een kwestie van _vertalers_ bedenken en maken
    * Rascal is een taal om _vertalers_ mee te maken
@@ -130,4 +130,20 @@ Verhalen vertellen; met heel veel structuur:
 * Stickers uitdelen
 ## Tijdplanning
 
-Hier komt de planning van de dag ((TODO))
+
+| Slot        | Onderwerp | Wie/Waar
+| ----        |  ---      |  ---
+| 10:00-10:50 | Inleiding & voorbereiding   | Jurgen/Tijs (L120)
+| 10:50-11:05 | 15 min Pauze | Hierna parallel:
+|             |              |
+| 11:05-11:35 | Voorbereiding Hackathon | Jurgen/Tijs (L120) |
+| 11:05-11:35 | QSoft - Quantum Quest   |  Koen Groenland (L016) |
+|             | uitlooptijd/wissel 10 min |  switch! | 
+| 11:45-12:15 | Voorbereiding Hackathon  |  Jurgen/Tijs (L120) |
+| 11:45-12:15 | QSoft - Quantum Quest |  Koen Groenland  (L016) |
+|             |       | 
+ 12:15-12:45  | Grote Pauze (met uitloop tot 13:00) | Forum |
+|   | | 
+| 13:00- 15.00 | Hackathon + Snacks + Koffie (120) | Jurgen/Tijs (L120)
+|              | Waterval demo's |                               (L120)
+| Einde  | Prijsuitreiking & Herinnering |                       (L120)
