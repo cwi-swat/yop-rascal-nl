@@ -12,10 +12,13 @@ Element vertaal((Tekening) `schrijf <Tekst zin>`)
     = text(huidigeX, huidigeY, "<zin>");
 ```
 * Uitproberen!
-* Wat gaat er mis?
+
+### Wat gaat er mis?
+
 * Repareren door dit te veranderen:
 ```
 Element vertaal((Tekening) `schrijf <Tekst zin>`) 
     = rotate(huidigeRichting, [text(huidigeX, huidigeY, "<zin>")]);
 ```
-* gelukkig zat er nog een `rotate` in miniSVG, anders moesten we dat eerst nog toevoegen!
+
+Gelukkig zat er nog een `rotate` in miniSVG, anders moesten we dat eerst nog toevoegen!

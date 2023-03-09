@@ -112,7 +112,8 @@ Daarna uitleg:
 * dan acht aan acht, en (misschien) 16 aan 16. even kijken of mensen wel willen!
 * de laatste 1 of 2 verhalen mogen klassikaal
 
-Verhalen vertellen; met heel veel structuur:
+Verhalen vertellen; met héél veel structuur (komt op het scherm):
+
 1. Wat heb je bedacht: laat de "syntax" zien
 2. Waarom heb je dat bedacht? hoe helpt het de programmeur in jouw taal "lui en slim" te zijn?
 3. Vragen van de andere kinderen. Bij 1 en 2 mag er niet onderbroken worden!
@@ -121,6 +122,7 @@ Verhalen vertellen; met heel veel structuur:
 6. Vragen van de andere kinderen. Bij 4 en 5 mag er niet onderbroken worden!
 7. Dan het andere team 1-6
 8. Stemmen: meeste stemmen gelden. De makers mogen meestemmen. Bij gelijkspel doet de leraar eerlijk "kop of munt".
+
 ### Klassikaal oogsten
 
 * Demo van het winnende team/de winnende teams
@@ -128,7 +130,8 @@ Verhalen vertellen; met heel veel structuur:
 * Leerdoelen expliciet maken
 * Vragen hoeveel gelukt is
 * Stickers uitdelen
-## Tijdplanning
+ 
+## Planning
 
 
 | Slot        | Onderwerp | Wie/Waar

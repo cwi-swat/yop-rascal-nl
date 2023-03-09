@@ -2,7 +2,7 @@
 
 * Werk in teams van twee achter één laptop samen. Help elkaar. Wissel het toetsenbord af en toe. 
 * Het idee van YOP is gebaseerd op het klassieke ["LOGO"](https://nl.wikipedia.org/wiki/Logo_(programmeertaal)): 
-   * YOP heeft een (platonische) notie van een 🐢 die wandelt over een stuk plat papier met een pen in zijn pootjes. 
+   * YOP heeft een (platonisch) idee van een 🐢 die wandelt over een stuk plat papier met een pen in zijn pootjes. 
    * Als de 🐢 `vooruit` loopt, dan trekt hij kaarsrechte strepen achter zich aan.
    * De 🐢 kan naar `links` en `rechts` van richting veranderen
    * De 🐢 kan de `pen` tijdelijk `op`trekken om te verplaatsen zonder strepen te trekken.
@@ -21,6 +21,7 @@
 ---
 
 **Veelvoorkomende vragen**
+
    * help, hij doet het niet!
       * In `VScode`, ga naar `src/lang/Gebruiker.rsc`
       * Zoek `main`
