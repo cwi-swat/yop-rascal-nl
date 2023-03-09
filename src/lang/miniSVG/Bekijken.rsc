@@ -52,5 +52,5 @@ str pagina(str svg)
         '   \</head\>
         '   \<body\>
         '       <svg>
-        '   \<body\>
-        '\<html\>";
+        '   \</body\>
+        '\</html\>";
