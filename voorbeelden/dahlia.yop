@@ -1,4 +1,14 @@
 pen dikte 3
+
+recept randompenkleur gegeven rood en groen en blauw {
+    pen kleur meng
+        10 delen wit met
+        random rood delen rood met
+        random groen delen groen met
+        random blauw delen blauw met
+        random 15 delen transparant 
+}
+
 herhaal 8 { 
     rechts 45
     herhaal 6 {
@@ -6,12 +16,7 @@ herhaal 8 {
             vooruit 2
             rechts 2
         }
-        pen kleur meng
-            10 delen wit met
-            random 10 delen rood met
-            random 10 delen groen met
-            5 + random 5 delen blauw met
-            random 15 delen transparant
+        doe randompenkleur met 10 en 10 en 10
         rechts 90
     }
 }

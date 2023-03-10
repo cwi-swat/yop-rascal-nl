@@ -1,10 +1,15 @@
+recept veelhoek met aantal, lengte {
+    herhaal aantal {
+        vooruit lengte
+        links 360 / aantal
+    }
+}  
+
 i = 100
+
 herhaal 2 {
     herhaal 6 {
-        herhaal 6 {
-            vooruit i
-            links 60
-        }
+        doe veelhoek met 6, 40
         pen kleur meng 
             random i delen rood met
             random 100 - i delen blauw met

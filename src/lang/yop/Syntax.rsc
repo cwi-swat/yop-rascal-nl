@@ -11,11 +11,25 @@ syntax Tekening
     | "pen" ("op" | "neer")
     | "pen" "kleur" Kleur kleur
     | "pen" "dikte" Som dikte
+    | "als" Conditie "{" Tekening* stappen "}"
     | Naam "=" Som
     | "cirkel" Som diameter
     | "herhaal" Som "{" Tekening* "}"
-    | "recept" Naam naam ("gegeven" {Naam "en"}+ )? "{" Tekening* stappen "}"
-    | "doe" Naam ("met" {Som "en"}+)?
+    | "recept" Naam naam ("met" {Naam ","}+ )? "{" Tekening* stappen "}"
+    | "doe" Naam ("met" {Som ","}+)?
+    ;
+
+syntax Conditie
+    = Som l "==" Som r
+    | Som l "!=" Som r
+    | Som l "\<=" Som r
+    | Som l "\<"  Som r
+    | Som l "\>"  Som l
+    | Som l "\>=" Som r
+    | bracket "(" Conditie ")"
+    | "niet" Conditie c
+    > left Conditie lc "en" Conditie rc
+    > left Conditie lc "of" Conditie rc
     ;
 
 syntax Som 

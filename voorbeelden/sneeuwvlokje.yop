@@ -1,0 +1,50 @@
+recept sneeuwvlokkant met lengte,diepte {
+    als diepte == 0 {
+        vooruit lengte 
+    }
+    als diepte != 0 {
+        doe sneeuwvlokkant met lengte / 3, diepte - 1
+        links 60
+        doe sneeuwvlokkant met lengte / 3, diepte - 1
+        rechts 120
+        doe sneeuwvlokkant met lengte / 3, diepte - 1
+        links 60
+        doe sneeuwvlokkant met lengte / 3, diepte - 1
+    }
+}
+
+recept sneeuwvlok met lengte, diepte {
+    herhaal 3 {
+        doe sneeuwvlokkant met lengte, diepte
+        rechts 120
+    }
+}
+
+doe sneeuwvlok met 200, 4
+
+// TO SNOWFLAKE.SIDE :LENGTH :DEPTH
+
+//   IF :DEPTH = 0 [
+//     FORWARD :LENGTH
+//     STOP 
+//   ]
+
+//   SNOWFLAKE.SIDE :LENGTH  / 3 :DEPTH - 1
+
+//   LEFT    60
+//   SNOWFLAKE.SIDE :LENGTH  / 3 :DEPTH - 1
+//   RIGHT   120
+//   SNOWFLAKE.SIDE :LENGTH  / 3 :DEPTH - 1
+//   LEFT    60
+
+//   SNOWFLAKE.SIDE :LENGTH  / 3 :DEPTH - 1
+// END
+
+// TO SNOWFLAKE :LENGTH :DEPTH
+//   REPEAT 3 [
+//     SNOWFLAKE.SIDE :LENGTH :DEPTH
+//     RIGHT 120
+//   ]
+// END
+ 
+// SNOWFLAKE 200 4

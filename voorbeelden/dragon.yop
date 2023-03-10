@@ -1,0 +1,36 @@
+recept dcr met stap, lengte {
+    als stap > 0 {
+        rechts 45
+        doe dcr met stap - 1, lengte / wortel 2
+        links 90
+        doe dcl met stap - 1, lengte / wortel 2
+        rechts 45
+    }
+    als stap == 0 {
+        rechts 45
+        vooruit lengte
+        links 90
+        vooruit lengte
+        rechts 45
+    }
+}
+
+recept dcl met stap, lengte {
+    als stap > 0 {
+        links 45
+        doe dcr met stap - 1, lengte / wortel 2
+        rechts 90
+        doe dcl met stap - 1, lengte / wortel 2
+        links 45
+    }
+    als stap == 0 {
+        links 45
+        vooruit lengte
+        rechts 90
+        vooruit lengte
+        links 45
+    }
+}
+
+doe dcr met 10, 500
+doe dcl met 10, 500
