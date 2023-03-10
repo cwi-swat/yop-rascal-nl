@@ -1,3 +1,5 @@
+Let op: Deze branch doet het nog niet helemaal goed
+
 # YOP-RASCAL-NL
 
 This project is for Dutch students and teachers, so we continue in Dutch.
