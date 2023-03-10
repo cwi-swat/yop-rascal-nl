@@ -7,15 +7,15 @@ titel: Lesplan voor de Leraar
 * Attitude
    * "Ik kan zelf een programmeertaal bedenken, ontwerpen en maken"
    * "Metaprogrammeren is misschien ingewikkeld, maar het is niet moeilijk en héél leuk"
-   * Omgaan met imperfectie van je eigen bedenksels, en (tijdelijke) frustraties als wat je bedenkt even niet lukt, de aanhouder wint, én om hulp vragen is niet slecht.
+   * Omgaan met imperfectie en frustratie
+   * Om hulp vragen is niet slecht.
    * "Lui én slim"; de computer het werk laten doen.
 * Kennis
    * Nieuwe woorden en begrippen:
-      * metaprogrammeren
-      * vertalerbouw
+      * vertaler: "compiler"
       * pattern matching (patroon herkenning)
       * substitution (vervangen)
-      * syntax
+      * syntax 
       * semantics
    * Programmeertalen maken is een kwestie van _vertalers_ bedenken en maken
    * Rascal is een taal om _vertalers_ mee te maken
@@ -112,7 +112,8 @@ Daarna uitleg:
 * dan acht aan acht, en (misschien) 16 aan 16. even kijken of mensen wel willen!
 * de laatste 1 of 2 verhalen mogen klassikaal
 
-Verhalen vertellen; met heel veel structuur:
+Verhalen vertellen; met héél veel structuur (komt op het scherm):
+
 1. Wat heb je bedacht: laat de "syntax" zien
 2. Waarom heb je dat bedacht? hoe helpt het de programmeur in jouw taal "lui en slim" te zijn?
 3. Vragen van de andere kinderen. Bij 1 en 2 mag er niet onderbroken worden!
@@ -121,6 +122,7 @@ Verhalen vertellen; met heel veel structuur:
 6. Vragen van de andere kinderen. Bij 4 en 5 mag er niet onderbroken worden!
 7. Dan het andere team 1-6
 8. Stemmen: meeste stemmen gelden. De makers mogen meestemmen. Bij gelijkspel doet de leraar eerlijk "kop of munt".
+
 ### Klassikaal oogsten
 
 * Demo van het winnende team/de winnende teams
@@ -128,6 +130,23 @@ Verhalen vertellen; met heel veel structuur:
 * Leerdoelen expliciet maken
 * Vragen hoeveel gelukt is
 * Stickers uitdelen
-## Tijdplanning
+ 
+## Planning
 
-Hier komt de planning van de dag ((TODO))
+
+| Slot        | Onderwerp | Wie/Waar
+| ----        |  ---      |  ---
+| 10:00-10:50 | Inleiding & voorbereiding   | Jurgen/Tijs (L120)
+| 10:50-11:05 | 15 min Pauze | Hierna parallel:
+|             |              |
+| 11:05-11:35 | Voorbereiding Hackathon | Jurgen/Tijs (L120) |
+| 11:05-11:35 | QSoft - Quantum Quest   |  Koen Groenland (L016) |
+|             | uitlooptijd/wissel 10 min |  switch! | 
+| 11:45-12:15 | Voorbereiding Hackathon  |  Jurgen/Tijs (L120) |
+| 11:45-12:15 | QSoft - Quantum Quest |  Koen Groenland  (L016) |
+|             |       | 
+ 12:15-12:45  | Grote Pauze (met uitloop tot 13:00) | Forum |
+|   | | 
+| 13:00- 15.00 | Hackathon + Snacks + Koffie (120) | Jurgen/Tijs (L120)
+|              | Waterval demo's |                               (L120)
+| Einde  | Prijsuitreiking & Herinnering |                       (L120)
