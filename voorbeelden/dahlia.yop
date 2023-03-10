@@ -1,5 +1,5 @@
 pen dikte 3
-herhaal 8 {
+herhaal 8 { 
     rechts 45
     herhaal 6 {
         herhaal 90 {

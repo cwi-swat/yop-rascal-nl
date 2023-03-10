@@ -8,31 +8,34 @@ import ParseTree;
 import Exception;
 
 // de toestand van de schildpad is X, Y en Richting
-real huidigeX = 0.;
-real huidigeY = 0.;
-real huidigeRichting = 0.;
-real huidigePenDikte = 2.;
-Color huidigePenKleur = rgb(0,0,0,1.);
-bool pen = true;
-map[str,real] waarden = ();
+data Toestand =
+  toestand(
+    real huidigeX = 0.,
+    real huidigeY = 0.,
+    real huidigeRichting = 0.,
+    real huidigePenDikte = 2.,
+    Color huidigePenKleur = rgb(0,0,0,1.),
+    bool pen = true,
+    map[str,real] waarden = (),
+    map[str, Tekening] recepten = (),
+    Toestand vorige = toestand()
+  );
+
+Toestand huidigeToestand = toestand();
 
 // richting veranderen kan, maar als je klokje rond bent, begin je weer bij 0
 void veranderRichting(real graden) {
-    huidigeRichting = huidigeRichting + graden;
-    while (huidigeRichting > 360.0)
-        huidigeRichting -= 360;
-    while (huidigeRichting < -360.0)
-        huidigeRichting += 360;
+    huidigeToestand.huidigeRichting = huidigeToestand.huidigeRichting + graden;
+    while (huidigeToestand.huidigeRichting > 360.0)
+        huidigeToestand.huidigeRichting -= 360.0;
+    while (huidigeToestand.huidigeRichting < -360.0)
+        huidigeToestand.huidigeRichting += 360.0;
 }
 
 MiniSVG vertaal(Programma p) {
     // eerst de schildpad terug in de oorsprong
-    huidigeX = 0.;
-    huidigeY = 0.;
-    huidigeRichting = 0.;
-    pen = true;
-    waarden = ();
-
+    huidigeToestand = toestand();
+    
     // dan de lijst van tekeningen vertalen
     return miniSVG(vertaal(p.tekeningen));
 }
@@ -40,38 +43,38 @@ MiniSVG vertaal(Programma p) {
 // 1-voor-1 de teken instructies vertalen
 // de tekening komt alleen in de lijst als de pen `true` is
 list[Element] vertaal(Tekening* tekeningen) 
-    = [e | t <- tekeningen, e := vertaal(t), pen];
+    = [e | t <- tekeningen, e := vertaal(t), huidigeToestand.pen];
 
 Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
     // waar komen we vandaan?
-    vorigeX = huidigeX;
-    vorigeY = huidigeY;
+    vorigeX = huidigeToestand.huidigeX;
+    vorigeY = huidigeToestand.huidigeY;
 
     // en waar gaan we naartoe?
-    huidigeX = huidigeX + cos(radialen(huidigeRichting)) * vertaal(afstand);
-    huidigeY = huidigeY + sin(radialen(huidigeRichting)) * vertaal(afstand);
+    huidigeToestand.huidigeX = huidigeToestand.huidigeX + cos(radialen(huidigeToestand.huidigeRichting)) * vertaal(afstand);
+    huidigeToestand.huidigeY = huidigeToestand.huidigeY + sin(radialen(huidigeToestand.huidigeRichting)) * vertaal(afstand);
 
-    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY, \stroke-width=huidigePenDikte, \stroke=huidigePenKleur));
+    return link(t, line(vorigeX, huidigeToestand.huidigeX, vorigeY, huidigeToestand.huidigeY, \stroke-width=huidigeToestand.huidigePenDikte, \stroke=huidigeToestand.huidigePenKleur));
 }
 
 Element vertaal(t:(Tekening) `naar <Som x> <Som y>`) {
     // waar komen we vandaan?
-    vorigeX = huidigeX;
-    vorigeY = huidigeY;
+    vorigeX = huidigeToestand.huidigeX;
+    vorigeY = huidigeToestand.huidigeY;
 
     // en waar gaan we naartoe?
     huidigeX = vertaal(x);
     huidigeY = vertaal(y);
 
-    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY,  \stroke-width=huidigePenDikte, \stroke=huidigePenKleur));
+    return link(t, line(vorigeX, huidigeToestand.huidigeX, vorigeY, huidigeToestand.huidigeY,  \stroke-width=huidigeToestand.huidigePenDikte, \stroke=huidigeToestand.huidigePenKleur));
 }
 
 Element vertaal(t:(Tekening) `spring <Som afstand>`) {
     // simuleer een sprong door pen op, vooruit, pen neer
 
-    pen = false;
+    huidigeToestand.pen = false;
     vertaal((Tekening) `vooruit <Som afstand>`);
-    pen = true;
+    huidigeToestand.pen = true;
 
     return comment(t);
 }
@@ -87,32 +90,32 @@ Element vertaal(t:(Tekening) `links <Som graden>`) {
 }
 
 Element vertaal(t:(Tekening) `pen op`) {
-    pen = false;
+    huidigeToestand.pen = false;
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen neer`) {
-    pen = true;
+    huidigeToestand.pen = true;
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `<Naam n> = <Som s>`) {
-    waarden["<n>"] = vertaal(s);
+    huidigeToestand.waarden["<n>"] = vertaal(s);
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen dikte <Som s>`) {
-    huidigePenDikte = vertaal(s);
+    huidigeToestand.huidigePenDikte = vertaal(s);
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen kleur <Kleur k>`) {
-    huidigePenKleur = vertaal(k);
+    huidigeToestand.huidigePenKleur = vertaal(k);
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `cirkel <Som diameter>`) 
-    = link(t, circle(huidigeX, huidigeY, vertaal(diameter),  \stroke-width=huidigePenDikte,\stroke=huidigePenKleur));
+    = link(t, circle(huidigeToestand.huidigeX, huidigeToestand.huidigeY, vertaal(diameter),  \stroke-width=huidigeToestand.huidigePenDikte,\stroke=huidigeToestand.huidigePenKleur));
 
 Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`) 
     = move(0., 0., [*vertaal(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
@@ -177,7 +180,7 @@ Color mix(lrel[real parts, Color color] mixture) {
 }
 
 // handige functie om even een commentaar te produceren op basis van de huidige 🐢
-Element comment(Tekening t) = comment("🐢 <t>; x: <huidigeX>, y: <huidigeY>, richting: <huidigeRichting>, pen: <pen> 🐢");
+Element comment(Tekening t) = comment("🐢 <t>; x: <huidigeToestand.huidigeX>, y: <huidigeToestand.huidigeY>, richting: <huidigeToestand.huidigeRichting>, pen: <huidigeToestand.pen> 🐢");
 
 // handige functie om de link op te zoeken bij een tekening
 Element link(Tekening t, Element e) = link(t.src, e);

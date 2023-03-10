@@ -14,6 +14,8 @@ syntax Tekening
     | Naam "=" Som
     | "cirkel" Som diameter
     | "herhaal" Som "{" Tekening* "}"
+    | "recept" Naam naam ("gegeven" {Naam "en"}+ )? "{" Tekening* stappen "}"
+    | "doe" Naam ("met" {Som "en"}+)?
     ;
 
 syntax Som 
@@ -33,10 +35,6 @@ syntax Som
            )
     ;
 
-// Kleur wordt nog nergens gebruikt, maar er is wel
-// een handige vertaling alvast. Dus gebruik `Kleur`
-// in je eigen Syntax uitbreiding en dan kun je de vertaling
-// in Semantiek ook gebruiken
 syntax Kleur
     = "rood"
     | "groen"
