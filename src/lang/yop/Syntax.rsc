@@ -1,6 +1,6 @@
 module lang::yop::Syntax
 
-start syntax Programma = Tekening* tekeningen;
+start syntax Programma = Recept* recepten Tekening* tekeningen;
 
 syntax Tekening
     = "vooruit" Som afstand
@@ -15,8 +15,12 @@ syntax Tekening
     | Naam "=" Som
     | "cirkel" Som diameter
     | "herhaal" Som "{" Tekening* "}"
-    | "recept" Naam naam ("met" {Naam ","}+ )? "{" Tekening* stappen "}"
-    | "doe" Naam ("met" {Som ","}+)?
+    
+    | "doe" Naam recept ("met" {Som ","}+)?
+    ;
+
+syntax Recept 
+    = "recept" Naam naam ("met" {Naam ","}+ )? "{" Tekening* stappen "}"
     ;
 
 syntax Conditie
