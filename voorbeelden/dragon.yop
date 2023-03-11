@@ -32,5 +32,9 @@ recept dcl met stap, lengte {
     }
 }
 
-doe dcr met 10, 500
-doe dcl met 10, 500
+recept draak met diepte, lengte {
+    doe dcr met diepte, lengte
+    doe dcl met diepte, lengte
+}
+
+doe draak met 7, 100
