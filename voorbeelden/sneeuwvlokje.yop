@@ -1,4 +1,4 @@
-recept sneeuwvlokkant met lengte,diepte {
+recept sneeuwvlokkant met lengte, diepte {
     als diepte == 0 {
         vooruit lengte 
     }
@@ -20,7 +20,7 @@ recept sneeuwvlok met lengte, diepte {
     }
 }
 
-doe sneeuwvlok met 200, 4
+doe sneeuwvlok met 200, 10
 
 // TO SNOWFLAKE.SIDE :LENGTH :DEPTH
 

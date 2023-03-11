@@ -82,13 +82,10 @@ Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
 
 
 Element vertaal(t:(Tekening) `als <Conditie c> { <Tekening* tekeningen> }`) {
-    println("testen van <c>");
     if (vertaal(c)) {
-        println("<c> was waar");
         return move(0.0, 0.0, [vertaal(x) | x <- tekeningen]);
     }
     else {
-        println("<c> was onwaar");
         return comment("conditie <c> was onwaar");
     }
 }
@@ -98,8 +95,11 @@ Element vertaal(t:(Tekening) `doe <Naam n>`) {
         // maak een nieuwe lege toestand aan
         huidigeWerk = taak((), huidigeWerk);
 
+        // doe niets als het recept niet bestaat
+        Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
+
         // gewoon het recept stap-voor-stap vertalen
-        return move(0.0, 0.0, [ vertaal(stap) | stap <- zoekRecept("<n>").stappen]);
+        return move(0.0, 0.0, [ vertaal(stap) | stap <- recept.stappen]);
     }
     catch value e: {
         throw e;
@@ -114,7 +114,7 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
     try {
         // maak een nieuwe lege toestand aan die een clone is van de vorige
         // maak een nieuwe lege toestand aan
-        huidigeWerk = taak((), huidigeWerk);
+        nieuweWerk = taak((), huidigeWerk);
 
         // doe niets als het recept niet bestaat
         Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
@@ -124,15 +124,14 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
             
             for (Naam a <- parameters) {
                 // als iemand een argument vergeet wordt het 0
-                huidigeWerk.waarden["<a>"] = vertaal(argumenten[i]?0.0);
+                nieuweWerk.waarden["<a>"] = vertaal(argumenten[i]? (Som) `0`);
                 i=i+1;
             }
         }
 
-        println("bindings <huidigeWerk.waarden>");
+        huidigeWerk = nieuweWerk;
 
         // gewoon het recept stap-voor-stap vertalen
-        
         return move(0.0, 0.0, [ vertaal(stap) | stap <- recept.stappen]);
     }
     catch e: throw e;
@@ -187,7 +186,7 @@ Element vertaal(t:(Tekening) `pen neer`) {
 }
 
 Element vertaal(t:(Tekening) `<Naam n> = <Som s>`) {
-    huidigeWerkwaarden["<n>"] = vertaal(s);
+    huidigeWerk.waarden["<n>"] = vertaal(s);
     return comment(t);
 }
 
