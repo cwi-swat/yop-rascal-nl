@@ -5,9 +5,9 @@ import lang::miniSVG::Syntax;
 // Dit vertaalt een-op-een een lijst van miniSVG teken-instructies naar de textuele XML vorm die "SVG" heet.
 // Én het regelt de assen (van waar tot waar (-1000 tot 1000), en de richting (y-as omhoog en x-as naar rechts))
 str toSVG(miniSVG(list[Element] elements))
-    = "\<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1000 1000\" preserveAspectRatio=\"xMidYMid slice\" height=\"100%\" \>
+    = "\<svg id=\"yop\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1000 1000\" preserveAspectRatio=\"xMidYMid slice\" height=\"100%\" \>
       '\<rect x=\"0\" y=\"0\" width=\"1000\" height=\"1000\" style=\"fill: lightyellow\"/\>
-      '\<g transform=\"matrix(1 0 0 -1 500 500)\" \>
+      '\<g id=\"assenstelsel\" transform=\"matrix(1 0 0 -1 500 500)\" \>
       '    <for (e <- elements) {>
       '    <toSVG(e)><}>
       '    \<line x1=\"0\" y1=\"-500\" x2=\"0\" y2=\"500\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
