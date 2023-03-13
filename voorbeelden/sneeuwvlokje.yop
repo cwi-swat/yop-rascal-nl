@@ -20,6 +20,7 @@ recept sneeuwvlok met lengte, diepte {
     }
 }
 
-doe sneeuwvlok met 200, 3
+pen dikte 1/10
+doe sneeuwvlok met 200, 5
  
 // SNOWFLAKE 200 4
