@@ -49,8 +49,13 @@ str pagina(str svg)
         '               margin: 0;
         '           }
         '       \</style\>
+        '       \<script src=\"https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js\"\>\</script\>
         '   \</head\>
         '   \<body\>
         '       <svg>
+        '       \<script\>
+        '           var svgElement = document.getElementById(\'assenstelsel\');
+        '           panzoom(svgElement);
+        '       \</script\>
         '   \<body\>
         '\<html\>";
