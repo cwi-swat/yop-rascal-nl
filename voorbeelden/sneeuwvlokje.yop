@@ -1,5 +1,6 @@
 recept sneeuwvlokkant met lengte, diepte {
     als diepte == 0 {
+        pen kleur meng 5 + random 10 delen blauw met 1 + random 10 delen rood met 1 + random 10 delen transparant
         vooruit lengte 
     }
     als diepte != 0 {
