@@ -15,7 +15,6 @@ syntax Tekening
     | Naam "=" Som
     | "cirkel" Som diameter
     | "herhaal" Som "{" Tekening* "}"
-    
     | "doe" Naam recept ("met" {Som ","}+)?
     ;
 
