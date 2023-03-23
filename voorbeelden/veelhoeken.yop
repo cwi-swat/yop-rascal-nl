@@ -1,11 +1,4 @@
-// Regelmatige veelhoeken zijn geinig. Driehoeken, vierkanten
-// of zeshoeken teken je zelf makkelijk, maar voor hogere
-// aantallen is een YOP programma wel zo handig. Hoe hoger
-// het aantal hoeken, hoe meer een regelmatig veelhoek op
-// een cirkel gaat lijken.
-
-// Hier stel je het aantal hoeken in:
-hoeken = 10
+hoeken = 9
 
 // Dit is een mooie schatting voor de lengte van de zijdes,
 // dat ze niet te kort zijn en ook niet te lang

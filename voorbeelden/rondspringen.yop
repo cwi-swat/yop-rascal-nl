@@ -1,9 +1,2 @@
-herhaal 50 {
-    x = random 500 - 250
-    y = random 500 - 250
-    naar x y
-    pen kleur meng
-        // 10 delen zwart met
-        20 delen wit met
-        10 delen rood
-}
+naar 50 50
+ 

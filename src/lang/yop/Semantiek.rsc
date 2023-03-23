@@ -116,15 +116,18 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
         // maak een nieuwe lege toestand aan
         nieuweWerk = taak((), huidigeWerk);
 
+        // workaround om bug in concrete list indexing
+        args = [a | a <- argumenten];
+
         // doe niets als het recept niet bestaat
         Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
-
+   
         if ((Recept) `recept <Naam n> met <{Naam ","}+ parameters> { <Tekening* _> }` := recept) {
             int i = 0;
             
             for (Naam a <- parameters) {
                 // als iemand een argument vergeet wordt het 0
-                nieuweWerk.waarden["<a>"] = vertaal(argumenten[i]? (Som) `0`);
+                nieuweWerk.waarden["<a>"] = vertaal(args[i]? (Som) `0`);
                 i=i+1;
             }
         }

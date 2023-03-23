@@ -1,3 +1,10 @@
+recept randomkleur {
+    pen kleur meng random 10 delen rood
+               met random 10 delen groen 
+               met random 10 delen blauw
+               met random 10 delen transparant
+}
+
 recept dcr met stap, lengte {
     als stap > 0 {
         rechts 45
@@ -25,6 +32,7 @@ recept dcl met stap, lengte {
     }
     als stap == 0 {
         links 45
+        doe randomkleur
         vooruit lengte
         rechts 90
         vooruit lengte
@@ -37,4 +45,4 @@ recept draak met diepte, lengte {
     doe dcl met diepte, lengte
 }
 
-doe draak met 7, 100
+doe draak met 8, 100
