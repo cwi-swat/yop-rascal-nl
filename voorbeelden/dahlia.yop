@@ -7,7 +7,7 @@ recept kleur met rood, groen, blauw {
         random 15 delen transparant 
 }
 
-pen dikte 1
+pen dikte 3
 
 herhaal 8 { 
     rechts 45
