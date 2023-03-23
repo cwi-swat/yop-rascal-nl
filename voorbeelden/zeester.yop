@@ -4,4 +4,3 @@ herhaal 3600 {
     rechts i + (1 / 10)
     i = i + 1
 }
- 
