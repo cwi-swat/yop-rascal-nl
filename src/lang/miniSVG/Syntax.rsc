@@ -1,7 +1,7 @@
 module lang::miniSVG::Syntax
 
 data MiniSVG 
-    = miniSVG(list[Element] elements);
+    = miniSVG(list[Element] elements, str title="plaatje");
 
 data Element(Color stroke=rgb(0,0,0,1.), real \stroke-width=2., Color fill=rgb(230,230,230,1.), real \fill-opacity=0.8, real \stroke-opacity=1.)
     = circle(real cx, real cy, real r)

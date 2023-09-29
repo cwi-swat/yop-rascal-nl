@@ -34,7 +34,7 @@ MiniSVG vertaal(Programma p) {
     waarden = ();
 
     // dan de lijst van tekeningen vertalen
-    return miniSVG(vertaal(p.tekeningen));
+    return miniSVG(vertaal(p.tekeningen), title=p@\loc[extension=""].file);
 }
 
 // 1-voor-1 de teken instructies vertalen

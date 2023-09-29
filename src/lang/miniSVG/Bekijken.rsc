@@ -12,12 +12,12 @@ void bekijken(MiniSVG plaatje) {
     echteSVG = toSVG(plaatje);
 
     // dan laten zien
-    bekijkSVG(echteSVG);
+    bekijkSVG(echteSVG, id=plaatje.title);
 }
 
 // dit start een web server en een web viewer op met het plaatje er in:
 private void bekijkSVG(str svg, str id="miniSVG") {
-    showInteractiveContent(content(id, webServer(svg)));
+    showInteractiveContent(content(id, webServer(svg)), viewColumn=2, title=id);
 }
 
 // dit is een kleine webserver die twee dingen doet:
