@@ -3,7 +3,7 @@ ports:
     onOpen: ignore
 vscode:
   extensions:
-    - http://jurgen.vinju.org/downloads/rascalmpl-0.6.4-head.vsix
+    - usethesource.rascalmpl@0.9.1
 tasks:
   - name: "open Gebruiker.rsc"
     init: gp open /workspace/yop-rascal-nl/src/lang/yop/Gebruiker.rsc
