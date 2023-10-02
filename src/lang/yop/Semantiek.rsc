@@ -30,6 +30,7 @@ MiniSVG vertaal(Programma p) {
     huidigeX = 0.;
     huidigeY = 0.;
     huidigeRichting = 0.;
+    huidigePenKleur = rgb(0,0,0,1.);
     pen = true;
     waarden = ();
 

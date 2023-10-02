@@ -8,5 +8,11 @@ herhaal 30 {
     // dan draaien we wat naar rechts
     rechts 20
     
+    // we kliezen een andere kleur
+    pen kleur meng 
+        random 50 delen wit met 
+        random 50 delen rood met 
+        random 50 delen blauw
+
     // en gaan we nog 29 keer alles overnieuw
 }
