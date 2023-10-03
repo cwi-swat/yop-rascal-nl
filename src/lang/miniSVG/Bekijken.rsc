@@ -54,8 +54,10 @@ str pagina(str svg)
         '   \<body\>
         '       <svg>
         '       \<script\>
-        '           var svgElement = document.getElementById(\'assenstelsel\');
-        '           panzoom(svgElement);
+        '           document.addEventListener(\"DOMContentLoaded\", function() {
+        '               var svgElement = document.getElementById(\'yop\');
+        '               panzoom(svgElement);
+        '           });
         '       \</script\>
         '   \<body\>
         '\<html\>";
