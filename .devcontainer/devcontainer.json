@@ -1,5 +1,6 @@
 {
     "name" : "Your Own Programming Language",
+    "image" : "mcr.microsoft.com/devcontainers/base:ubuntu",
     "postStartCommand": ".devcontainer/open-ports.sh && code src/lang/yop/Gebruiker.rs",
     "customizations": {
         "vscode": {
