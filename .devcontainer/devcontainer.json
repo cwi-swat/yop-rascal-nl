@@ -1,0 +1,11 @@
+{
+    "name" : "Your Own Programming Language",
+    "postStartCommand": ".devcontainer/open-ports.sh && code src/lang/yop/Gebruiker.rs",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "usethesource.rascalmpl"
+            ]
+        }
+    }
+}

@@ -1,9 +1,0 @@
-ports:
-  - port: 9000-12000
-    onOpen: ignore
-vscode:
-  extensions:
-    - usethesource.rascalmpl@0.9.1
-tasks:
-  - name: "open Gebruiker.rsc"
-    init: gp open /workspace/yop-rascal-nl/src/lang/yop/Gebruiker.rsc
