@@ -58,7 +58,7 @@ value exec(run(Programma p)) {
 value exec(mini(Programma p)) {
     try {
         MiniSVG mini = vertaal(p);
-        bestand = (p.src.top.parent + "svg" + p.src.top.file)[extension="mini"];
+        bestand = (p.src.top.parent.parent + "resultaten" + "mini" + p.src.top.file)[extension="mini"];
         iprintToFile(bestand, mini);
         edit(bestand);
         return ("result": true);
@@ -72,7 +72,7 @@ value exec(mini(Programma p)) {
 value exec(svg(Programma p)) {
     try {
         str svg = toSVG(vertaal(p));
-        bestand = (p.src.top.parent + "svg" + p.src.top.file)[extension="svg"];
+        bestand = (p.src.top.parent.parent + "resultaten" + "svg" + p.src.top.file)[extension="svg"];
         writeFile(bestand, svg);
         edit(bestand);
         return ("result": true);

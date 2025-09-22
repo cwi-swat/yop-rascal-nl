@@ -20,9 +20,9 @@ map[str,real] waarden = ();
 void veranderRichting(real graden) {
     huidigeRichting = huidigeRichting + graden;
     while (huidigeRichting > 360.0)
-        huidigeRichting -= 360;
+        huidigeRichting -= 360.0;
     while (huidigeRichting < -360.0)
-        huidigeRichting += 360;
+        huidigeRichting += 360.0;
 }
 
 MiniSVG vertaal(Programma p) {
@@ -35,12 +35,12 @@ MiniSVG vertaal(Programma p) {
     waarden = ();
 
     // dan de lijst van tekeningen vertalen
-    return miniSVG(vertaal(p.tekeningen), title=p@\loc[extension=""].file);
+    return miniSVG(vertaalMeer(p.tekeningen), title=p@\loc[extension=""].file);
 }
 
 // 1-voor-1 de teken instructies vertalen
 // de tekening komt alleen in de lijst als de pen `true` is
-list[Element] vertaal(Tekening* tekeningen) 
+list[Element] vertaalMeer(Tekening* tekeningen) 
     = [e | t <- tekeningen, e := vertaal(t), pen];
 
 Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
@@ -116,7 +116,7 @@ Element vertaal(t:(Tekening) `cirkel <Som diameter>`)
     = link(t, circle(huidigeX, huidigeY, vertaal(diameter),  \stroke-width=huidigePenDikte,\stroke=huidigePenKleur));
 
 Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`) 
-    = move(0., 0., [*vertaal(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
+    = move(0., 0., [*vertaalMeer(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
 
 // uitrekenen van sommen gaat door stap voor stap vertalen van
 // yop sommen naar Rascal sommen:

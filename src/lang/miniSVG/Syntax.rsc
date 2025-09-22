@@ -5,7 +5,7 @@ data MiniSVG
 
 data Element(Color stroke=rgb(0,0,0,1.), real \stroke-width=2., Color fill=rgb(230,230,230,1.), real \fill-opacity=0.8, real \stroke-opacity=1.)
     = circle(real cx, real cy, real r)
-    | rectangle(real x, real y, real width, real height, real rx=0, real ry=0)
+    | rectangle(real x, real y, real width, real height, real rx=0.0, real ry=0.0)
     | ellipse(real cx, real cy, real rx, real ry)
     | line(real x1, real x2, real y1, real y2)
     | polyline(lrel[real x, real y] poreals)

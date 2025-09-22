@@ -33,10 +33,6 @@ syntax Som
            )
     ;
 
-// Kleur wordt nog nergens gebruikt, maar er is wel
-// een handige vertaling alvast. Dus gebruik `Kleur`
-// in je eigen Syntax uitbreiding en dan kun je de vertaling
-// in Semantiek ook gebruiken
 syntax Kleur
     = "rood"
     | "groen"
@@ -57,20 +53,6 @@ layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "--";
 
 // Hieronder ideeen voor mogelijke uitbreidingen:
 
-// TE DOEN: pen dikte instellen.
-// Kijk bij de vertaling van `naar` hoe je dit zou kunnen doen voor pendikte.
-//   * er moet een `real huidigePenDikte = 1.0` bij komen
-//   * die variabele moet veranderen als `pen dikte <Som s>` langs komt tijdens `vertaal`
-//   * ALLES wat iets tekent in miniSVG moet die variabele gaan vertalen naar `\stroke-width` in miniSVG. Bijvoorbeeld: `circle(\stroke-width=huidigePenDikte)`
-// syntax Tekening = "pen" "dikte" Som;
-
-// TE DOEN: pen kleur instellen
-// Kijk bij de vertaling van `naar` hoe je dit zou kunnen doen voor pendikte.
-//   * er moet een `Color huidigePenKleur = 1.0` bij komen
-//   * die variabele moet veranderen als `pen kleurr <Kleur s>` langs komt tijdens `vertaal`
-//   * ALLES wat iets tekent in miniSVG moet die variabele gaan vertalen naar `\stroke-width` in miniSVG. Bijvoorbeeld: `circle(\stroke-width=huidigePenDikte)`
- // syntax Tekening = "pen" "kleur" Kleur;
-
 // TE DOEN: Letters kunnen schrijven:
 // syntax Tekening = "schrijf" Tekst;
 // lexical Tekst = ![\n]+ !>> ![\n];
@@ -85,6 +67,6 @@ layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "--";
 // syntax Tekening = "spiegel" "in" ("x"|"y") "{" Tekening* "}";
 
 // LASTIG: hele tekening kopieren en gedraaid terugplakken
-// Ga je twee de vertaling maken vanuit een andere schildpadpositie? Of ga je de miniSVG tekening kopieren en
-// daarin absolute coordinaten wijzigen? Wees lui en slim!
+// Ga je de vertaling van dezelfde tekening nog eens maken vanuit een andere schildpadpositie? 
+// Of ga je de miniSVG tekening kopieren en daarin absolute coordinaten wijzigen? Wees lui en slim!
 // syntax Tekening = "draai" Getal aantal "keer" "{" Tekening* "}";
