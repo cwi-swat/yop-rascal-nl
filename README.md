@@ -2,15 +2,11 @@
 
 This project is for Dutch students and teachers, so we continue in Dutch.
 
-<a href="https://gitpod.io/#https://github.com/cwi-swat/yop-rascal-nl">
-  <img
-    src="https://img.shields.io/badge/Probeer%20met-Gitpod-908a85?logo=gitpod"
-    alt="Use with Gitpod"
-  />
-</a>
+Om dit te kunnen proberen moet je eerst Microsoft VSCode installeren met de Rascal extensie (allebei gratis).
 
 Dit is een klein projectje om snel te leren hoe je je eigen programmeertaal kunt maken.
-De doelgroep is middelbare school leerlingen.
+De doelgroep is middelbare school leerlingen. Maar je kunt ook lekker gewoon programmeren
+in een taal die gemaakt is om creatieve tekeningen te maken.
 
 * In `doc/Leraar.md` staat het lesplan.
 * In `doc/Leerling.md` staan de opdrachten.
