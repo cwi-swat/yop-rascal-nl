@@ -16,7 +16,7 @@ import ParseTree;
 import IO;
 
 PathConfig pcfg = getProjectPathConfig(|project://yop-rascal-nl|);
-Language yopLang = language(pcfg, "YOP", "yop", "lang::yop::Gebruiker", "contribs");
+Language yopLang = language(pcfg, "YOP", {"yop"}, "lang::yop::Gebruiker", "contribs");
 
 data Command
     = run(Programma p)
@@ -25,23 +25,23 @@ data Command
     ;
 
 set[LanguageService] contribs() = {
-    parser(start[Programma] (str program, loc src) {
+    parsing(start[Programma] (str program, loc src) {
         return parse(#start[Programma], program, src);
     }),
 
-    lenses(rel[loc src, Command lens] (start[Programma] p) {
-        return {
+    codeLens(lrel[loc src, Command lens] (start[Programma] p) {
+        return [
             <p.src, run (p.top, title="Bekijk plaatje")>,
             <p.src, mini(p.top, title="Bekijk MiniSVG code")>,
             <p.src, svg(p.top,  title="Bekijk SVG code")>
-        };
+        ];
     }),
 
-    summarizer(Summary (loc _, start[Programma] p) {
+    analysis(Summary (loc _, start[Programma] p) {
         return controleer(p.top);
     }),
 
-    executor(exec)
+    execution(exec)
 };
 
 value exec(run(Programma p)) {
