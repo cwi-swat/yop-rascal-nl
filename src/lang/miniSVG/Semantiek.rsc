@@ -53,7 +53,7 @@ str toSVG(rotate(real angle, list[Element] elements))
       '\</g\>";
 
 str toSVG(link(loc src, Element element)) 
-    = "\<a href=\"#\" onclick=\"fetch(\'/editor?\' + new URLSearchParams({src: \'<escape("<src>", ( "\<" : "&lt;", "\>" : "&gt;" ))>\'}));\"\>
+    = "\<a href=\"#\" onclick=\"fetch(\'/editor?\' + new URLSearchParams({ src: atob(\'<toBase64("<src>")>\') }));\"\>
       '  <toSVG(element)>
       '\</a\>";
 
