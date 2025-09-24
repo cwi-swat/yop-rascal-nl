@@ -17,7 +17,7 @@ void bekijken(MiniSVG plaatje) {
 
 // dit start een web server en een web viewer op met het plaatje er in:
 private void bekijkSVG(str svg, str id="miniSVG") {
-    showInteractiveContent(content(id, webServer(svg)), viewColumn=1, title=id);
+    showInteractiveContent(content(id, webServer(svg)), viewColumn=2, title=id);
 }
 
 // dit is een kleine webserver die twee dingen doet:
@@ -32,7 +32,7 @@ Response (Request) webServer(str svg) {
     }
 
     // hier sturen we de hele pagina met het plaatje er alvast in
-    default Response reply(get(_)) {
+    default Response reply(get(_)) { 
         return response(pagina(svg));
     }
 

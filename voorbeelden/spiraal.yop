@@ -7,4 +7,5 @@ herhaal (2 x hoek) / 5 {
     vooruit 30 x sin lengte
     hoek = hoek - 5
     lengte = lengte + (1/10)
+    pen kleur meng 5 delen blauw met random 10 + 1 delen wit
 }
