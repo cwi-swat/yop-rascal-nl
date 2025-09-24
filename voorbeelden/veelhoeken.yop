@@ -14,8 +14,11 @@ kant   = 500 / hoeken
 pen dikte 5
 herhaal hoeken { // er zijn zoveel streepjes te tekenen
     vooruit kant
-    rechts 360 / hoeken // na elk streepje moeten we zoveel draaien
-    pen kleur meng 5 delen rood met random 5 + 1 delen transparant
+    links 360 / hoeken // na elk streepje moeten we zoveel draaien
+    
+    pen kleur 
+        meng 5 delen rood met 
+        random 5 + 1 delen transparant
 }
 
 // aan het eind kom je precies uit waar je begonnen was.
