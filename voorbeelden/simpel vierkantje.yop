@@ -1,6 +1,3 @@
-// zo gaat het prima
-
-pen kleur zwart
 
 vooruit 100
 rechts 90
@@ -9,26 +6,3 @@ rechts 90
 vooruit 100
 rechts 90
 vooruit 100
-rechts 90
-
-// maar dit is handiger
-
-pen kleur rood
-spring 120 
-
-herhaal 4 {
-    vooruit 100
-    rechts 90
-}
-
-// en hier spelen met letter formules:
-pen kleur blauw
-spring 120 
-
-afstand = 100
-hoek = 60
-
-herhaal 360 / hoek {
-    vooruit afstand
-    rechts hoek
-}

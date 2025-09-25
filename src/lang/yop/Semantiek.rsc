@@ -6,33 +6,43 @@ import String;
 import util::Math;
 import ParseTree;
 import Exception;
+import IO;
 
-// de toestand van de schildpad is X, Y en Richting
-real huidigeX = 0.;
-real huidigeY = 0.;
-real huidigeRichting = 0.;
-real huidigePenDikte = 2.;
-Color huidigePenKleur = rgb(0,0,0,1.);
-bool pen = true;
-map[str,real] waarden = ();
+map[str, Recept] recepten = ();
+
+data Werk(
+    map[str,real] waarden = (),
+    real x = 0.,
+    real y = 0.,
+    real richting = 90.0, // "omhoog"
+    real penDikte = 2.,
+    Color penKleur = rgb(0,0,0,1.),
+    bool pen = true)
+    = hoofdtaak()
+    | taak(Werk vorige)
+    ;
+
+Werk huidigeWerk = hoofdtaak();
 
 // richting veranderen kan, maar als je klokje rond bent, begin je weer bij 0
-void veranderRichting(real graden) {
-    huidigeRichting = huidigeRichting + graden;
-    while (huidigeRichting > 360.0)
-        huidigeRichting -= 360.0;
-    while (huidigeRichting < -360.0)
-        huidigeRichting += 360.0;
+Werk veranderRichting(Werk taak, real graden) {
+    taak.richting = taak.richting + graden;
+    while (taak.richting > 360.0)
+        taak.richting -= 360.0;
+    while (taak.richting < -360.0)
+        taak.richting += 360.0;
+
+    return taak;
 }
 
 MiniSVG vertaal(Programma p) {
-    // eerst de schildpad terug in de oorsprong
-    huidigeX = 0.;
-    huidigeY = 0.;
-    huidigeRichting = 0.;
-    huidigePenKleur = rgb(0,0,0,1.);
-    pen = true;
-    waarden = ();
+    huidigeWerk = hoofdtaak();
+    recepten=();
+
+    // dan recepten registreren
+    for (r <- p.recepten) {
+        registreer(r);
+    }
 
     // dan de lijst van tekeningen vertalen
     return miniSVG(vertaalMeer(p.tekeningen), title=p@\loc[extension=""].file);
@@ -41,82 +51,166 @@ MiniSVG vertaal(Programma p) {
 // 1-voor-1 de teken instructies vertalen
 // de tekening komt alleen in de lijst als de pen `true` is
 list[Element] vertaalMeer(Tekening* tekeningen) 
-    = [e | t <- tekeningen, e := vertaal(t), pen];
+    = [e | t <- tekeningen, e := vertaal(t), huidigeWerk.pen];
+
+void registreer(t:(Recept) `recept <Naam n> { <Tekening* _> }`) {
+    recepten["<n>"] = t;
+}
+
+void registreer(t:(Recept) `recept <Naam n> met <{Naam ","}+ _> { <Tekening* _> }`) {
+    recepten["<n>"] = t;
+}
 
 Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
     // waar komen we vandaan?
-    vorigeX = huidigeX;
-    vorigeY = huidigeY;
+    vorigeX = huidigeWerk.x;
+    vorigeY = huidigeWerk.y;
 
     // en waar gaan we naartoe?
-    huidigeX = huidigeX + cos(radialen(huidigeRichting)) * vertaal(afstand);
-    huidigeY = huidigeY + sin(radialen(huidigeRichting)) * vertaal(afstand);
+    huidigeWerk.x = huidigeWerk.x + cos(radialen(huidigeWerk.richting)) * vertaal(afstand);
+    huidigeWerk.y = huidigeWerk.y + sin(radialen(huidigeWerk.richting)) * vertaal(afstand);
 
-    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY, \stroke-width=huidigePenDikte, \stroke=huidigePenKleur));
+    return link(t, line(vorigeX, huidigeWerk.x, vorigeY, huidigeWerk.y, \stroke-width=huidigeWerk.penDikte, \stroke=huidigeWerk.penKleur));
 }
 
 Element vertaal(t:(Tekening) `naar <Som x> <Som y>`) {
     // waar komen we vandaan?
-    vorigeX = huidigeX;
-    vorigeY = huidigeY;
+    vorigeX = huidigeWerk.x;
+    vorigeY = huidigeWerk.y;
 
     // en waar gaan we naartoe?
-    huidigeX = vertaal(x);
-    huidigeY = vertaal(y);
+    huidigeWerk.x = vertaal(x);
+    huidigeWerk.y = vertaal(y);
 
-    return link(t, line(vorigeX, huidigeX, vorigeY, huidigeY,  \stroke-width=huidigePenDikte, \stroke=huidigePenKleur));
+    return link(t, line(vorigeX, huidigeWerk.x, vorigeY, huidigeWerk.y,  \stroke-width=huidigeWerk.penDikte, \stroke=huidigeWerk.penKleur));
 }
 
 Element vertaal(t:(Tekening) `spring <Som afstand>`) {
     // simuleer een sprong door pen op, vooruit, pen neer
 
-    pen = false;
+    huidigeWerk.pen = false;
     vertaal((Tekening) `vooruit <Som afstand>`);
-    pen = true;
+    huidigeWerk.pen = true;
 
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `rechts <Som graden>`) {
-    veranderRichting(-1 * vertaal(graden));
+    huidigeWerk = veranderRichting(huidigeWerk, -1 * vertaal(graden));
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `links <Som graden>`) {
-    veranderRichting(vertaal(graden));
+    huidigeWerk = veranderRichting(huidigeWerk, vertaal(graden));
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen op`) {
-    pen = false;
+    huidigeWerk.pen = false;
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen neer`) {
-    pen = true;
+    huidigeWerk.pen = true;
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `<Naam n> = <Som s>`) {
-    waarden["<n>"] = vertaal(s);
+    huidigeWerk.waarden["<n>"] = vertaal(s);
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen dikte <Som s>`) {
-    huidigePenDikte = vertaal(s);
+    huidigeWerk.penDikte = vertaal(s);
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `pen kleur <Kleur k>`) {
-    huidigePenKleur = vertaal(k);
+    huidigeWerk.penKleur = vertaal(k);
     return comment(t);
 }
 
 Element vertaal(t:(Tekening) `cirkel <Som diameter>`) 
-    = link(t, circle(huidigeX, huidigeY, vertaal(diameter),  \stroke-width=huidigePenDikte,\stroke=huidigePenKleur));
+    = link(t, circle(huidigeWerk.x, huidigeWerk.y, vertaal(diameter),  \stroke-width=huidigeWerk.penDikte,\stroke=huidigeWerk.penKleur));
 
 Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`) 
     = move(0., 0., [*vertaalMeer(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
+
+Element vertaal(t:(Tekening) `als <Conditie c> { <Tekening* tekeningen> }`) {
+    if (vertaal(c)) {
+        return move(0.0, 0.0, [vertaal(x) | x <- tekeningen]);
+    }
+    else {
+        return comment("conditie <c> was onwaar");
+    }
+}
+
+Element vertaal(t:(Tekening) `doe <Naam n>`) {
+    try {
+        // maak een nieuwe lege toestand aan
+        nieuweWerk = taak(huidigeWerk, 
+            x = huidigeWerk.x, 
+            y = huidigeWerk.y, 
+            penDikte=huidigeWerk.penDikte, 
+            penKleur=huidigeWerk.penKleur,
+            pen=huidigeWerk.pen);
+    
+        huidigeWerk = nieuweWerk;
+
+        // doe niets als het recept niet bestaat
+        Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
+
+        // gewoon het recept stap-voor-stap vertalen
+        return move(0.0, 0.0, [ vertaal(stap) | stap <- recept.stappen]);
+    }
+    catch e:42: {
+        throw e;
+    }
+    finally {
+        // oude toestand wordt weer de huidige toestand, maar wel met de X en de Y en de R waar we gebleven waren
+        // huidigeWerk.vorige.penKleur = huidigeWerk.penKleur;
+        huidigeWerk = huidigeWerk.vorige;
+    }
+}
+
+Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
+    
+    // maak een nieuwe lege toestand aan die een clone is van de vorige
+    // maak een nieuwe lege toestand aan
+    nieuweWerk = taak(huidigeWerk, 
+            x = huidigeWerk.x, 
+            y = huidigeWerk.y, 
+            penDikte=huidigeWerk.penDikte, 
+            penKleur=huidigeWerk.penKleur,
+            pen=huidigeWerk.pen);
+
+    // workaround om bug in concrete list indexing
+    args = [a | a <- argumenten];
+
+    // doe niets als het recept niet bestaat
+    Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
+
+    if ((Recept) `recept <Naam n> met <{Naam ","}+ parameters> { <Tekening* _> }` := recept) {
+        int i = 0;
+
+        for (Naam a <- parameters) {
+            nieuweWerk.waarden = nieuweWerk.waarden? ? nieuweWerk.waarden : ();
+            // als iemand een argument vergeet wordt het 0
+            nieuweWerk.waarden["<a>"] = vertaal(args[i]? (Som) `0`);
+            i=i+1;
+        }
+    }
+
+    try {
+        // huidigeWerk.vorige.penKleur = huidigeWerk.penKleur;
+        huidigeWerk = nieuweWerk;
+        return move(0.0, 0.0, vertaalMeer(recept.stappen));
+    }
+    catch e:42: throw e;
+    finally {
+        huidigeWerk = huidigeWerk.vorige;
+    }
+}
 
 // uitrekenen van sommen gaat door stap voor stap vertalen van
 // yop sommen naar Rascal sommen:
@@ -134,13 +228,24 @@ real vertaal((Som) `<Som a> / <Som b>`) {
     catch ArithmeticException("Division by zero"): 
         throw b.src;
 } 
-real vertaal((Som) `<Naam n>`)          = waarden["<n>"]?0.;
+real vertaal((Som) `<Naam n>`)          = huidigeWerk.waarden["<n>"]?0.;
 real vertaal((Som) `(<Som s>)`)         = vertaal(s);
 
 real vertaal((Som) `random <Som w>`) = 1. * arbInt(round(vertaal(w)));
 
 // van syntax naar Rascal `int` getallen waar we mee kunnen rekenen
 real vertaal(Getal g) = 1. * toInt("<g>");
+
+bool vertaal((Conditie) `<Som l> == <Som r>`) = vertaal(l) == vertaal(r);
+bool vertaal((Conditie) `<Som l> != <Som r>`) = vertaal(l) != vertaal(r);
+bool vertaal((Conditie) `<Som l> \<= <Som r>`) = vertaal(l) <= vertaal(r);
+bool vertaal((Conditie) `<Som l> \>= <Som r>`) = vertaal(l) >= vertaal(r);
+bool vertaal((Conditie) `<Som l> \< <Som r>`) = vertaal(l) < vertaal(r);
+bool vertaal((Conditie) `<Som l> \> <Som r>`) = vertaal(l) > vertaal(r);
+bool vertaal((Conditie) `(<Conditie c>)`) = vertaal(c);
+bool vertaal((Conditie) `niet <Conditie c>`) = !vertaal(c);
+bool vertaal((Conditie) `<Conditie l> en <Conditie r>`) = vertaal(l) && vertaal(r);
+bool vertaal((Conditie) `<Conditie l> of <Conditie r>`) = vertaal(l) || vertaal(r);
 
 // er is alvast een vertaling voor kleuren, maar die wordt nog nergens
 // gebruikt. Bedenk zelf een manier om kleuren te gebruiken in YOP!
@@ -178,7 +283,7 @@ Color mix(lrel[real parts, Color color] mixture) {
 }
 
 // handige functie om even een commentaar te produceren op basis van de huidige 🐢
-Element comment(Tekening t) = comment("🐢 <t>; x: <huidigeX>, y: <huidigeY>, richting: <huidigeRichting>, pen: <pen> 🐢");
+Element comment(Tekening t) = comment("🐢 <t>; x: <huidigeWerk.x>, y: <huidigeWerk.y>, richting: <huidigeWerk.richting>, pen: <huidigeWerk.pen>, penDikte: <huidigeWerk.penDikte> 🐢");
 
 // handige functie om de link op te zoeken bij een tekening
 Element link(Tekening t, Element e) = link(t.src, e);

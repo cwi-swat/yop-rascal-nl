@@ -1,27 +1,21 @@
 // Regelmatige veelhoeken zijn geinig. Driehoeken, vierkanten
 // of zeshoeken teken je zelf makkelijk, maar voor hogere
-// aantallen is een YOP programma wel zo handig. Hoe hoger
-// het aantal hoeken, hoe meer een regelmatig veelhoek op
+// aantallen is een YOP recept wel zo handig. 
+
+// Geinig: Hoe hoger het aantal hoeken, hoe meer een regelmatig veelhoek op
 // een cirkel gaat lijken.
+  
+recept veelhoek met hoeken, stift {
+    kant = 500 / hoeken       // schatting die lekker past op het scherm
+    pen dikte stift
+    herhaal hoeken {          // er zijn zoveel streepjes te tekenen
+        vooruit kant
+        links 360 / hoeken
+    }
+    pen dikte 2 x stift
 
-// Hier stel je het aantal hoeken in:
-hoeken = 7
-
-// Dit is een mooie schatting voor de lengte van de zijdes,
-// dat ze niet te kort zijn en ook niet te lang
-kant   = 500 / hoeken
-
-pen dikte 5
-herhaal hoeken { // er zijn zoveel streepjes te tekenen
-    vooruit kant
-    links 360 / hoeken // na elk streepje moeten we zoveel draaien
-    
-    pen kleur 
-        meng 5 delen rood met 
-        random 5 + 1 delen transparant
+    // aan het eind kom je precies uit waar je begonnen was. dat laten we zien met een cirkel
+    cirkel 3
 }
 
-// aan het eind kom je precies uit waar je begonnen was.
-pen kleur zwart
-pen dikte 10
-cirkel 3
+doe veelhoek met 17, 3
