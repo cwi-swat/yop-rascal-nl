@@ -32,8 +32,20 @@ Response (Request) webServer(str svg) {
     }
 
     // hier sturen we de hele pagina met het plaatje er alvast in
-    default Response reply(get(_)) { 
+    Response reply(get("/")) { 
         return response(pagina(svg));
+    }
+
+    Response reply(get("/index.html")) { 
+        return response(pagina(svg));
+    }
+
+    default Response reply(get("/favicon.ico")) { 
+        return response(notFound(), "we hebben geen favicon");
+    }
+
+    default Response reply(get(str path)) { 
+        return response(notFound(), "<path> bestaat niet in dit plaatje.");
     }
 
     return reply;
