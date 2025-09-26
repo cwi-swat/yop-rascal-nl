@@ -1,0 +1,19 @@
+recept levy met diepte, lengte {
+    
+
+    als diepte == 0 {
+        vooruit lengte
+    }
+    
+    als diepte > 0 {
+        rechts 45
+        doe levy met diepte - 1, lengte / wortel 2
+        spring lengte / wortel 2
+        links 90
+        doe levy met diepte - 1, lengte / wortel 2
+    }
+}
+
+pen dikte 2
+
+doe levy met 10, 200
