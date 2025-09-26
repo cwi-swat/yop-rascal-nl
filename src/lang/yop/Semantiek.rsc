@@ -22,7 +22,7 @@ data Werk(
     | taak(Werk vorige)
     ;
 
-Werk huidigeWerk = hoofdtaak();
+Werk huidigeWerk = hoofdtaak(waarden=());
 
 // richting veranderen kan, maar als je klokje rond bent, begin je weer bij 0
 Werk veranderRichting(Werk taak, real graden) {
@@ -36,7 +36,7 @@ Werk veranderRichting(Werk taak, real graden) {
 }
 
 MiniSVG vertaal(Programma p) {
-    huidigeWerk = hoofdtaak();
+    huidigeWerk = hoofdtaak(waarden=());
     recepten=();
 
     // dan recepten registreren
@@ -184,7 +184,8 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
             richting = huidigeWerk.richting,
             penDikte=huidigeWerk.penDikte, 
             penKleur=huidigeWerk.penKleur,
-            pen=huidigeWerk.pen);
+            pen=huidigeWerk.pen,
+            waarden=());
 
     // workaround om bug in concrete list indexing
     args = [a | a <- argumenten];
@@ -196,7 +197,6 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
         int i = 0;
 
         for (Naam a <- parameters) {
-            nieuweWerk.waarden = nieuweWerk.waarden? ? nieuweWerk.waarden : ();
             // als iemand een argument vergeet wordt het 0
             nieuweWerk.waarden["<a>"] = vertaal(args[i]? (Som) `0`);
             i=i+1;
