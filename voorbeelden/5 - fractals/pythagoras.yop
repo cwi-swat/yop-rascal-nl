@@ -1,0 +1,35 @@
+// bedacht door de Nederlandse Wiskunde leraar A.E. Bosman in 1942
+recept vierkant met kant {
+    pen dikte kant
+    pen kleur meng 
+        random 10 delen transparant met 
+        random 10 + 10 delen rood
+    vooruit kant
+}
+
+recept links met diepte, kant {
+    spring kant + kant / 4
+    links 90
+    spring kant / 4
+    rechts 45
+    doe pythagoras met diepte, kant / wortel 2
+}
+
+recept rechts met diepte, kant {
+    spring kant + kant / 4
+    rechts 90
+    spring kant / 4
+    links 45
+    doe pythagoras met diepte, kant / wortel 2
+}
+
+recept pythagoras met diepte, kant {
+    doe vierkant met kant
+    
+    als diepte > 0 {
+        doe links met diepte - 1, kant 
+        doe rechts met diepte - 1, kant
+    }
+}
+
+doe pythagoras met 8, 100

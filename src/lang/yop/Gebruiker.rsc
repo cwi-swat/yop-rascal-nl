@@ -49,6 +49,10 @@ value exec(run(Programma p)) {
         bekijken(vertaal(p));
         return ("result": true);
     }
+    catch StackOverflow(): {
+        registerDiagnostics([error("Oneindige recursie", src)]);
+        return ("result": false);
+    }
     catch loc src : {
         registerDiagnostics([error("Delen door nul is flauwekul", src)]);
         return ("result": false);
