@@ -1,0 +1,39 @@
+recept driehoek met lengte {
+    links 30
+    vooruit lengte
+    links 120
+    vooruit lengte
+    links 120
+    vooruit lengte
+}
+
+recept kleineLinks met lengte {
+    links 90
+    spring lengte / 2
+    rechts 90
+    doe inElkaar met lengte / 2
+}
+
+recept kleineBoven met lengte {
+    links 30
+    spring lengte / 2
+    rechts 30
+    doe inElkaar met lengte / 2
+}
+
+recept kleineRechts met lengte {
+    doe inElkaar met lengte / 2
+}
+
+recept inElkaar met lengte {
+    doe driehoek met lengte
+
+    als lengte >= 10 {
+        doe kleineLinks met lengte
+        doe kleineRechts met lengte
+        doe kleineBoven met lengte
+    }
+}
+
+pen dikte 1
+doe inElkaar met 450
