@@ -15,9 +15,11 @@ str toSVG(miniSVG(list[Element] elements))
       '\</svg\>
       '";
 
-str toSVG(list[Element] elements) 
-    = "<for (e <- elements, group([]) != e) {>
-      '<toSVG(e)><}>";
+str toSVG([]) = "";
+
+str toSVG(list[Element] elements:[_,*_]) 
+    = "<for (e <- elements, group([]) != e) {><toSVG(e)>
+      '<}>";
 
 str toSVG(e:circle(real cx, real cy, real r)) 
     = "\<circle cx=\"<cx * 1.0>\" cy=\"<cy * 1.0>\" r=\"<r * 1.0>\" 

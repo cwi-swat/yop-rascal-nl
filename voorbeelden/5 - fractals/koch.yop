@@ -18,6 +18,7 @@ recept koch met diepte, kant {
 }
 
 breedte = 400
+diepte = 5
 pen dikte 1
 
 // centreer
@@ -28,7 +29,7 @@ rechts 180
 // drie keer een koch curve maakt een sneeuwvlokje
 herhaal 3 {
     pen kleur zwart
-    doe koch met 5, breedte
+    doe koch met diepte, breedte
 
     pen kleur meng 5 delen zwart met 5 delen transparant
     vooruit breedte
