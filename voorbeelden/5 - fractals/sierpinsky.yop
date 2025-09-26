@@ -26,7 +26,9 @@ recept kleineRechts met lengte {
 }
 
 recept inElkaar met lengte {
-    doe driehoek met lengte
+    als lengte < 10 {
+        doe driehoek met lengte
+    }
 
     als lengte >= 10 {
         doe kleineLinks met lengte
