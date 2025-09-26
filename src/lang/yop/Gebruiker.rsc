@@ -5,6 +5,7 @@ import lang::yop::Semantiek;
 import lang::yop::Controle;
 
 import lang::miniSVG::Syntax;
+import lang::miniSVG::Semantiek;
 import lang::miniSVG::Bekijken;
 
 import util::Reflective;
@@ -59,7 +60,7 @@ value exec(mini(Programma p)) {
         MiniSVG mini = vertaal(p);
         bestand = (p.src.top.parent.parent + "resultaten" + "mini" + p.src.top.file)[extension="mini"];
         iprintToFile(bestand, mini);
-        edit(bestand);
+        edit(bestand, viewColumn=2);
         return ("result": true);
     }
     catch loc src : {
@@ -73,7 +74,7 @@ value exec(svg(Programma p)) {
         str svg = toSVG(vertaal(p));
         bestand = (p.src.top.parent.parent + "resultaten" + "svg" + p.src.top.file)[extension="svg"];
         writeFile(bestand, svg);
-        edit(bestand);
+        edit(bestand, viewColumn=2);
         return ("result": true);
     }
     catch loc src : {

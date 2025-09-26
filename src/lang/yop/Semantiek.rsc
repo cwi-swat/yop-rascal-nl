@@ -92,56 +92,56 @@ Element vertaal(t:(Tekening) `spring <Som afstand>`) {
     vertaal((Tekening) `vooruit <Som afstand>`);
     huidigeWerk.pen = true;
 
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `rechts <Som graden>`) {
     huidigeWerk = veranderRichting(huidigeWerk, -1 * vertaal(graden));
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `links <Som graden>`) {
     huidigeWerk = veranderRichting(huidigeWerk, vertaal(graden));
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `pen op`) {
     huidigeWerk.pen = false;
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `pen neer`) {
     huidigeWerk.pen = true;
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `<Naam n> = <Som s>`) {
     huidigeWerk.waarden["<n>"] = vertaal(s);
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `pen dikte <Som s>`) {
     huidigeWerk.penDikte = vertaal(s);
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `pen kleur <Kleur k>`) {
     huidigeWerk.penKleur = vertaal(k);
-    return comment(t);
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `cirkel <Som diameter>`) 
     = link(t, circle(huidigeWerk.x, huidigeWerk.y, vertaal(diameter),  \stroke-width=huidigeWerk.penDikte,\stroke=huidigeWerk.penKleur));
 
 Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`) 
-    = move(0., 0., [*vertaalMeer(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
+    = group([*vertaalMeer(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
 
 Element vertaal(t:(Tekening) `als <Conditie c> { <Tekening* tekeningen> }`) {
     if (vertaal(c)) {
-        return move(0.0, 0.0, [vertaal(x) | x <- tekeningen]);
+        return group([vertaal(x) | x <- tekeningen]);
     }
     else {
-        return comment("conditie <c> was onwaar");
+        return nothing();
     }
 }
 
@@ -162,7 +162,7 @@ Element vertaal(t:(Tekening) `doe <Naam n>`) {
         Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
 
         // gewoon het recept stap-voor-stap vertalen
-        return move(0.0, 0.0, vertaalMeer(recept.stappen));
+        return group(vertaalMeer(recept.stappen));
     }
     catch e:42: {
         throw e;
@@ -206,7 +206,7 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
     try {
         // huidigeWerk.vorige.penKleur = huidigeWerk.penKleur;
         huidigeWerk = nieuweWerk;
-        return move(0.0, 0.0, vertaalMeer(recept.stappen));
+        return group(vertaalMeer(recept.stappen));
     }
     catch e:42: throw e;
     finally {
@@ -283,9 +283,6 @@ Color mix(lrel[real parts, Color color] mixture) {
 
     return rgb(round(mixR), round(mixG), round(mixB), mixT);
 }
-
-// handige functie om even een commentaar te produceren op basis van de huidige 🐢
-Element comment(Tekening t) = comment("🐢 <t>; x: <huidigeWerk.x>, y: <huidigeWerk.y>, richting: <huidigeWerk.richting>, pen: <huidigeWerk.pen>, penDikte: <huidigeWerk.penDikte> 🐢");
 
 // handige functie om de link op te zoeken bij een tekening
 Element link(Tekening t, Element e) = link(t.src, e);

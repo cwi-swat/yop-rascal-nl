@@ -14,9 +14,10 @@ data Element(Color stroke=rgb(0,0,0,1.), real \stroke-width=2., Color fill=rgb(2
     | move(real x, real y, list[Element] elements)
     | rotate(real angle, list[Element] elements)
     | scale(real factor, list[Element] elements)
+    | group(list[Element] elements)
     | link(loc src, Element element)
-    | comment(str what)
     ;
 
 data Color = rgb(int r, int g, int b, real transparancy);
 
+Element nothing() = group([]);
