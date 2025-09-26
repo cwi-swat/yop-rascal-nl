@@ -162,7 +162,7 @@ Element vertaal(t:(Tekening) `doe <Naam n>`) {
         Recept recept = recepten["<n>"]?(Recept) `recept xxx { }`;
 
         // gewoon het recept stap-voor-stap vertalen
-        return move(0.0, 0.0, [ vertaal(stap) | stap <- recept.stappen]);
+        return move(0.0, 0.0, vertaalMeer(recept.stappen));
     }
     catch e:42: {
         throw e;

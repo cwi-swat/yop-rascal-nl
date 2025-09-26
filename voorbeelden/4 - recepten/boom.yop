@@ -1,16 +1,26 @@
+recept blaadje {
+    vooruit 6
+    cirkel 3
+}
+
 recept tak met hoogte, lengte, dikte {
     pen kleur meng 15 delen zwart met 45 delen groen met 3  delen rood met random 50 delen wit
     pen dikte dikte
     
     vooruit lengte
 
+    // meer takken tekenen
     als hoogte > 0 {
         doe takLinks  met hoogte - 1, (lengte x 3) / 4, dikte / 2
         doe takRechts met hoogte - 1, (lengte x 3) / 4, dikte / 2
     }
 
+    // zes blaadjes tekenen
     als hoogte <= 0 {
-        cirkel dikte
+        herhaal 6 {
+            doe blaadje
+            rechts 60
+        }
     }
 }
 
@@ -33,4 +43,4 @@ recept boom met hoogte, lengte, dikte {
     doe takRechts met hoogte, lengte, (dikte x 9) / 10
 }
 
-doe boom met 5, 50, 25
+doe boom met 7, 50, 25
