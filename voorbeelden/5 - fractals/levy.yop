@@ -1,7 +1,11 @@
 recept levy met diepte, lengte {
-    
-
     als diepte == 0 {
+        pen kleur meng 
+            random 50 delen rood
+            met random 50 delen groen
+            met random 50 delen blauw
+            met random 50 delen transparant
+
         vooruit lengte
     }
     
@@ -15,6 +19,6 @@ recept levy met diepte, lengte {
 }
 
 pen dikte 2
-
+links 90
 doe levy met 10, 200
 

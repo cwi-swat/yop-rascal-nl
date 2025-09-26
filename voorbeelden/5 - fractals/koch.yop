@@ -1,0 +1,36 @@
+recept koch met diepte, kant {
+    als diepte <= 1 {
+        vooruit kant
+    }
+
+    als diepte > 1 {
+        doe koch met diepte - 1, kant / 3
+        spring kant / 3
+        links 60
+        doe koch met diepte - 1, kant / 3
+        spring kant / 3
+        rechts 120
+        doe koch met diepte - 1, kant / 3
+        spring kant / 3
+        links 60
+        doe koch met diepte - 1, kant / 3
+    }
+}
+
+breedte = 400
+pen dikte 1
+
+// centreer
+links 90
+spring breedte / 2
+rechts 180
+
+// drie keer een koch curve maakt een sneeuwvlokje
+herhaal 3 {
+    pen kleur zwart
+    doe koch met 5, breedte
+
+    pen kleur meng 5 delen zwart met 5 delen transparant
+    vooruit breedte
+    rechts 120
+}

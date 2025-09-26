@@ -11,21 +11,21 @@ recept kleineLinks met lengte {
     links 90
     spring lengte / 2
     rechts 90
-    doe inElkaar met lengte / 2
+    doe sierpinsky met lengte / 2
 }
 
 recept kleineBoven met lengte {
     links 30
     spring lengte / 2
     rechts 30
-    doe inElkaar met lengte / 2
+    doe sierpinsky met lengte / 2
 }
 
 recept kleineRechts met lengte {
-    doe inElkaar met lengte / 2
+    doe sierpinsky met lengte / 2
 }
 
-recept inElkaar met lengte {
+recept sierpinsky met lengte {
     als lengte < 10 {
         doe driehoek met lengte
     }
@@ -38,4 +38,4 @@ recept inElkaar met lengte {
 }
 
 pen dikte 1
-doe inElkaar met 450
+doe sierpinsky met 450

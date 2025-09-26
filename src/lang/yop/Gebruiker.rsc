@@ -33,7 +33,8 @@ set[LanguageService] contribs() = {
         return [
             <p.src, run (p.top, title="Bekijk plaatje")>,
             <p.src, mini(p.top, title="Bekijk MiniSVG code")>,
-            <p.src, svg(p.top,  title="Bekijk SVG code")>
+            <p.src, svg(p.top,  title="Bekijk SVG code")>,
+            *[<x.src, run (p.top, title="Bekijk plaatje")> | x <- [t | Tekening t <- p.top.tekeningen][-1..-2]]
         ];
     }),
 
