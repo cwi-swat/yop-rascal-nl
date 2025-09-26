@@ -151,6 +151,7 @@ Element vertaal(t:(Tekening) `doe <Naam n>`) {
         nieuweWerk = taak(huidigeWerk, 
             x = huidigeWerk.x, 
             y = huidigeWerk.y, 
+            richting = huidigeWerk.richting,
             penDikte=huidigeWerk.penDikte, 
             penKleur=huidigeWerk.penKleur,
             pen=huidigeWerk.pen);
@@ -180,6 +181,7 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
     nieuweWerk = taak(huidigeWerk, 
             x = huidigeWerk.x, 
             y = huidigeWerk.y, 
+            richting = huidigeWerk.richting,
             penDikte=huidigeWerk.penDikte, 
             penKleur=huidigeWerk.penKleur,
             pen=huidigeWerk.pen);

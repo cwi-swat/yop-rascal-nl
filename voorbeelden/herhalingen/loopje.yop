@@ -2,6 +2,7 @@ herhaal 500 {
     pen dikte (random 10) + 1
     afstand = random 50
     hoek = random 180
+    
     pen kleur meng 
         random 10 delen rood met 
         random 10 delen groen met 

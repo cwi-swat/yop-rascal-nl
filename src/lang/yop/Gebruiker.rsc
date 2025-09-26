@@ -6,7 +6,6 @@ import lang::yop::Controle;
 
 import lang::miniSVG::Syntax;
 import lang::miniSVG::Bekijken;
-import lang::miniSVG::Semantiek;
 
 import util::Reflective;
 import util::IDEServices;

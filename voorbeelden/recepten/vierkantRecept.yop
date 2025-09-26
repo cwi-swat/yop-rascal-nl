@@ -1,0 +1,8 @@
+recept vierkant met kant {
+    herhaal 4 {
+        vooruit kant
+        rechts 90
+    }
+}
+
+doe vierkant met 100

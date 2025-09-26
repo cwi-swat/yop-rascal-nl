@@ -1,0 +1,36 @@
+recept tak met hoogte, lengte, dikte {
+    pen kleur meng 15 delen zwart met 45 delen groen met 3  delen rood met random 50 delen wit
+    pen dikte dikte
+    
+    vooruit lengte
+
+    als hoogte > 0 {
+        doe takLinks  met hoogte - 1, (lengte x 3) / 4, dikte / 2
+        doe takRechts met hoogte - 1, (lengte x 3) / 4, dikte / 2
+    }
+
+    als hoogte <= 0 {
+        cirkel dikte
+    }
+}
+
+recept takLinks met hoogte, lengte, dikte {
+    links 45 + (45 - random 90) 
+    doe tak met hoogte, lengte, dikte
+}
+
+recept takRechts met hoogte, lengte, dikte {
+    rechts 45 + (45 - random 90) 
+    doe tak met hoogte, lengte, dikte
+}
+
+recept boom met hoogte, lengte, dikte {
+    pen kleur meng 15 delen zwart met 45 delen groen met 3  delen rood met random 50 delen wit
+    pen dikte dikte
+    vooruit lengte
+
+    doe takLinks met hoogte, lengte, (dikte x 9) / 10
+    doe takRechts met hoogte, lengte, (dikte x 9) / 10
+}
+
+doe boom met 5, 50, 25
