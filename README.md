@@ -3,12 +3,19 @@
 This project is for Dutch students and teachers, so we continue in Dutch.
 
 Om dit te proberen:
-1. eerst Microsoft VSCode installeren met de Rascal extensie (allebei gratis).
-2. dan naar `src/lang/yop/Gebruiker.rsc` gaan in VScode
-3. onderaan klikken op `Run main`. Even wachten (zie progress bar beneden)
-4. open dan een voorbeeld in `/voorbeelden`
-5. verander de code naar wens
-6. kies: "Bekijk plaatje"
+1. eerst **downloaden en installeren**: 
+   * VScode: https://code.visualstudio.com/download
+   * Rascal VScode extensie: https://releases.usethesource.io/adhoc/rascalmpl-0.13.0-opendag.vsix
+2. dan naar `src/lang/yop/Gebruiker.rsc` gaan in VScode (links op je scherm)
+   * Er komt een pop-up menu tevoorschijn:
+      * Kies om Java automatisch te installeren
+      * Accepteer de Java license agreement
+      * Kies "Temurin" als Java versie om te installeren
+4. onderaan in `Gebruiker.rsc` klikken op `Run main`. Even wachten (zie progress bar beneden)
+   * nu wordt de YOP taal een extensie van VS code en kun je aan de slag.
+6. open dan een voorbeeld in `/voorbeelden`
+7. verander de code naar wens
+8. kies: "Bekijk plaatje"
 
 Dit is een klein projectje om snel te leren hoe je je _eigen programmeertaal_ kunt maken: YOP - Your Own Programming language.
 De doelgroep daarvoor is middelbare school leerlingen. 
