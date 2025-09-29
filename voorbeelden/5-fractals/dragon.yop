@@ -27,7 +27,7 @@ recept rechts met diepte, lengte {
 }
 
 pen dikte 1
-diepte = 3
+diepte = 12
 breedte = 200
 
 doe rechts met diepte, breedte
