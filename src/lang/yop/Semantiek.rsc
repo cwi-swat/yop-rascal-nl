@@ -17,6 +17,7 @@ data Werk(
     real richting = 90.0, // "omhoog"
     real penDikte = 2.,
     Color penKleur = rgb(0,0,0,1.),
+    Color vulKleur = rgb(255,255,255,.5),
     bool pen = true)
     = hoofdtaak()
     | taak(Werk vorige)
@@ -130,8 +131,13 @@ Element vertaal(t:(Tekening) `pen kleur <Kleur k>`) {
     return nothing();
 }
 
+Element vertaal(t:(Tekening) `vul kleur <Kleur k>`) {
+    huidigeWerk.vulKleur = vertaal(k);
+    return nothing();
+}
+
 Element vertaal(t:(Tekening) `cirkel <Som diameter>`) 
-    = link(t, circle(huidigeWerk.x, huidigeWerk.y, vertaal(diameter),  \stroke-width=huidigeWerk.penDikte,\stroke=huidigeWerk.penKleur));
+    = link(t, circle(huidigeWerk.x, huidigeWerk.y, vertaal(diameter),  \stroke-width=huidigeWerk.penDikte, \stroke=huidigeWerk.penKleur, \fill=huidigeWerk.vulKleur));
 
 Element vertaal((Tekening) `herhaal <Som aantal> { <Tekening* tekeningen> }`) 
     = group([*vertaalMeer(tekeningen) | _ <- [0..round(vertaal(aantal))]]);
@@ -154,6 +160,7 @@ Element vertaal(t:(Tekening) `doe <Naam n>`) {
             richting = huidigeWerk.richting,
             penDikte=huidigeWerk.penDikte, 
             penKleur=huidigeWerk.penKleur,
+            vulKleur=huidigeWerk.vulKleur,
             pen=huidigeWerk.pen);
     
         huidigeWerk = nieuweWerk;
@@ -184,6 +191,7 @@ Element vertaal(t:(Tekening) `doe <Naam n> met <{Som ","}+ argumenten>`) {
             richting = huidigeWerk.richting,
             penDikte=huidigeWerk.penDikte, 
             penKleur=huidigeWerk.penKleur,
+            vulKleur=huidigeWerk.vulKleur,
             pen=huidigeWerk.pen,
             waarden=());
 

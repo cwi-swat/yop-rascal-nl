@@ -10,6 +10,7 @@ syntax Tekening
     | "links" Som graden
     | "pen" ("op" | "neer")
     | "pen" "kleur" Kleur kleur
+    | "vul" "kleur" Kleur kleur
     | "pen" "dikte" Som dikte
     | Naam "=" Som
     | "cirkel" Som diameter
