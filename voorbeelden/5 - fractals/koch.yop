@@ -1,5 +1,6 @@
 recept koch met diepte, kant {
     als diepte <= 1 {
+        pen dikte 1/5
         vooruit kant
     }
 
@@ -19,7 +20,6 @@ recept koch met diepte, kant {
 
 breedte = 400
 diepte = 5
-pen dikte 1
 
 // centreer
 links 90
@@ -31,7 +31,9 @@ herhaal 3 {
     pen kleur zwart
     doe koch met diepte, breedte
 
+    pen dikte 1
     pen kleur meng 5 delen zwart met 5 delen transparant
     vooruit breedte
     rechts 120
 }
+

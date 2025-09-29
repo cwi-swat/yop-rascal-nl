@@ -26,7 +26,7 @@ data Command
 
 set[LanguageService] contribs() = {
     parsing(start[Programma] (str program, loc src) {
-        return parse(#start[Programma], program, src);
+        return parse(#start[Programma], program, src, allowRecovery=false);
     }),
 
     codeLens(lrel[loc src, Command lens] (start[Programma] p) {

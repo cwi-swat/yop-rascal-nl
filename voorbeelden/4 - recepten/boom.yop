@@ -4,7 +4,12 @@ recept blaadje {
 }
 
 recept tak met hoogte, lengte, dikte {
-    pen kleur meng 15 delen zwart met 45 delen groen met 3  delen rood met random 5 x hoogte  delen wit
+    pen kleur meng 
+        15 delen zwart met 
+        45 delen groen met 
+        3  delen rood met 
+        random 5 x hoogte delen wit
+        
     pen dikte dikte
     
     vooruit lengte

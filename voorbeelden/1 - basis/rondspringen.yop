@@ -1,3 +1,4 @@
+pen dikte 5
 herhaal 50 {
     x = random 500 - 250
     y = random 500 - 250
