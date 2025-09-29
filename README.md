@@ -17,11 +17,11 @@ Om dit te proberen:
 7. verander de code naar wens
 8. kies: "Bekijk plaatje"
 
-Dit is een klein projectje om snel te leren hoe je je _eigen programmeertaal_ kunt maken: YOP - Your Own Programming language.
-De doelgroep daarvoor is middelbare school leerlingen. 
+Yop-rascal-nl is een overzichtelijk project om snel te leren hoe je je _eigen programmeertaal_ kunt maken: YOP - Your Own Programming language.
+De doelgroep daarvoor is middelbare school leerlingen en beginnende programmeurs in het algemeen.
 
 Maar je kunt ook lekker _gewoon programmeren_
-in een speciale taal (YOP) die gemaakt is om creatieve tekeningen te maken. De doelgroep daarvoor is _iedereen_ 
+in YOP als je bijvoorbeeld op de basisschool zit. YOP is gemaakt is om creatieve tekeningen te maken. De doelgroep daarvoor is _iedereen_ 
 die (een beetje) kan lezen en schrijven.
 
 Verder informatie:
