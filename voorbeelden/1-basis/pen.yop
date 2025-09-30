@@ -1,0 +1,12 @@
+pen kleur meng 50 delen rood met 50 delen transparant
+
+pen dikte 25
+vooruit 50
+
+pen kleur meng 50 delen blauw met 50 delen transparant
+pen dikte 50
+vooruit 50
+
+pen kleur meng 50 delen groen met 50 delen transparant
+pen dikte 100
+vooruit 50
