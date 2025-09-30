@@ -1,12 +1,8 @@
-i = 100
-herhaal 2 {
+herhaal 6 {
     herhaal 6 {
-        herhaal 6 {
-            vooruit i
-            links 60
-        }
-    
+        vooruit 100
         links 60
     }
-    i = i - 50
+
+    links 60
 }
