@@ -2,4 +2,24 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreviewFromCodeNavigation": false,
     "workbench.editor.enablePreview": false,
+    "files.exclude": {
+        "target": true,
+        "bin" : true,
+        ".vscode" : true,
+        ".github" : true,
+        "META-INF" : true,
+        ".gitignore" : true,
+        "LICENSE" : true,
+        "pom.xml" : true
+    },
+    "search.exclude": {
+        "target": true,
+        "bin" : true,
+        ".vscode" : true,
+        ".github" : true,
+        "META-INF" : true,
+        ".gitignore" : true,
+        "LICENSE" : true,
+        "pom.xml" : true
+    },
 }
