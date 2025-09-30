@@ -1,4 +1,6 @@
+// test
 herhaal 6 {
+    
     herhaal 6 {
         vooruit 100
         links 60
@@ -6,3 +8,4 @@ herhaal 6 {
 
     links 60
 }
+ 

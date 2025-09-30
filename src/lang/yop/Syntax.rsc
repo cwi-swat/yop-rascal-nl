@@ -70,7 +70,7 @@ lexical Naam   = @category="Variable" naam: ([a-zA-Z][a-zA-Z0-9]*) \ 'pi';
 lexical Spaties = [\ \t\n\r]+ !>> [\ \t\n\r];
 
 lexical Commentaar = @category="comment" "//" ![\n]* !>> ![\n] $;
-layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "--";
+layout  Ertussen   = (Spaties | Commentaar)* !>> [\ \t\n\r] !>> "//";
 
 // Hieronder ideeen voor mogelijke uitbreidingen:
 
