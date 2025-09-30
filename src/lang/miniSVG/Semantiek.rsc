@@ -6,13 +6,15 @@ import String;
 // Dit vertaalt een-op-een een lijst van miniSVG teken-instructies naar de textuele XML vorm die "SVG" heet.
 // Én het regelt de assen (van waar tot waar (-1000 tot 1000), en de richting (y-as omhoog en x-as naar rechts))
 str toSVG(miniSVG(list[Element] elements))
-    = "\<svg id=\"yop\" style=\"background-color: lightyellow\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1000 1000\" preserveAspectRatio=\"xMidYMid slice\" height=\"100%\" \>
+    = "\<div style=\"background: lightyellow; display: inline-block; padding: 100px;\" \>
+      '\<svg id=\"yop\" style=\"overflow:visible; background-color:lightyellow;\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1000 1000\" preserveAspectRatio=\"xMidYMid slice\" height=\"100%\" \>
       '\<g id=\"assenstelsel\"  transform=\"matrix(1 0 0 -1 500 500)\" \>
       '    <toSVG(elements)>
       '    \<line x1=\"0\" y1=\"-500\" x2=\"0\" y2=\"500\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
       '    \<line x1=\"-500\" y1=\"0\" x2=\"500\" y2=\"0\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
       '\</g\>
       '\</svg\>
+      '\<div\>
       '";
 
 str toSVG([]) = "";

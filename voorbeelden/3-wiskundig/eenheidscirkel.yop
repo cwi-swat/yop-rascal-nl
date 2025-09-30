@@ -1,10 +1,10 @@
-radius = 250
+radius = 100
 stappen = 8
 
 // dit is een automatische cirkel
 pen kleur zwart
 cirkel radius
-pen dikte 10
+pen dikte radius / 10
 
 pen kleur meng 50 delen zwart met 50 delen transparant
 
@@ -27,4 +27,48 @@ herhaal stappen + 1  {
     radialen = radialen + (2 x pi / stappen)
 }
 
+// en dan maken we hier een sinus en een cosinus
+
+opschuif = 0
+pen op
+naar opschuif 0
+pen neer
+pen kleur rood
+pen dikte 3
+
+// nu tekenen we de sinus
+radialen = 0
+herhaal stappen + 1  {
+    // met cos bereken je de x-as van een punt op een cirkel
+    x = opschuif + radialen/ 2 x radius
+    // met sin bereken je de y-as van een punt op een cirkel
+    y = radius x sin radialen
+    
+    // steeds roder als we verder gaan (om de richting te zien)
+    naar x y
+    
+    // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
+    radialen = radialen + (2 x pi / stappen)
+}
+
+// nu tekenen we de cosinus
+pen op
+naar opschuif radius x cos 0
+pen neer
+pen kleur blauw
+pen dikte 3
+
+radialen = 0
+herhaal stappen + 1  {
+    // met cos bereken je de x-as van een punt op een cirkel
+    x = opschuif + radialen/ 2 x radius
+    // met sin bereken je de y-as van een punt op een cirkel
+    y = radius x cos radialen
+    
+    // steeds roder als we verder gaan (om de richting te zien)
+    naar x y
+    
+    // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
+    radialen = radialen + (2 x pi / stappen)
+}
 
