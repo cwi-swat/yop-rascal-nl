@@ -1,38 +1,30 @@
-schaal = 250
-stappen = 20
+radius = 250
+stappen = 8
 
-r = 0
-herhaal stappen + 1 {
-    x = schaal x cos r
-    y = schaal x sin r
+// dit is een automatische cirkel
+pen kleur zwart
+cirkel radius
+pen dikte 10
+
+pen kleur meng 50 delen zwart met 50 delen transparant
+
+// nu gaan we zelf de punten op een cirkel berekenen
+// we "lopen" over de cirkel van rechts midden, naar boven toe 
+// en een rondje links om:
+
+radialen = 0
+herhaal stappen + 1  {
+    // met cos bereken je de x-as van een punt op een cirkel
+    x = radius x cos radialen
+    // met sin bereken je de y-as van een punt op een cirkel
+    y = radius x sin radialen
     
-    pen dikte 3
+    // steeds roder als we verder gaan (om de richting te zien)
+    pen kleur meng 1 + radialen delen rood met 1 + (2 x pi - radialen) delen wit
     naar x y
-    naar 0 0
-    naar x y
-    pen dikte 1
     
-    r = r + (PI / stappen)
+    // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
+    radialen = radialen + (2 x pi / stappen)
 }
-naar 0 0
 
-schaal = 50
-stappen = 10
 
-r = 0
-
-herhaal stappen + 1 {
-    naar schaal x cos r schaal x sin r
-    r = r + (PI / stappen)
-}
-naar 0 0
- 
-schaal = 50
-stappen = 5
-
-r = 0
-herhaal stappen + 1 {
-    naar schaal x cos r schaal x sin r
-    r = r + (PI / stappen)
-}
-naar 0 0
