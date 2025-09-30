@@ -20,7 +20,7 @@ herhaal stappen + 1  {
     y = radius x sin radialen
     
     // steeds roder als we verder gaan (om de richting te zien)
-    pen kleur meng 1 + radialen delen rood met 1 + (2 x pi - radialen) delen wit
+    pen kleur meng radialen delen rood met (2 x pi - radialen) delen wit
     naar x y
     
     // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
@@ -29,9 +29,8 @@ herhaal stappen + 1  {
 
 // en dan maken we hier een sinus en een cosinus
 
-opschuif = 0
 pen op
-naar opschuif 0
+naar 0 0
 pen neer
 pen kleur rood
 pen dikte 3
@@ -40,7 +39,7 @@ pen dikte 3
 radialen = 0
 herhaal stappen + 1  {
     // met cos bereken je de x-as van een punt op een cirkel
-    x = opschuif + radialen/ 2 x radius
+    x =  radialen x radius
     // met sin bereken je de y-as van een punt op een cirkel
     y = radius x sin radialen
     
@@ -53,7 +52,7 @@ herhaal stappen + 1  {
 
 // nu tekenen we de cosinus
 pen op
-naar opschuif radius x cos 0
+naar 0 radius x cos 0
 pen neer
 pen kleur blauw
 pen dikte 3
@@ -61,7 +60,7 @@ pen dikte 3
 radialen = 0
 herhaal stappen + 1  {
     // met cos bereken je de x-as van een punt op een cirkel
-    x = opschuif + radialen/ 2 x radius
+    x = radialen x radius
     // met sin bereken je de y-as van een punt op een cirkel
     y = radius x cos radialen
     
