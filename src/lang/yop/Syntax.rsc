@@ -32,6 +32,7 @@ syntax Som
     | 'pi'
     | "random" Som
     | "(" Som ")"
+    | "-" Som
     > left ( Som "x" Som
            | Som "/" Som
            )

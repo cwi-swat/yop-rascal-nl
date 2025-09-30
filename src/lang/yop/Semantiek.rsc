@@ -228,6 +228,7 @@ real vertaal((Som) `<Getal g>`)         = vertaal(g);
 real vertaal((Som) `wortel <Som w>`)    = sqrt(vertaal(w));
 real vertaal((Som) `sin <Som w>`)       = sin(vertaal(w));
 real vertaal((Som) `cos <Som w>`)       = cos(vertaal(w));
+real vertaal((Som) `- <Som w>`)         = -1.0 * vertaal(w);
 real vertaal((Som) `PI`)                = PI();
 real vertaal((Som) `<Som a> + <Som b>`) = vertaal(a) + vertaal(b);
 real vertaal((Som) `<Som a> - <Som b>`) = vertaal(a) - vertaal(b);

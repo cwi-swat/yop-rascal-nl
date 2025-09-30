@@ -31,12 +31,12 @@ recept tak met hoogte, lengte, dikte {
 }
 
 recept takLinks met hoogte, lengte, dikte {
-    links 45 + (45 - random 90) 
+    links -60 + random 120
     doe tak met hoogte, lengte, dikte
 }
 
 recept takRechts met hoogte, lengte, dikte {
-    rechts 45 + (45 - random 90) 
+    rechts -60 + random 120
     doe tak met hoogte, lengte, dikte
 }
 
