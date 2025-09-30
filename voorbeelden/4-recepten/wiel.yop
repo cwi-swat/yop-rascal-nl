@@ -1,0 +1,27 @@
+recept spaak met lengte {
+    pen dikte lengte / 100
+    pen kleur meng 50 delen zwart met 50 delen transparant
+    vooruit lengte
+}
+
+recept spaken met aantal, lengte {
+    herhaal aantal {
+        rechts 360 / aantal
+        doe spaak met lengte
+    }
+}
+
+recept wiel met aantalSpaken, grootte {
+    pen dikte grootte / 10
+    pen kleur zwart
+    vul kleur zwart
+    cirkel grootte / 10
+    vul kleur transparant
+    cirkel grootte
+    doe spaken met aantalSpaken, grootte
+}
+
+doe wiel met 40, 100
+rechts 90
+spring 220
+doe wiel met 40, 50
