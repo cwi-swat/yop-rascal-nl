@@ -1,6 +1,6 @@
 i = 0
-herhaal 3600 { 
+herhaal 1800 { 
     vooruit 10 
-    rechts i + 1/5 // elke keer een beetje scherper draaien
+    rechts i + 1/10 // elke keer een beetje scherper draaien
     i = i + 1
 }

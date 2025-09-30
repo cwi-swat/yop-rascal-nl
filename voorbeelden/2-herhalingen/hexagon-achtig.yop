@@ -1,4 +1,6 @@
-// test
+// dit tekent zes hexagons dwars door elkaar heen,
+// maar het lijkt op een 3D speelveld voor "Q-Bert"
+
 herhaal 6 {
     
     herhaal 6 {
@@ -8,4 +10,3 @@ herhaal 6 {
 
     links 60
 }
- 
