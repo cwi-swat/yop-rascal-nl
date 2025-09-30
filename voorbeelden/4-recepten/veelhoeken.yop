@@ -18,4 +18,20 @@ recept veelhoek met hoeken, stift {
     cirkel 3
 }
 
-doe veelhoek met 7, 3
+hoeken = 4
+
+pen op
+naar 0 - 200 0
+pen neer
+doe veelhoek met hoeken, 3
+
+pen op
+naar 0 0
+pen neer
+doe veelhoek met hoeken + 1, 3
+
+pen op
+naar 200 0
+pen neer
+doe veelhoek met hoeken + 2, 3
+

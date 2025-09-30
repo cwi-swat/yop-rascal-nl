@@ -10,3 +10,14 @@ vooruit 50
 pen kleur meng 50 delen groen met 50 delen transparant
 pen dikte 100
 vooruit 50
+
+spring 100
+pen dikte 10
+
+vul kleur meng
+    random 50 delen groen met 
+    random 50 delen wit met
+    random 50 delen blauw met
+    random 100 delen transparant
+    
+cirkel 100
