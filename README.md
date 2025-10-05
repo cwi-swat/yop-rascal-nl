@@ -2,10 +2,12 @@
 
 This project is for Dutch students and teachers, so we continue in Dutch.
 
-Om dit te proberen:
+Om dit te proberen moet je wel even geduld hebben met wat voorbereidende installaties:
 1. eerst **downloaden en installeren**: 
    * VScode: https://code.visualstudio.com/download
    * Rascal VScode extensie: https://releases.usethesource.io/adhoc/rascalmpl-0.13.0-opendag.vsix
+   * Git for windows (kijk in de Source view en klik op "installeer git"
+2. clone deze GitHub repository met de Source view in VScode
 2. dan naar `src/lang/yop/Gebruiker.rsc` gaan in VScode (links op je scherm)
    * Er komt een pop-up menu tevoorschijn:
       * Kies om Java automatisch te installeren
@@ -42,8 +44,8 @@ aan de leraren of de rest van de klas aan het eind.
 
 "een programmeer taal maken", betekent:
    1. bedenken/ontwerpen van een uitbreiding of verandering in de voorbeeldtaal
-   2. programmeren van de "syntax" (hoe het er uit ziet in YOP
-   3. programmeren van  "semantiek" (wat het moet doen, de vertaling naar (mini) SVG.
+   2. programmeren van de "syntax" (hoe het er uit ziet in YOP. zie yop/Syntax.rsc
+   3. programmeren van  "semantiek" (wat het moet doen, de vertaling naar (mini) SVG. zie yop/Semantiek.rsc
    4. uitproberen (laten zien aan je zelf hoe het werkt met een mooi voorbeeldprogramma)
    5. terug naar stap 1, 2, of 3: programmeren is vaak _uitproberen_ en _verbeteren_. Let goed op eventuele gekke meldingen, daar kun je van leren.
    6. demonstreren (uitleggen aan iemand anders wat, hoe en waarom je het hebt bedacht)
