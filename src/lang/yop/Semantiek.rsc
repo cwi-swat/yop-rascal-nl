@@ -45,8 +45,14 @@ MiniSVG vertaal(Programma p) {
         registreer(r);
     }
 
-    // dan de lijst van tekeningen vertalen
-    return miniSVG(vertaalMeer(p.tekeningen), title=p@\loc[extension=""].file);
+    // vertaal het programma naar miniSVG
+    elems = vertaalMeer(p.tekeningen);
+
+    // de laatste toestand wordt getekend als een schildpad met de juiste positie, richting, etc.
+    t = turtle(huidigeWerk.x, huidigeWerk.y, huidigeWerk.richting, \stroke=huidigeWerk.vulKleur, \stroke-width=huidigeWerk.penDikte, \stroke=huidigeWerk.penKleur);
+
+    // het resultaat samenstellen
+    return miniSVG(elems + [t], title=p@\loc[extension=""].file);
 }
 
 // 1-voor-1 de teken instructies vertalen

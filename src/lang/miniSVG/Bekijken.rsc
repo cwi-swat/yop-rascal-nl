@@ -64,7 +64,9 @@ str pagina(str svg)
         '       \<script src=\"https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js\"\>\</script\>
         '   \</head\>
         '   \<body\>
+        '       \<div style=\"background: lightyellow; display: inline-block; padding: 100px;\" \>
         '       <svg>
+        '       \</div\>
         '       \<script\>
         '           document.addEventListener(\"DOMContentLoaded\", function() {
         '               var svgElement = document.getElementById(\'yop\');
