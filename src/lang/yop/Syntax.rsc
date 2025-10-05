@@ -61,8 +61,8 @@ syntax Kleur
     | "wit"
     | "zwart"
     | "transparant"
-    | Som "delen" Kleur
-    | "meng" {Kleur "met"}+
+    | non-assoc delen: Som "delen" Kleur!meng
+    | meng: "meng" {Kleur!meng "met"}+
     ;
 
 lexical Getal  = [0-9]+;

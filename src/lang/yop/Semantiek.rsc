@@ -268,8 +268,13 @@ Color vertaal((Kleur) `zwart`)  = rgb(0,0,0,1.);
 Color vertaal((Kleur) `transparant`)  = rgb(255,255,255,0.);
 Color vertaal((Kleur) `<Som s> delen <Kleur k>`) = vertaal(k);
 
-Color vertaal((Kleur) `meng <{Kleur "met"}+ elems>`)
-    = mix([<vertaal(s), vertaal(k)> | (Kleur) `<Som s> delen <Kleur k>` <- elems]);
+Color vertaal((Kleur) `meng <{Kleur "met"}+ elems>`) {
+    lrel[real weight, Color color] delen = [<vertaal(s), vertaal(k)> | (Kleur) `<Som s> delen <Kleur k>` <- elems];
+    real maxWeight = max(delen.weight + [1.]);
+    lrel[real, Color] gehelen = [<maxWeight, vertaal(k)> | k <- elems, !(k is delen)];
+
+    return mix(delen + gehelen);
+}
 
 Color mix(lrel[real parts, Color color] mixture) {
     total = (0. | it + p | p <- mixture<parts>);
