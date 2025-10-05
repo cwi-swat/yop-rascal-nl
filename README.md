@@ -7,7 +7,7 @@ Om dit te proberen moet je wel even geduld hebben met wat voorbereidende install
    * VScode: https://code.visualstudio.com/download
    * Rascal VScode extensie: https://releases.usethesource.io/adhoc/rascalmpl-0.13.0-opendag.vsix
    * Git for windows (kijk in de Source view en klik op "installeer git"
-2. clone deze GitHub repository met de Source view in VScode
+2.  kopieer deze GitHub repository met de Source view in VScode: clone `https://github.com/cwi-swat/yop-rascal-nl`
 2. dan naar `src/lang/yop/Gebruiker.rsc` gaan in VScode (links op je scherm)
    * Er komt een pop-up menu tevoorschijn:
       * Kies om Java automatisch te installeren
