@@ -8,9 +8,9 @@ import String;
 str toSVG(miniSVG(list[Element] elements))
     = "\<svg id=\"yop\" style=\"overflow:visible; background-color:lightyellow;\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1000 1000\" preserveAspectRatio=\"xMidYMid slice\" height=\"100%\" \>
       '\<g id=\"assenstelsel\"  transform=\"matrix(1 0 0 -1 500 500)\" \>
-      '    <toSVG(elements)>
       '    \<line x1=\"0\" y1=\"-500\" x2=\"0\" y2=\"500\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\> 
       '    \<line x1=\"-500\" y1=\"0\" x2=\"500\" y2=\"0\" stroke-dasharray=\"2\" stroke=\"orange\" stroke-opacity=\".5\" /\>
+      '    <toSVG(elements)>
       '\</g\>
       '\</svg\>
       '";
