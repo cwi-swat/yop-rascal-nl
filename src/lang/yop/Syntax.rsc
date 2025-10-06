@@ -17,6 +17,7 @@ syntax Tekening
     | "herhaal" Som "{" Tekening* "}"
     | "doe" Naam recept ("met" {Som ","}+)?
     | "als" Conditie "{" Tekening* stappen "}"
+    | "schildpad" ("aan" | "uit")
     ;
 
 syntax Recept

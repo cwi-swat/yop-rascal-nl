@@ -16,6 +16,7 @@ data Element(Color stroke=rgb(0,0,0,1.), real \stroke-width=2., Color fill=rgb(2
     | scale(real factor, list[Element] elements)
     | group(list[Element] elements)
     | link(loc src, Element element)
+    | turtle(real x, real y, real angle)
     ;
 
 data Color = rgb(int r, int g, int b, real transparancy);

@@ -18,7 +18,8 @@ data Werk(
     real penDikte = 2.,
     Color penKleur = rgb(0,0,0,1.),
     Color vulKleur = rgb(255,255,255,.5),
-    bool pen = true)
+    bool pen = true,
+    bool schildpad = true)
     = hoofdtaak()
     | taak(Werk vorige)
     ;
@@ -45,8 +46,14 @@ MiniSVG vertaal(Programma p) {
         registreer(r);
     }
 
-    // dan de lijst van tekeningen vertalen
-    return miniSVG(vertaalMeer(p.tekeningen), title=p@\loc[extension=""].file);
+    // vertaal het programma naar miniSVG
+    elems = vertaalMeer(p.tekeningen);
+
+    // de laatste toestand wordt getekend als een schildpad met de juiste positie, richting, etc.
+    t = turtle(huidigeWerk.x, huidigeWerk.y, huidigeWerk.richting, \stroke=huidigeWerk.vulKleur, \stroke-width=huidigeWerk.penDikte, \stroke=huidigeWerk.penKleur);
+
+    // het resultaat samenstellen
+    return miniSVG(elems + [t | huidigeWerk.schildpad], title=p@\loc[extension=""].file);
 }
 
 // 1-voor-1 de teken instructies vertalen
@@ -60,6 +67,16 @@ void registreer(t:(Recept) `recept <Naam n> { <Tekening* _> }`) {
 
 void registreer(t:(Recept) `recept <Naam n> met <{Naam ","}+ _> { <Tekening* _> }`) {
     recepten["<n>"] = t;
+}
+
+Element vertaal((Tekening) `schildpad aan`) {
+    huidigeWerk.schildpad = true;
+    return nothing();
+}
+
+Element vertaal((Tekening) `schildpad uit`) {
+    huidigeWerk.schildpad = false;
+    return nothing();
 }
 
 Element vertaal(t:(Tekening) `vooruit <Som afstand>`) {
