@@ -18,7 +18,7 @@ recept koch met diepte, kant {
     }
 }
 
-breedte = 400
+breedte = 500
 diepte = 5
 
 // centreer
@@ -37,3 +37,4 @@ herhaal 3 {
     rechts 120
 }
 
+schildpad uit

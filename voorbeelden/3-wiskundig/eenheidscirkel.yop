@@ -43,7 +43,6 @@ herhaal stappen + 1  {
     // met sin bereken je de y-as van een punt op een cirkel
     y = radius x sin radialen
     
-    // steeds roder als we verder gaan (om de richting te zien)
     naar x y
     
     // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
@@ -64,7 +63,6 @@ herhaal stappen + 1  {
     // met sin bereken je de y-as van een punt op een cirkel
     y = radius x cos radialen
     
-    // steeds roder als we verder gaan (om de richting te zien)
     naar x y
     
     // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)

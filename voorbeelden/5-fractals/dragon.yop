@@ -27,9 +27,11 @@ recept rechts met diepte, lengte {
 }
 
 pen dikte 1
-diepte = 12
+diepte = 9
 breedte = 200
 
 doe rechts met diepte, breedte
 rechts 90
 doe links met diepte, breedte
+
+schildpad uit
