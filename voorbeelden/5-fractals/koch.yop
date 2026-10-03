@@ -1,6 +1,6 @@
 recept koch met diepte, kant {
     als diepte <= 1 {
-        pen dikte 1/5
+        pen dikte 1
         vooruit kant
     }
 
@@ -19,7 +19,7 @@ recept koch met diepte, kant {
 }
 
 breedte = 500
-diepte = 5
+diepte = 4
 
 // centreer
 links 90
