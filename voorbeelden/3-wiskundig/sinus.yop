@@ -3,7 +3,7 @@ pen op
 pen kleur rood
 pen dikte 3
 herhaal 1000 {
-    naar i 50 x sin (i / 50)
+    naar i 50 x sin (i : 50)
     pen neer
     i = i + 1
 }
@@ -12,7 +12,7 @@ i = -500
 pen op
 pen kleur blauw
 herhaal 1000 {
-    naar i 50 x cos (i / 50)
+    naar i 50 x cos (i : 50)
     pen neer
     pen kleur meng 
         2 delen blauw met 

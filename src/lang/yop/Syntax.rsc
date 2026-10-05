@@ -35,7 +35,7 @@ syntax Som
     | "(" Som ")"
     | "-" Som
     > left ( Som "x" Som
-           | Som "/" Som
+           | Som ":" Som
            )
     > left ( Som "+" Som
            | Som "-" Som

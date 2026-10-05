@@ -17,8 +17,8 @@ recept tak met hoogte, lengte, dikte {
 
     // meer takken tekenen
     als hoogte > 0 {
-        doe takLinks  met hoogte - 1, (lengte x 3) / 4, dikte / 2
-        doe takRechts met hoogte - 1, (lengte x 3) / 4, dikte / 2
+        doe takLinks  met hoogte - 1, (lengte x 3) : 4, dikte : 2
+        doe takRechts met hoogte - 1, (lengte x 3) : 4, dikte : 2
     }
 
     // zes blaadjes tekenen
@@ -45,8 +45,8 @@ recept boom met hoogte, lengte, dikte {
     pen dikte dikte
     vooruit lengte
 
-    doe takLinks met hoogte, lengte, (dikte x 9) / 10
-    doe takRechts met hoogte, lengte, (dikte x 9) / 10
+    doe takLinks met hoogte, lengte, (dikte x 9) : 10
+    doe takRechts met hoogte, lengte, (dikte x 9) : 10
 }
 
 doe boom met 7, 50, 25

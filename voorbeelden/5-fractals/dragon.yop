@@ -5,10 +5,10 @@ recept links met diepte, lengte {
     
     als diepte > 0 {
         rechts 45
-        doe links met diepte - 1, lengte / wortel 2
-        spring lengte / wortel 2
+        doe links met diepte - 1, lengte : wortel 2
+        spring lengte : wortel 2
         links 90
-        doe rechts met diepte - 1, lengte / wortel 2
+        doe rechts met diepte - 1, lengte : wortel 2
     }
 }
 
@@ -19,10 +19,10 @@ recept rechts met diepte, lengte {
 
     als diepte > 0 {
         links 45
-        doe links met diepte - 1, lengte / wortel 2
-        spring lengte / wortel 2
+        doe links met diepte - 1, lengte : wortel 2
+        spring lengte : wortel 2
         rechts 90
-        doe rechts met diepte - 1, lengte / wortel 2
+        doe rechts met diepte - 1, lengte : wortel 2
     }
 }
 

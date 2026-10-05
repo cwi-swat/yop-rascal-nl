@@ -4,7 +4,7 @@ stappen = 8
 // dit is een automatische cirkel
 pen kleur zwart
 cirkel radius
-pen dikte radius / 40
+pen dikte radius : 40
 
 pen kleur meng 50 delen zwart met 50 delen transparant
 
@@ -24,7 +24,7 @@ herhaal stappen + 1  {
     naar x y
     
     // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
-    radialen = radialen + (2 x pi / stappen)
+    radialen = radialen + (2 x pi : stappen)
 }
 
 // en dan maken we hier een sinus en een cosinus
@@ -46,7 +46,7 @@ herhaal stappen + 1  {
     naar x y
     
     // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
-    radialen = radialen + (2 x pi / stappen)
+    radialen = radialen + (2 x pi : stappen)
 }
 
 // nu tekenen we de cosinus
@@ -66,14 +66,14 @@ herhaal stappen + 1  {
     naar x y
     
     // een stukje verder op de cirkel lopen (de omtrek is 2 x pi x radius)
-    radialen = radialen + (2 x pi / stappen)
+    radialen = radialen + (2 x pi : stappen)
 }
 
 pen op
 naar 0 0
 pen neer
 radialen = 0
-pen dikte radius / 40
+pen dikte radius : 40
 
 // nog een streepje op de x-as om een punt te maken
 herhaal stappen + 1  {
@@ -87,6 +87,6 @@ herhaal stappen + 1  {
     naar x y
     
     // een stukje verder op x-as, net zo als op de cirkel (de omtrek is 2 x pi x radius)
-    radialen = radialen + (2 x pi / stappen)
+    radialen = radialen + (2 x pi : stappen)
 }
 

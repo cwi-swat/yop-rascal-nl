@@ -8,19 +8,19 @@ recept vierkant met kant {
 }
 
 recept links met diepte, kant {
-    spring kant + kant / 4
+    spring kant + kant : 4
     links 90
-    spring kant / 4
+    spring kant : 4
     rechts 45
-    doe pythagoras met diepte, kant / wortel 2
+    doe pythagoras met diepte, kant : wortel 2
 }
 
 recept rechts met diepte, kant {
-    spring kant + kant / 4
+    spring kant + kant : 4
     rechts 90
-    spring kant / 4
+    spring kant : 4
     links 45
-    doe pythagoras met diepte, kant / wortel 2
+    doe pythagoras met diepte, kant : wortel 2
 }
 
 recept pythagoras met diepte, kant {

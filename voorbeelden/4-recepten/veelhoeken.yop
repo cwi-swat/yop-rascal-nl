@@ -6,11 +6,11 @@
 // een cirkel gaat lijken.
   
 recept veelhoek met hoeken, stift {
-    kant = 500 / hoeken       // schatting die lekker past op het scherm
+    kant = 500 : hoeken       // schatting die lekker past op het scherm
     pen dikte stift
     herhaal hoeken {          // er zijn zoveel streepjes te tekenen
         vooruit kant
-        links 360 / hoeken
+        links 360 : hoeken
     }
     pen dikte 2 x stift
 

@@ -9,20 +9,20 @@ recept driehoek met lengte {
 
 recept kleineLinks met lengte {
     links 90
-    spring lengte / 2
+    spring lengte : 2
     rechts 90
-    doe sierpinsky met lengte / 2
+    doe sierpinsky met lengte : 2
 }
 
 recept kleineBoven met lengte {
     links 30
-    spring lengte / 2
+    spring lengte : 2
     rechts 30
-    doe sierpinsky met lengte / 2
+    doe sierpinsky met lengte : 2
 }
 
 recept kleineRechts met lengte {
-    doe sierpinsky met lengte / 2
+    doe sierpinsky met lengte : 2
 }
 
 recept sierpinsky met lengte {

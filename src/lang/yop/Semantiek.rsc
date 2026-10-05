@@ -250,7 +250,7 @@ real vertaal((Som) `PI`)                = PI();
 real vertaal((Som) `<Som a> + <Som b>`) = vertaal(a) + vertaal(b);
 real vertaal((Som) `<Som a> - <Som b>`) = vertaal(a) - vertaal(b);
 real vertaal((Som) `<Som a> x <Som b>`) = vertaal(a) * vertaal(b);
-real vertaal((Som) `<Som a> / <Som b>`) {
+real vertaal((Som) `<Som a> : <Som b>`) {
     try 
         return vertaal(a) / vertaal(b); 
     catch ArithmeticException("Division by zero"): 
