@@ -14,6 +14,7 @@ import util::LanguageServer;
 
 import ParseTree;
 import IO;
+import Exception;
 
 PathConfig pcfg = getProjectPathConfig(|project://yop-rascal-nl|);
 Language yopLang = language(pcfg, "YOP", {"yop"}, "lang::yop::Gebruiker", "contribs");
@@ -49,7 +50,7 @@ value exec(run(Programma p)) {
         return ("result": true);
     }
     catch StackOverflow(): {
-        registerDiagnostics([error("Oneindige recursie", src)]);
+        registerDiagnostics([error("Oneindige recursie", p.src)]);
         return ("result": false);
     }
     catch loc src : {
